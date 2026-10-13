@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="teachers" directorySegmentName="seg_0" id="10AC015B-BD51-26AB-723A-E1DF6E978424">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="teacher_id" id="1C3F0F97-9C43-0643-814B-8677037502EB">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="middle_name" id="2443B038-0E39-5F05-5DD6-5463F8138A41">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="phone" id="2A99D7C4-7585-8368-4DD9-75E9976E5C77">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="email" id="6F862A0F-C7DC-B538-A69D-608ECE7AF73B">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="title_id" id="A672A538-4D4E-D860-4443-C24B6A2B64E9">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="first_name" id="AC6949BE-0621-A49D-0F68-DFEBBB6E330F">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="last_name" id="D3C34E73-5A0A-B225-541B-3C38F275F028">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="teachers_title_ix" id="2DAA64BE-46E5-F249-F329-9A66FB54C830">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="teachers_title_fk" id="35BE5DA6-9FA8-BBBB-7300-37F074EB4656">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="teachers_pk" id="DEA8EC43-B46A-3D36-454B-7CD10A921739">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="teachers_first_name_ck" id="0DA3F332-36B8-0864-C966-9ED3B3CD10F0">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="teachers_id_ck" id="50B23141-A410-18B2-CCD3-B350F245D7D7">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="teachers_email_ck" id="B9F8BD05-728C-324C-B625-BC15D28421B8">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="teachers_last_name_ck" id="BDF84ABB-6B92-E093-C064-26BD0CA88CE0">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="teachers_phone_ck" id="F19C0495-D309-4ABA-26F7-9B2B95D7C048">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev11g>

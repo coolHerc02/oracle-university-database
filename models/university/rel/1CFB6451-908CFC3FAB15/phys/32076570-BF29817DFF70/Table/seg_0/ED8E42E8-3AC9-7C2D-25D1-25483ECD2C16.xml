@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="grades" directorySegmentName="seg_0" id="ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="discipline_id" id="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="grade_value" id="95F2293B-5DDE-0320-FFED-43F46F355A61">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="faculty_number" id="A31284D6-DEC3-D043-1931-EDD11C531E9F">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="grade_date" id="BEDBF16C-A051-2D64-9A7B-6171B2875521">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="grades_value_ix" id="4B54CF1A-F57E-83DE-8CFE-34F6203D0D9E">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="grades_discipline_ix" id="6828D8DD-A044-EAFA-858E-C1D640307A51">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="grades_discipline_fk" id="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="grades_student_fk" id="E7FEC07F-8029-7D2B-2DB5-0C529B3A105C">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="grades_value_fk" id="F7AD25C1-0041-986B-1E73-8DB27B68493D">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="grades_pk" id="04DA56D7-B0F5-B418-6D6A-A33EEB47A76D">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

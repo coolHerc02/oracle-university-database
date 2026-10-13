@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="grade_scale" directorySegmentName="seg_0" id="8AD0092F-24C2-5F11-AC75-1E3921AF8B6B">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="grade_label" id="385CE920-6E7D-461C-7719-712E7C66C716">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="is_passing" id="B3A88682-939A-8AB8-E1FA-51BFF4941D32">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="grade_value" id="C4D03B6F-7291-F1F2-8070-6CA0C3A48603">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="grade_scale_pk" id="41844720-4F8E-3A49-5391-FA3A437CE599">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="grade_scale_value_ck" id="1406D772-8C8B-37C3-99D0-9ED4150EBE0C">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="grade_scale_label_ck" id="72710462-291E-117C-599C-4D19144BD1C2">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="grade_scale_passing_ck" id="D4AA4A78-468B-C6D0-ADFE-B27E0A0D820F">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="grade_scale_label_uq" id="E460595B-A007-0959-9092-E22FD559C502">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

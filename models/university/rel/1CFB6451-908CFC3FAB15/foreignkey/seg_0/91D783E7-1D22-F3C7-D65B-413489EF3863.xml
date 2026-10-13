@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="91D783E7-1D22-F3C7-D65B-413489EF3863" containerWithKeyObject="85CC84A1-642B-978D-0182-4AABF4A1E555" localFKIndex="D9CE02FD-A909-BA6C-7EAA-EAD5625C8C04" name="semesters_year_fk">
+<sourceDDLFile>university_import.sql</sourceDDLFile>
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:52:27 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<importedID>12485CCD-16FC-9D1B-55BB-D5097D8C7E09</importedID>
+<referredTableLongName>study_years</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>56025D48-265A-7504-9A8D-A232A14A5D1A</referredTableID>
+<keyObject>FA8DA2CA-5511-5DEB-2B9C-C1994CC8693D</keyObject>
+<referredKeyID>FA8DA2CA-5511-5DEB-2B9C-C1994CC8693D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>study_year_no</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

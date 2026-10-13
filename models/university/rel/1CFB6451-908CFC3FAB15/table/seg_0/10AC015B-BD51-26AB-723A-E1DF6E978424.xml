@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="10AC015B-BD51-26AB-723A-E1DF6E978424" name="teachers">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Teachers. Each must lead at least two distinct disciplines after a completed operation.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>3A669A75-E31B-778A-6BA5-464FCD23D385</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="teacher_id" id="1C3F0F97-9C43-0643-814B-8677037502EB">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>051BAD7E-F180-1B25-BC2E-6A90F1897C41</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="first_name" id="AC6949BE-0621-A49D-0F68-DFEBBB6E330F">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>57253794-6E94-7989-8818-C2ADF7C79E7C</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>544542A6-9E7A-C7EE-725E-D84FF17BEFD8</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="middle_name" id="2443B038-0E39-5F05-5DD6-5463F8138A41">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>D510B8FA-B665-45B6-36C0-58A1121BC492</importedID>
+      <nullsAllowed>true</nullsAllowed>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>544542A6-9E7A-C7EE-725E-D84FF17BEFD8</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="last_name" id="D3C34E73-5A0A-B225-541B-3C38F275F028">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>241FB6E1-F834-0D50-D5AD-442FE0CDBA1B</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>544542A6-9E7A-C7EE-725E-D84FF17BEFD8</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="title_id" id="A672A538-4D4E-D860-4443-C24B6A2B64E9">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>DA933046-21D3-1C94-504F-5C23589A6981</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="E149ED2A-2FEA-C0E7-8D31-F9E70AD5462E" referredColumn="97537D9A-C83C-5FA0-FD9C-2A28FA31F0FB" />
+      </associations>
+    </Column>
+    <Column name="phone" id="2A99D7C4-7585-8368-4DD9-75E9976E5C77">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <commentInRDBMS>Text phone number preserving prefix, plus sign and leading zeroes.</commentInRDBMS>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>872FCE45-9E23-89C2-796D-84100B69F8A5</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>2C422E0A-42A8-805F-2904-FF4604B63DDC</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="email" id="6F862A0F-C7DC-B538-A69D-608ECE7AF73B">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>1607DDDD-63F4-983B-1BEC-B631FCC06438</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>51E4E621-D24D-7009-1208-C8E7158FEC26</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="DEA8EC43-B46A-3D36-454B-7CD10A921739" name="teachers_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>FA7F1383-5672-1E6C-25F1-8BD9A0B2C6ED</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="1C3F0F97-9C43-0643-814B-8677037502EB" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="2DAA64BE-46E5-F249-F329-9A66FB54C830" name="teachers_title_ix">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>2983D996-DAD0-F68B-41C1-88130928BB6B</importedID>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="A672A538-4D4E-D860-4443-C24B6A2B64E9" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="35BE5DA6-9FA8-BBBB-7300-37F074EB4656" name="teachers_title_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="A672A538-4D4E-D860-4443-C24B6A2B64E9" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="teachers_id_ck" directorySegmentName="seg_0" id="50B23141-A410-18B2-CCD3-B350F245D7D7">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>86D8B9EE-B327-C692-9AD6-555A2F478B22</importedID>
+      <rule>teacher_id &gt; 0 and teacher_id = trunc(teacher_id)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="teachers_first_name_ck" directorySegmentName="seg_0" id="0DA3F332-36B8-0864-C966-9ED3B3CD10F0">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>DFB1177A-3191-15B5-1258-ACC8F3B97930</importedID>
+      <rule>trim(first_name) is not null</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="teachers_last_name_ck" directorySegmentName="seg_0" id="BDF84ABB-6B92-E093-C064-26BD0CA88CE0">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>B66B2F7B-C467-C513-55F3-F140769FF401</importedID>
+      <rule>trim(last_name) is not null</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="teachers_phone_ck" directorySegmentName="seg_0" id="F19C0495-D309-4ABA-26F7-9B2B95D7C048">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>6D4957CB-80BD-B7B4-ADB6-227C153752B6</importedID>
+      <rule>trim(phone) is not null</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="teachers_email_ck" directorySegmentName="seg_0" id="B9F8BD05-728C-324C-B625-BC15D28421B8">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>B426219A-DF15-8DDF-B511-F15A79F2F6B9</importedID>
+      <rule>email like '%_@_%._%'</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

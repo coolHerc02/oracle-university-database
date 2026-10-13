@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16" name="grades">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>One mandatory grade and date for every recorded student-discipline pair. Corrections use UPDATE.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>34612302-1143-E6C1-803D-9B8274A586FA</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="faculty_number" id="A31284D6-DEC3-D043-1931-EDD11C531E9F">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>224DC77F-BC73-FB48-5994-2444E8EF1733</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>F6FF1DDD-7433-DFC7-8F59-4B9596EEDB6D</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="3A61B0F6-214E-8A65-5739-1CBFDBF92842" referredColumn="D810B62C-1CDC-3128-C45C-F46933E6BAEC" />
+      </associations>
+    </Column>
+    <Column name="discipline_id" id="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>29F75734-1C9F-6A04-5A9F-9A806E3E41CF</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="E1E4649B-9108-17DB-ED52-CD69E413E68D" />
+      </associations>
+    </Column>
+    <Column name="grade_value" id="95F2293B-5DDE-0320-FFED-43F46F355A61">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>73C9DF69-3494-B6EE-E434-6D27E0CEB0AE</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="397AFC19-5D12-150C-4245-BE4EDE398898" referredColumn="C4D03B6F-7291-F1F2-8070-6CA0C3A48603" />
+      </associations>
+    </Column>
+    <Column name="grade_date" id="BEDBF16C-A051-2D64-9A7B-6171B2875521">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <commentInRDBMS>Date of the examination/grade.</commentInRDBMS>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>86D1400C-FB80-0033-FEE1-B45D041B2805</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT007</logicalDatatype>
+      <domain>5156BAD2-0261-6D45-70CE-B2D41AECF2F7</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="04DA56D7-B0F5-B418-6D6A-A33EEB47A76D" name="grades_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>E07CEB3D-603B-2D12-FABB-D0FC760B97D0</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="A31284D6-DEC3-D043-1931-EDD11C531E9F" />
+        <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="6828D8DD-A044-EAFA-858E-C1D640307A51" name="grades_discipline_ix">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>DBBFA538-4746-ED5E-8703-BD408981CC4B</importedID>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="4B54CF1A-F57E-83DE-8CFE-34F6203D0D9E" name="grades_value_ix">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>DDA4A83D-C2A4-2A41-4037-2F1226C3E7EF</importedID>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="95F2293B-5DDE-0320-FFED-43F46F355A61" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8" name="grades_discipline_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="E7FEC07F-8029-7D2B-2DB5-0C529B3A105C" name="grades_student_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="A31284D6-DEC3-D043-1931-EDD11C531E9F" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="F7AD25C1-0041-986B-1E73-8DB27B68493D" name="grades_value_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="95F2293B-5DDE-0320-FFED-43F46F355A61" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

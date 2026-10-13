@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="15CF4E98-FE7D-2159-2F09-F2DCF1499ADB" name="specialty">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <commentInRDBMS>Specialty reference data. Names are stored once.</commentInRDBMS>
+  <generatorID>0DCD2481-E061-2D83-1706-CEF19F14DFD0</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+  <expectedVolumes>0</expectedVolumes>
+  <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+  <growthPercent>0</growthPercent>
+  <growthType>Year</growthType>
+  <maxVolumes>9999999</maxVolumes>
+  <minVolumes>0</minVolumes>
+  <normalForm>Third</normalForm>
+  <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+    <Attribute name="specialty id" id="F419C43E-D699-E1DB-536A-C6434355AEA8">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>4DB60686-0E13-B6BB-AAD8-A7443ECA3186</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="specialty name" id="A61D25D5-C916-388C-C599-CCAD70FAD0EA">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>82361A31-31DF-636F-8ED2-D2E7AED754D4</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>9EE70564-8A49-6A3F-0CB9-F9CA63D285C1</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+  </attributes>
+  <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+    <identifier id="7AF7DF62-C094-C869-5388-16D2447FA56B" name="specialties pk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>E331BE80-4E43-F561-BE97-BD280A55B533</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <pk>true</pk>
+      <usedAttributes>
+        <attributeRef>F419C43E-D699-E1DB-536A-C6434355AEA8</attributeRef>
+      </usedAttributes>
+    </identifier>
+    <identifier id="862A9436-1FF8-664E-65A1-4C413AC644D7" name="specialties name uq">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>79639370-E1D1-FB21-CCE2-41DDAA649C16</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <usedAttributes>
+        <attributeRef>A61D25D5-C916-388C-C599-CCAD70FAD0EA</attributeRef>
+      </usedAttributes>
+    </identifier>
+  </identifiers>
+</Entity>

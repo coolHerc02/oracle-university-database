@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="08017D41-A7A4-49A6-8E6A-A64E3A314A23" name="discipline teacher">
+  <createdBy>Codex</createdBy>
+  <createdTime>2026-10-13 09:40:19 UTC</createdTime>
+  <commentInRDBMS>Teaching M:N association. Each discipline has at least ONE teacher (1..N). Each teacher leads at least TWO distinct disciplines (2..N). The composite key prevents repeated assignments.</commentInRDBMS>
+  <generatorID>482E6F98-6F19-4959-94AC-F85C091ED33D</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+  <expectedVolumes>0</expectedVolumes>
+  <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+  <growthPercent>0</growthPercent>
+  <growthType>Year</growthType>
+  <maxVolumes>9999999</maxVolumes>
+  <minVolumes>0</minVolumes>
+  <normalForm>Third</normalForm>
+  <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+    <Attribute name="discipline id" id="7F3C18D2-3AEA-414D-88D9-1A80BFC95C40">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>07933D0C-3571-48DC-8B78-79364B7DA8A7</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <referedAttribute>546EDE85-8082-2F42-D0F2-CE878D15A027</referedAttribute>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="teacher id" id="B4421A9A-0A8B-4748-BB7F-AFB4E84A6B27">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>F89677A3-DDB2-4A06-A955-FA8210B0FC50</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <referedAttribute>4E6D3547-0E0C-B979-1C4C-693DA2D827E8</referedAttribute>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+  </attributes>
+  <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+    <identifier id="B7FAE66C-5028-425B-90DF-668C90339F07" name="discipline teachers pk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>0E1FD125-E593-488D-827F-ACC0208ED633</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <pk>true</pk>
+      <usedAttributes>
+        <attributeRef>7F3C18D2-3AEA-414D-88D9-1A80BFC95C40</attributeRef>
+        <attributeRef>B4421A9A-0A8B-4748-BB7F-AFB4E84A6B27</attributeRef>
+      </usedAttributes>
+    </identifier>
+  </identifiers>
+</Entity>

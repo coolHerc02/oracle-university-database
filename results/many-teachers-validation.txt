@@ -1,0 +1,57 @@
+PASS 1: Sixteen seeded teaching assignments
+PASS 2: Discipline no longer contains a single-teacher column
+PASS 3: Composite assignment PK has ordered discipline and teacher columns
+PASS 4: Two seeded disciplines have multiple teachers
+PASS 5: Every discipline has at least one teacher
+PASS 6: Every teacher leads at least two distinct disciplines
+PASS 7: Student average remains six
+PASS 8: Academic report has one row per grade
+PASS 9: Academic row lists both teachers without repeating the grade
+PASS 10: Failed students are not duplicated by teachers
+PASS 11: Teacher ranking counts assignments, not grade joins
+PASS 12: Duplicate assignment is rejected (expected -1, actual -1)
+PASS 13: Duplicate refusal preserves all assignments
+PASS 14: Direct assignment INSERT guarded (expected -20020, actual -20020)
+PASS 15: Direct assignment UPDATE guarded (expected -20020, actual -20020)
+PASS 16: Direct assignment DELETE guarded (expected -20020, actual -20020)
+PASS 17: Missing teacher rejected (expected -2291, actual -2291)
+PASS 18: Missing discipline rejected (expected -2291, actual -2291)
+PASS 19: Missing assignment reported (expected -20072, actual -20072)
+PASS 20: Second teacher can be removed while minima hold
+PASS 21: Changing teacher list preserves transcript grain and average
+PASS 22: Last teacher of discipline cannot be removed (expected -20047, actual
+-20047)
+PASS 23: Last-teacher rejection restores assignment
+PASS 24: Teacher cannot be left with one discipline (expected -20041, actual
+-20041)
+PASS 25: Invalid replacement rolls back atomically (expected -20041, actual
+-20041)
+PASS 26: Rejected replacement preserves original teacher
+PASS 27: Standalone assignment INSERT succeeds
+PASS 28: Standalone assignment DELETE succeeds
+PASS 29: New teacher can join two existing disciplines
+PASS 30: Joining existing disciplines creates no duplicate disciplines
+PASS 31: CLOB teacher aggregation preserves ampersand text
+PASS 32: Repeated discipline in new teacher bundle rejected (expected -1, actual
+-1)
+PASS 33: Failed bundle leaves no partial teacher
+PASS 34: Existing-discipline bundle needs at least two (expected -20030, actual
+-20030)
+PASS 35: NULL discipline list rejected (expected -20030, actual -20030)
+PASS 36: Missing discipline rolls back teacher bundle (expected -2291, actual
+-2291)
+PASS 37: New teacher minimum remains enforced (expected -20041, actual -20041)
+PASS 38: Discipline metadata update preserves all its teachers
+PASS 39: Teacher list safely exceeds VARCHAR2/LISTAGG limit
+PASS 40: Many teachers still leave four academic rows and average six
+PASS 41: Write guard reset after successes and failures
+PASS 42: Rollback restores sixteen assignments
+PASS 43: Rollback restores six teachers
+PASS 44: Rollback restores fourteen disciplines
+PASS 45: Rollback preserves sixty grades
+PASS 46: Rollback preserves eighteen students
+PASS 47: No compilation errors
+MANY_TEACHERS_VALIDATION_PASSED: 47 checks
+
+PL/SQL procedure successfully completed.
+

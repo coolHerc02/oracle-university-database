@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="students" directorySegmentName="seg_0" id="C5BA3C56-4C8B-0EF6-80E5-684EB15C1E3D">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="email" id="54AB57DB-58C0-D9E0-D2B7-D87510DC9B52">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="middle_name" id="9502452D-626D-84E9-8610-1A87F2137478">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="first_name" id="9C8C4EAD-F3E7-C7D4-59C4-F8A2D92BBADD">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="last_name" id="A5E5313F-C7F4-0E30-0A25-8964E48512F4">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="faculty_number" id="D810B62C-1CDC-3128-C45C-F46933E6BAEC">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="study_year_no" id="DA9F5BF3-1961-4D24-3B13-20A06BF5DC22">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="specialty_id" id="EDB9AC4F-A82D-1801-D72D-1564360CC9C6">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="students_specialty_ix" id="AB5CE625-3CBF-F11E-CD5E-CF202A6504B5">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="students_year_ix" id="CD7BEC5D-34E6-616F-AB31-FEE74ECDDBAA">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging></logging>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="students_year_fk" id="5BC05876-205C-4BF4-1D16-0C3BCD28D939">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="students_specialty_fk" id="A1966210-8E35-E998-79C3-80EE351B748E">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="students_pk" id="CF29420B-53C1-954C-8231-3C5AA0D36731">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="students_first_name_ck" id="66F655B7-C674-4E04-1343-E2AEF6DDCACB">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="students_number_ck" id="8082C1EA-8B42-BA17-2ED8-FE2D7CBCA183">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="students_last_name_ck" id="B38E4A40-5F02-9008-87C2-58D7510F2E2B">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="students_email_ck" id="CE25D377-595C-885D-A931-6993A61B0467">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+</TableProxyOraclev11g>

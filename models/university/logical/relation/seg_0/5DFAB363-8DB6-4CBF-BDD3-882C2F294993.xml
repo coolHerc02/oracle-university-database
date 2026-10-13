@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="semesters_year_fk" directorySegmentName="seg_0" id="5DFAB363-8DB6-4CBF-BDD3-882C2F294993">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>91D783E7-1D22-F3C7-D65B-413489EF3863</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>B4B6B016-57D4-11A5-5035-040103E1A58C</sourcePk>
+  <identifying>false</identifying>
+  <optionalSource>true</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>E9A93E80-2E46-FB44-E645-C373BB5656E6</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>E9465718-8DE7-918F-3D6B-AC7B9ED198AA</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>включва 0..2 семестъра</nameOnSource>
+  <nameOnTarget>принадлежи към курс</nameOnTarget>
+</Relation>

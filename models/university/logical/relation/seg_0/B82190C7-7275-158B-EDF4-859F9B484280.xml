@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="grades_discipline_fk" directorySegmentName="seg_0" id="B82190C7-7275-158B-EDF4-859F9B484280">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>7B2B6F56-1925-85CC-3CA1-570A9245CCE2</sourcePk>
+  <identifying>true</identifying>
+  <optionalSource>true</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>A08F57AD-DE97-A646-8978-268D88D7089F</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>3C568D34-718B-1372-270D-6EF980979BE6</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>има оценки</nameOnSource>
+  <nameOnTarget>е за дисциплина</nameOnTarget>
+</Relation>

@@ -1,0 +1,44 @@
+SUMMARY|TABLES|10
+SUMMARY|PACKAGE|1
+SUMMARY|PACKAGE BODY|1
+SUMMARY|PROCEDURE|14
+SUMMARY|SEQUENCE|4
+SUMMARY|TRIGGER|10
+SUMMARY|VIEW|6
+STUDENT|00010001|Александър Иванов Петров|Компютърни науки|I курс|student1@university.example
+ACADEMIC|Английски език|1|Анна Димитрова Колева|асистент|6|2026-06-12
+ACADEMIC|Математика|1|Петър Иванов Николов; Мария Петрова Георгиева|професор; доцент|6|2026-06-10
+ACADEMIC|Алгоритми|2|Петър Иванов Николов|професор|6|2026-06-11
+ACADEMIC|Дискретна математика|2|Петър Иванов Николов|професор|6|2026-06-13
+AVERAGE|00010001|Александър Иванов Петров|6.00
+AVERAGE|00010004|Елена Николова Георгиева|6.00
+FAILED|00010006|Анна Стоянова Петрова|2|2026-06-10
+FAILED|00010003|Иван Петров Стоянов|2|2026-06-10
+RANKING|1|00010001|Александър Иванов Петров|6.00
+RANKING|1|00010004|Елена Николова Георгиева|6.00
+RANKING|2|00010016|Ралица Георгиева Костова|5.67
+RANKING|3|00010007|Николай Александров Колев|5.00
+RANKING|4|00010013|Мартин Колев Петров|4.67
+RANKING|5|00010010|Петя Петрова Костова|4.33
+TEACHER|1|Мария Петрова Георгиева|доцент|4
+TEACHER|1|Петър Иванов Николов|професор|4
+TEACHER|2|Анна Димитрова Колева|асистент|2
+TEACHER|2|Георги Тодоров Петров|професор|2
+TEACHER|2|Елена Николова Стоянова|доцент|2
+TEACHER|2|Иван Колев Димитров|главен асистент|2
+DATA_COUNT|STUDENTS|18
+DATA_COUNT|TEACHERS|6
+DATA_COUNT|DISCIPLINES|14
+DATA_COUNT|GRADES|60
+DATA_COUNT|SPECIALTIES|3
+DATA_COUNT|ACADEMIC_TITLES|4
+DATA_COUNT|STUDY_YEARS|6
+DATA_COUNT|SEMESTERS|12
+DATA_COUNT|GRADE_SCALE|5
+DATA_COUNT|DISCIPLINE_TEACHERS|16
+INVALID|0
+ERRORS|0
+ASSIGNMENT|Бази от данни|Петър Николов
+ASSIGNMENT|Бази от данни|Мария Георгиева
+ASSIGNMENT|Математика|Петър Николов
+ASSIGNMENT|Математика|Мария Георгиева

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="teachers_title_fk" directorySegmentName="seg_0" id="BE38F1D8-FC6F-38A1-C3E6-0E22841ABA1A">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>E149ED2A-2FEA-C0E7-8D31-F9E70AD5462E</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>4D901195-654E-26A1-B4BB-D732699DAFF7</sourcePk>
+  <identifying>false</identifying>
+  <optionalSource>true</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>3863CE93-7777-24ED-4876-75F66315FBF2</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>A7788236-1D66-7223-651F-26E754E7C746</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>е титла на преподаватели</nameOnSource>
+  <nameOnTarget>има титла</nameOnTarget>
+</Relation>

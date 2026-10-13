@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="dt_discipline_fk" directorySegmentName="seg_0" id="07933D0C-3571-48DC-8B78-79364B7DA8A7">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>CC294951-1B2E-4A1A-980D-618E08EAE313</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>7B2B6F56-1925-85CC-3CA1-570A9245CCE2</sourcePk>
+  <identifying>true</identifying>
+  <optionalSource>false</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>A08F57AD-DE97-A646-8978-268D88D7089F</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>08017D41-A7A4-49A6-8E6A-A64E3A314A23</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>има 1..N назначения</nameOnSource>
+  <nameOnTarget>за 1 дисциплина</nameOnTarget>
+  <commentInRDBMS>Teaching M:N association. Each discipline has at least ONE teacher (1..N). Each teacher leads at least TWO distinct disciplines (2..N). The composite key prevents repeated assignments.</commentInRDBMS>
+</Relation>

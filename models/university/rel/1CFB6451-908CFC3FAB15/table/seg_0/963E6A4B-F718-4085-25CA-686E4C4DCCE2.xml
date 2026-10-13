@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="963E6A4B-F718-4085-25CA-686E4C4DCCE2" name="academic_titles">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Academic title reference data for teachers.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>80C3969A-859D-F52B-479B-D1C3865BE784</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="title_id" id="97537D9A-C83C-5FA0-FD9C-2A28FA31F0FB">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>11F0304E-5320-2889-9093-DC24539645C4</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="title_name" id="4FF8CBD3-CB57-E70C-3601-AEE9FC5A0456">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>C7D2A21D-637A-FBDB-C7FA-3C37E122A469</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>F1407E25-A0B1-F3FA-897A-7E4C9F1F8A90</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="F104806F-D871-45FF-9956-665A8A194B3F" name="academic_titles_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>09719974-E03E-1B38-5110-0F29296721C6</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="97537D9A-C83C-5FA0-FD9C-2A28FA31F0FB" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="5509E8B4-4988-F8D0-BFDD-613C36088FF1" name="academic_titles_name_uq">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>CB47BDC5-C0AC-681E-2F86-3981A03FDD23</importedID>
+      <indexState>Unique Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="4FF8CBD3-CB57-E70C-3601-AEE9FC5A0456" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="academic_titles_id_ck" directorySegmentName="seg_0" id="9CC7BB15-8321-F830-071C-1BB4486546AE">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>5CAD1085-240E-CACB-C718-44FBE7B1F446</importedID>
+      <rule>title_id &gt; 0 and title_id = trunc(title_id)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="academic_titles_name_ck" directorySegmentName="seg_0" id="4ADE26F4-7BBF-D305-8855-B54586705551">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>C8BA6A5B-C225-B19F-9BD9-40294708992A</importedID>
+      <rule>trim(title_name) is not null</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

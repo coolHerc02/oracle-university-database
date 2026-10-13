@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E9465718-8DE7-918F-3D6B-AC7B9ED198AA" name="semester">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <commentInRDBMS>Global semester number and its study year/term mapping.</commentInRDBMS>
+  <generatorID>85CC84A1-642B-978D-0182-4AABF4A1E555</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+  <expectedVolumes>0</expectedVolumes>
+  <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+  <growthPercent>0</growthPercent>
+  <growthType>Year</growthType>
+  <maxVolumes>9999999</maxVolumes>
+  <minVolumes>0</minVolumes>
+  <normalForm>Third</normalForm>
+  <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+    <Attribute name="semester no" id="3BAF6612-E9CF-388E-DCA9-22EA9AF13774">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>2651B5FB-FF9E-F4F1-4E46-E09A7D0BA43F</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="study year no" id="BDA808FE-E303-F315-1FB5-24EACBFABB06">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>5DFAB363-8DB6-4CBF-BDD3-882C2F294993</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <referedAttribute>3ECD61F5-EAFD-84BE-2C0F-8AAA3D77C915</referedAttribute>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="term no" id="BA10586A-66E9-55D0-1A6F-043508E3E3D6">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <commentInRDBMS>First or second semester within the study year.</commentInRDBMS>
+      <generatorID>B7741DEB-BEE7-5F8D-A654-668B3193E816</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+  </attributes>
+  <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+    <identifier id="0E783B1F-B4AF-C27C-D23E-C814B2346624" name="semesters pk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>53C006EC-E9DF-0F1B-A6EC-685F0434A8AA</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <pk>true</pk>
+      <usedAttributes>
+        <attributeRef>3BAF6612-E9CF-388E-DCA9-22EA9AF13774</attributeRef>
+      </usedAttributes>
+    </identifier>
+    <identifier id="F0F00E50-FEE9-2404-0B96-2A13923373B4" name="semesters year term uq">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>6F21DA57-7A08-5656-D1A6-86EC977F94A7</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <usedAttributes>
+        <attributeRef>BDA808FE-E303-F315-1FB5-24EACBFABB06</attributeRef>
+        <attributeRef>BA10586A-66E9-55D0-1A6F-043508E3E3D6</attributeRef>
+      </usedAttributes>
+    </identifier>
+  </identifiers>
+</Entity>

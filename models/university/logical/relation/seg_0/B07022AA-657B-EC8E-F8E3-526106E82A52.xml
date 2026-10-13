@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="students_specialty_fk" directorySegmentName="seg_0" id="B07022AA-657B-EC8E-F8E3-526106E82A52">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>CF287B3D-981A-2806-F8F7-6774E8BE7A65</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>7AF7DF62-C094-C869-5388-16D2447FA56B</sourcePk>
+  <identifying>false</identifying>
+  <optionalSource>true</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>15CF4E98-FE7D-2159-2F09-F2DCF1499ADB</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>0B3DAEBC-2CB0-FDBF-C57D-6384D99C0561</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>има студенти</nameOnSource>
+  <nameOnTarget>е от специалност</nameOnTarget>
+</Relation>

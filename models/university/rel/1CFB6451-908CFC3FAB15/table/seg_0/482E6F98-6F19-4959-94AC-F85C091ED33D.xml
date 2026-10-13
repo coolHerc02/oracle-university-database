@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="482E6F98-6F19-4959-94AC-F85C091ED33D" name="discipline_teachers">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>Codex</createdBy>
+  <createdTime>2026-10-13 09:40:19 UTC</createdTime>
+  <commentInRDBMS>Teaching M:N association. Each discipline has at least ONE teacher (1..N). Each teacher leads at least TWO distinct disciplines (2..N). The composite key prevents repeated assignments.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>D7329557-EB52-4A66-9DDA-78C2684DF908</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="discipline_id" id="9038D43D-520F-4388-A9A1-B8341A4EA25E">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>835297B6-7FEC-4234-AF14-E2243C4275AC</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="CC294951-1B2E-4A1A-980D-618E08EAE313" referredColumn="E1E4649B-9108-17DB-ED52-CD69E413E68D" />
+      </associations>
+    </Column>
+    <Column name="teacher_id" id="9A366DD8-839C-4A1D-8072-94A9AF908F18">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>7D764E56-E74F-4E74-9973-B72525E75FFC</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="D3D35D7C-A2F2-4A5F-8471-EE55779122BC" referredColumn="1C3F0F97-9C43-0643-814B-8677037502EB" />
+      </associations>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="0E1FD125-E593-488D-827F-ACC0208ED633" name="discipline_teachers_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>4B871B0F-FBB3-4BDE-B18E-CD5C569A42CA</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="9038D43D-520F-4388-A9A1-B8341A4EA25E" />
+        <colUsage columnID="9A366DD8-839C-4A1D-8072-94A9AF908F18" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="F9F02195-A68E-4B90-A5D2-DAF45C918505" name="dt_teacher_ix">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>0706E33F-A8C1-4A8A-B5F1-4347665213AE</importedID>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="9A366DD8-839C-4A1D-8072-94A9AF908F18" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="36CE296F-5048-4294-989F-E37A4C097C48" name="dt_teacher_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="9A366DD8-839C-4A1D-8072-94A9AF908F18" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="B12BC54B-E132-466A-86DA-B79B45CE7499" name="dt_discipline_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="9038D43D-520F-4388-A9A1-B8341A4EA25E" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

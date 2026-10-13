@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="56025D48-265A-7504-9A8D-A232A14A5D1A" name="study_years">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Permitted current study years and their display labels.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>4A645F49-0B7A-36DD-936F-13B550A17572</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="study_year_no" id="D039A417-9607-FA90-4C51-D5A11B5E0E18">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>FFFDC80B-3250-AC82-4B4E-932AE25F81EB</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="year_label" id="989B5E3E-EF80-302A-C44E-8B0E77BDFD80">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>2EB5369F-85E8-1772-693E-4A93AF4042A8</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>2C422E0A-42A8-805F-2904-FF4604B63DDC</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="FA8DA2CA-5511-5DEB-2B9C-C1994CC8693D" name="study_years_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>A8C79944-F8BC-062C-5255-E222D79A6904</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="D039A417-9607-FA90-4C51-D5A11B5E0E18" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="31A09D4F-4BFA-7941-1E4B-6FFA2ED634E9" name="study_years_label_uq">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>E8057D4D-4E9D-E269-3E41-757DC62721AE</importedID>
+      <indexState>Unique Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="989B5E3E-EF80-302A-C44E-8B0E77BDFD80" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="study_years_no_ck" directorySegmentName="seg_0" id="53B7650C-9E4B-F3F4-3EFE-F44D41A9AFAA">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>C8CA1740-849A-EE8A-D883-6A39FCD987F7</importedID>
+      <rule>study_year_no &gt; 0 and study_year_no = trunc(study_year_no)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="study_years_label_ck" directorySegmentName="seg_0" id="56E6C2AA-CF32-A9E1-BA04-A13A9C2602AE">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>74FC33CF-4C7F-37A2-9EAB-D7D33A2D490B</importedID>
+      <rule>trim(year_label) is not null</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

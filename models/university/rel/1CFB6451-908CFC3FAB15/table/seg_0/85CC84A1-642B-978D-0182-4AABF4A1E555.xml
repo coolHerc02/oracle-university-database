@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="85CC84A1-642B-978D-0182-4AABF4A1E555" name="semesters">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Global semester number and its study year/term mapping.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>E8BFA963-6C0D-F000-9188-A8806C636BEE</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="semester_no" id="2651B5FB-FF9E-F4F1-4E46-E09A7D0BA43F">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>D0624F63-1F91-71A1-6F24-03CF8B704BBA</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="study_year_no" id="0DA4BEAE-02F2-0206-CAAD-604351A965AA">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>1A3EB2F8-336D-7ECB-1181-8FD905B4752C</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="91D783E7-1D22-F3C7-D65B-413489EF3863" referredColumn="D039A417-9607-FA90-4C51-D5A11B5E0E18" />
+      </associations>
+    </Column>
+    <Column name="term_no" id="B7741DEB-BEE7-5F8D-A654-668B3193E816">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <commentInRDBMS>First or second semester within the study year.</commentInRDBMS>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>92776229-AA80-41C6-4017-465C3AEBE3C4</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="53C006EC-E9DF-0F1B-A6EC-685F0434A8AA" name="semesters_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>19B39461-7791-D0BD-1959-83174B5F1ACA</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="2651B5FB-FF9E-F4F1-4E46-E09A7D0BA43F" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="6F21DA57-7A08-5656-D1A6-86EC977F94A7" name="semesters_year_term_uq">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>4A130BC0-D21D-7433-7645-BC668295CB19</importedID>
+      <indexState>Unique Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="0DA4BEAE-02F2-0206-CAAD-604351A965AA" />
+        <colUsage columnID="B7741DEB-BEE7-5F8D-A654-668B3193E816" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="D9CE02FD-A909-BA6C-7EAA-EAD5625C8C04" name="semesters_year_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="0DA4BEAE-02F2-0206-CAAD-604351A965AA" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="semesters_no_ck" directorySegmentName="seg_0" id="EF29F580-B041-E29B-FD05-E01BB2340300">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>3B7B5DA3-769C-B631-8198-8E787ECE3E86</importedID>
+      <rule>semester_no &gt; 0 and semester_no = trunc(semester_no)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="semesters_term_ck" directorySegmentName="seg_0" id="67ACEF08-D217-9A9D-979A-6D30ECB726FA">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>B2057CAC-5262-87E9-19D8-CAFD3DEFA9F4</importedID>
+      <rule>term_no in (1, 2)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="semesters_order_ck" directorySegmentName="seg_0" id="D0A1036D-4BC3-7CEB-3154-FEDC067573D5">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>F150D530-C116-0394-F2C2-049505FDF8C5</importedID>
+      <rule>semester_no = 2 * (study_year_no - 1) + term_no</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

@@ -1,0 +1,53 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="study_years" directorySegmentName="seg_0" id="56025D48-265A-7504-9A8D-A232A14A5D1A">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="year_label" id="989B5E3E-EF80-302A-C44E-8B0E77BDFD80">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="study_year_no" id="D039A417-9607-FA90-4C51-D5A11B5E0E18">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="study_years_pk" id="FA8DA2CA-5511-5DEB-2B9C-C1994CC8693D">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.storage.oracle.TableCheckConstraintOracle">
+<TableCheckConstraint name="study_years_no_ck" id="53B7650C-9E4B-F3F4-3EFE-F44D41A9AFAA">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+<TableCheckConstraint name="study_years_label_ck" id="56E6C2AA-CF32-A9E1-BA04-A13A9C2602AE">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<nameChanged>true</nameChanged>
+</TableCheckConstraint>
+</tableCheckConstraints>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="study_years_label_uq" id="31A09D4F-4BFA-7941-1E4B-6FFA2ED634E9">
+<createdBy>User</createdBy>
+<createdTime>2026-10-06 10:48:38 UTC</createdTime>
+<ownerDesignName>university</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

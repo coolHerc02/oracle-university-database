@@ -1,0 +1,137 @@
+
+PL/SQL procedure successfully completed.
+
+
+Table created.
+
+
+Index created.
+
+
+14 rows created.
+
+ALL_ORIGINAL_TEACHING_ASSIGNMENTS_COPIED
+
+PL/SQL procedure successfully completed.
+
+
+Table altered.
+
+
+Index dropped.
+
+
+Table altered.
+
+
+Comment created.
+
+
+Comment created.
+
+
+PL/SQL procedure successfully completed.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+Package created.
+
+
+Package body created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+PROGRAMS_COMPILED_OK
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Trigger created.
+
+LESSON_PROGRAMS_COMPILED_OK: 14 standalone procedures, 1 AFTER INSERT trigger
+
+PL/SQL procedure successfully completed.
+
+MIGRATION_CORE_ROW_COUNTS_PRESERVED
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+MANY_TEACHERS_MIGRATION_COMPLETED

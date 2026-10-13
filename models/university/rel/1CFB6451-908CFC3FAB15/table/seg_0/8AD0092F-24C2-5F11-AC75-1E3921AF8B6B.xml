@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8AD0092F-24C2-5F11-AC75-1E3921AF8B6B" name="grade_scale">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Bulgarian integer grade scale 2-6 with labels and passing status.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>409BC2DE-E544-7B75-2DEA-873721448302</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="grade_value" id="C4D03B6F-7291-F1F2-8070-6CA0C3A48603">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>0B56F7E3-8F23-C2C3-FD14-93C5EDBF6235</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="grade_label" id="385CE920-6E7D-461C-7719-712E7C66C716">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>70E809A6-4981-5452-481F-328DF8566C23</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>2C422E0A-42A8-805F-2904-FF4604B63DDC</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="is_passing" id="B3A88682-939A-8AB8-E1FA-51BFF4941D32">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <commentInRDBMS>0 for grade 2; 1 for grades 3 through 6.</commentInRDBMS>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>7DB40935-77D7-6D67-04E5-ECAC12485498</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="41844720-4F8E-3A49-5391-FA3A437CE599" name="grade_scale_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>388668A4-E0DF-971B-85D1-7576C050BF77</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="C4D03B6F-7291-F1F2-8070-6CA0C3A48603" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="E460595B-A007-0959-9092-E22FD559C502" name="grade_scale_label_uq">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>15399665-372E-7DA5-4797-773C5D7A7D26</importedID>
+      <indexState>Unique Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="385CE920-6E7D-461C-7719-712E7C66C716" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="grade_scale_value_ck" directorySegmentName="seg_0" id="1406D772-8C8B-37C3-99D0-9ED4150EBE0C">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>D679F175-EC71-90FF-0AAF-DF844A603C00</importedID>
+      <rule>grade_value between 2 and 6 and grade_value = trunc(grade_value)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="grade_scale_passing_ck" directorySegmentName="seg_0" id="D4AA4A78-468B-C6D0-ADFE-B27E0A0D820F">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>BAE0BB00-2337-C7E7-BA6E-383D771F7A3D</importedID>
+      <rule>(grade_value = 2 and is_passing = 0) or (grade_value between 3 and 6 and is_passing = 1)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="grade_scale_label_ck" directorySegmentName="seg_0" id="72710462-291E-117C-599C-4D19144BD1C2">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>A29A0F81-EE8D-BA78-97BE-3AB54CC4DC08</importedID>
+      <rule>trim(grade_label) is not null</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

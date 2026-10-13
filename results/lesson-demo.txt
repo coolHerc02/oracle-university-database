@@ -1,0 +1,50 @@
+LESSON DEMONSTRATION: changes will be rolled back
+AFTER INSERT: student=DEMO-LESSON, discipline=32, grade=4 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, discipline=33, grade=5 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, discipline=34, grade=6 (transaction pending)
+EXPLICIT OPEN/FETCH/CLOSE CURSOR:
+Student: DEMO-LESSON Demo Student
+Specialty: Компютърни науки; I курс
+Average: 5.33
+Semester 1: Demo modelling | grade 5 | 2026-06-13
+Semester 2: Demo databases | grade 5 | 2026-06-11
+Semester 4: Demo SQL and PL/SQL | grade 6 | 2026-06-12
+FOR CURSOR - TEACHER DISCIPLINES:
+32 | Demo modelling | semester 1
+33 | Demo databases | semester 2
+34 | Demo SQL and PL/SQL | semester 4
+LIKE CURSOR - STUDENT KEYWORD:
+DEMO-LESSON | Demo Student | Компютърни науки | I курс | 5.33
+Student matches: 1
+LIKE CURSOR - DISCIPLINE KEYWORD:
+34 | Demo SQL and PL/SQL | semester 4 | Demo Teacher
+Discipline matches: 1
+
+PL/SQL procedure successfully completed.
+
+
+Rollback complete.
+
+LESSON_DEMO_ROLLED_BACK
+SEEDED ACADEMIC REPORT - EXPLICIT CURSOR
+Student: 00010001 Александър Иванов Петров
+Specialty: Компютърни науки; I курс
+Average: 6.00
+Semester 1: Английски език | grade 6 | 2026-06-12
+Semester 1: Математика | grade 6 | 2026-06-10
+Semester 2: Алгоритми | grade 6 | 2026-06-11
+Semester 2: Дискретна математика | grade 6 | 2026-06-13
+
+PL/SQL procedure successfully completed.
+
+CYRILLIC KEYWORD SEARCH
+00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
+Student matches: 1
+
+PL/SQL procedure successfully completed.
+
+4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
+Discipline matches: 1
+
+PL/SQL procedure successfully completed.
+

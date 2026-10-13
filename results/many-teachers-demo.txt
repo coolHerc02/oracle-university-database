@@ -1,0 +1,26 @@
+COMMITTED_SHARED_DISCIPLINES
+
+DISCIPLINE_NAME 	       TEACHER_COUNT TEACHER_NAME
+------------------------------ ------------- ----------------------------------------------------------------------
+Бази от данни                              2 Петър Иванов Николов; Мария Петрова Георгиева
+Математика                                 2 Петър Иванов Николов; Мария Петрова Георгиева
+
+ASSIGN_AND_REMOVE_A_CO_TEACHER_THEN_ROLLBACK
+
+PL/SQL procedure successfully completed.
+
+
+DISCIPLINE_NAME 	       TEACHER_COUNT TEACHER_NAME							    GRADE_VALUE AVERAGE_GRADE
+------------------------------ ------------- ---------------------------------------------------------------------- ----------- -------------
+Английски език                             1 Анна Димитрова Колева                                                            6          6.00
+Математика                                 3 Петър Иванов Николов; Мария Петрова Георгиева; Анна Димитрова Колева             6          6.00
+Алгоритми                                  1 Петър Иванов Николов                                                             6          6.00
+Дискретна математика                       1 Петър Иванов Николов                                                             6          6.00
+
+
+PL/SQL procedure successfully completed.
+
+
+Rollback complete.
+
+MANY_TEACHERS_DEMO_ROLLED_BACK

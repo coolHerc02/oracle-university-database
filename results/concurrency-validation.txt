@@ -1,0 +1,11 @@
+PASS 1: Seed grade before concurrency test is six
+PASS 2: Other session sees committed baseline while writer holds locks
+PASS 3: Competing writer receives ORA-00054 NOWAIT refusal
+PASS 4: Writer succeeds after first ROLLBACK, with transaction isolation
+PASS 5: Both ROLLBACK operations restore original grade
+PASS 6: Shared discipline has two committed teachers
+PASS 7: Uncommitted teaching assignment is isolated from other session
+PASS 8: Competing assignment writer receives NOWAIT refusal
+PASS 9: Assignment writer succeeds after lock release
+PASS 10: Both rollbacks preserve the two seeded teachers
+CONCURRENCY_VALIDATION_PASSED: 10 checks

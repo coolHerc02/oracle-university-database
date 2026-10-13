@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="grades_student_fk" directorySegmentName="seg_0" id="E8172360-9BD4-90E6-F53E-F88BCC9FDBC5">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>3A61B0F6-214E-8A65-5739-1CBFDBF92842</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>4100AF3D-643B-9E2D-6B5F-57C1BB0D4EB5</sourcePk>
+  <identifying>true</identifying>
+  <optionalSource>false</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>0B3DAEBC-2CB0-FDBF-C57D-6384D99C0561</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>3C568D34-718B-1372-270D-6EF980979BE6</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>има 2..N</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
+  <commentInRDBMS>Every student must have grades in at least TWO distinct disciplines (2..N). The composite GRADES primary key allows exactly ONE current grade per student-discipline pair. Enforced by UNIVERSITY_API and write guard triggers.</commentInRDBMS>
+</Relation>

@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="university_import_Domains">
+   <domains>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_30 char" id="2C422E0A-42A8-805F-2904-FF4604B63DDC">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>30 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="Date_0_0_0" id="5156BAD2-0261-6D45-70CE-B2D41AECF2F7">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_254 char" id="51E4E621-D24D-7009-1208-C8E7158FEC26">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>254 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_60 char" id="544542A6-9E7A-C7EE-725E-D84FF17BEFD8">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>60 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_150 char" id="6B1ECF08-FE5B-AF71-7AA5-3A12EB19978B">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>150 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_120 char" id="9EE70564-8A49-6A3F-0CB9-F9CA63D285C1">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>120 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_80 char" id="F1407E25-A0B1-F3FA-897A-7E4C9F1F8A90">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>80 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_20 char" id="F6FF1DDD-7433-DFC7-8F59-4B9596EEDB6D">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>20 char</dataTypeSize>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_0_0_0" id="FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA">
+         <createdBy>User</createdBy>
+         <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+         <ownerDesignName>university</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <fileName>university_import_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+   </domains>
+</DomainFile>

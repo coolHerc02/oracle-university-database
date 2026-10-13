@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0DCD2481-E061-2D83-1706-CEF19F14DFD0" name="specialties">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Specialty reference data. Names are stored once.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>7BD09740-8981-ACEC-AC47-C146CB324DDE</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="specialty_id" id="4DB60686-0E13-B6BB-AAD8-A7443ECA3186">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>77A00ABE-4EDD-1880-0087-68259FBB2FD3</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="specialty_name" id="82361A31-31DF-636F-8ED2-D2E7AED754D4">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>27EB3F33-F627-44DA-14FE-30067ADA625A</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>9EE70564-8A49-6A3F-0CB9-F9CA63D285C1</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="E331BE80-4E43-F561-BE97-BD280A55B533" name="specialties_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>7C293EE1-EDED-4F6E-207E-47CF8F1EBF8C</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="4DB60686-0E13-B6BB-AAD8-A7443ECA3186" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="79639370-E1D1-FB21-CCE2-41DDAA649C16" name="specialties_name_uq">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>44C124E0-98D5-0236-C504-189EAE68F879</importedID>
+      <indexState>Unique Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="82361A31-31DF-636F-8ED2-D2E7AED754D4" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="specialties_id_ck" directorySegmentName="seg_0" id="3F7858BD-03BC-61D4-8E49-6BB2048E14D9">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>EB9C4EB8-195D-76CF-C9C6-44ABEF7EB52A</importedID>
+      <rule>specialty_id &gt; 0 and specialty_id = trunc(specialty_id)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="specialties_name_ck" directorySegmentName="seg_0" id="94BE6018-3BD6-9895-10B3-1A5F57E473C3">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>E30FFB72-D5D4-FB86-CD9F-22EEC033209B</importedID>
+      <rule>trim(specialty_name) is not null</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

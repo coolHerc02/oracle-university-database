@@ -1,0 +1,11 @@
+PASS: SPECIALTIES all 3 rows and every field preserved
+PASS: ACADEMIC_TITLES all 4 rows and every field preserved
+PASS: STUDY_YEARS all 6 rows and every field preserved
+PASS: SEMESTERS all 12 rows and every field preserved
+PASS: GRADE_SCALE all 5 rows and every field preserved
+PASS: STUDENTS all 18 rows and every field preserved
+PASS: TEACHERS all 6 rows and every field preserved
+PASS: GRADES all 60 rows and every field preserved
+PASS: DISCIPLINES all 14 identities, names and semesters preserved
+PASS: all 14 original teaching assignments preserved; two shared assignments added
+MIGRATION_DATA_PRESERVATION_PASSED: 10 checks

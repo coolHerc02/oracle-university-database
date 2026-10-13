@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DF24936E-BD5C-637F-9EA7-B579796B8071" name="disciplines">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <commentInRDBMS>Each discipline belongs to one semester and has one or more teachers through DISCIPLINE_TEACHERS.</commentInRDBMS>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>964E8777-77A1-DD90-0ED6-B941765A4D87</importedID>
+  <allowColumnReorder>false</allowColumnReorder>
+  <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+  <parsed>true</parsed>
+  <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+    <Column name="discipline_id" id="E1E4649B-9108-17DB-ED52-CD69E413E68D">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>504B332E-FCE8-7A37-E7CC-34BE510FABE7</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="discipline_name" id="8F76E825-5CC7-7BAB-2706-28912659FD73">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>8176E138-2BE4-804E-1184-56112B978783</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT024</logicalDatatype>
+      <domain>6B1ECF08-FE5B-AF71-7AA5-3A12EB19978B</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+    </Column>
+    <Column name="semester_no" id="096ABB9B-8ADD-ACBD-2E1F-A520D3A8C3E6">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>0750A4DD-7672-0E08-7CCC-3446DE8C6740</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <associations>
+        <colAssociation fkAssociation="DCEC6D86-F9DF-D6BD-3F1B-FB514E361B18" referredColumn="2651B5FB-FF9E-F4F1-4E46-E09A7D0BA43F" />
+      </associations>
+    </Column>
+  </columns>
+  <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+    <ind_PK_UK id="200EAD05-A7B3-9C43-22DE-37EAFBFDFF0C" name="disciplines_pk">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>2B778550-D203-F046-F320-A360AF71D31D</importedID>
+      <pk>true</pk>
+      <indexState>Primary Constraint</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="E1E4649B-9108-17DB-ED52-CD69E413E68D" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="9B2557F3-116B-F70F-A672-2F319E6E85B2" name="disciplines_semester_ix">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>AC158162-2A29-8322-8CF2-E74F71E56A29</importedID>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="096ABB9B-8ADD-ACBD-2E1F-A520D3A8C3E6" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+    <ind_PK_UK id="9F11F6B3-5056-CCF9-E763-1E0017A900AB" name="disciplines_semester_fk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <indexState>Foreign Key</indexState>
+      <isSurrogateKey>false</isSurrogateKey>
+      <indexColumnUsage>
+        <colUsage columnID="096ABB9B-8ADD-ACBD-2E1F-A520D3A8C3E6" />
+      </indexColumnUsage>
+    </ind_PK_UK>
+  </indexes>
+  <tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+    <tableCheckConstraint name="disciplines_id_ck" directorySegmentName="seg_0" id="E8003E46-558A-B899-E915-A3FA0FD8124B">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>5DF33927-8DE6-7BC1-B156-A19B46CABBD5</importedID>
+      <rule>discipline_id &gt; 0 and discipline_id = trunc(discipline_id)</rule>
+    </tableCheckConstraint>
+    <tableCheckConstraint name="disciplines_name_ck" directorySegmentName="seg_0" id="548B7221-6492-A08A-E448-E22C557ABF58">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>714A6A35-731B-574A-F8AF-BC6C3A998B84</importedID>
+      <rule>trim(discipline_name) is not null</rule>
+    </tableCheckConstraint>
+  </tableCheckConstraints>
+  <normalForm>Third</normalForm>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+</Table>

@@ -1,0 +1,337 @@
+PASS: Native .dmd file exists
+PASS: All 10 table names match Oracle
+PASS: All 35 columns match Oracle
+PASS: ACADEMIC_TITLES.TITLE_ID datatype
+PASS: ACADEMIC_TITLES.TITLE_ID nullability
+PASS: ACADEMIC_TITLES.TITLE_ID unscaled NUMBER
+PASS: ACADEMIC_TITLES.TITLE_NAME datatype
+PASS: ACADEMIC_TITLES.TITLE_NAME nullability
+PASS: ACADEMIC_TITLES.TITLE_NAME character length/CHAR semantics
+PASS: DISCIPLINES.DISCIPLINE_ID datatype
+PASS: DISCIPLINES.DISCIPLINE_ID nullability
+PASS: DISCIPLINES.DISCIPLINE_ID unscaled NUMBER
+PASS: DISCIPLINES.DISCIPLINE_NAME datatype
+PASS: DISCIPLINES.DISCIPLINE_NAME nullability
+PASS: DISCIPLINES.DISCIPLINE_NAME character length/CHAR semantics
+PASS: DISCIPLINES.SEMESTER_NO datatype
+PASS: DISCIPLINES.SEMESTER_NO nullability
+PASS: DISCIPLINES.SEMESTER_NO unscaled NUMBER
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID datatype
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID nullability
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID unscaled NUMBER
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID datatype
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID nullability
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID unscaled NUMBER
+PASS: GRADES.FACULTY_NUMBER datatype
+PASS: GRADES.FACULTY_NUMBER nullability
+PASS: GRADES.FACULTY_NUMBER character length/CHAR semantics
+PASS: GRADES.DISCIPLINE_ID datatype
+PASS: GRADES.DISCIPLINE_ID nullability
+PASS: GRADES.DISCIPLINE_ID unscaled NUMBER
+PASS: GRADES.GRADE_VALUE datatype
+PASS: GRADES.GRADE_VALUE nullability
+PASS: GRADES.GRADE_VALUE unscaled NUMBER
+PASS: GRADES.GRADE_DATE datatype
+PASS: GRADES.GRADE_DATE nullability
+PASS: GRADE_SCALE.GRADE_VALUE datatype
+PASS: GRADE_SCALE.GRADE_VALUE nullability
+PASS: GRADE_SCALE.GRADE_VALUE unscaled NUMBER
+PASS: GRADE_SCALE.GRADE_LABEL datatype
+PASS: GRADE_SCALE.GRADE_LABEL nullability
+PASS: GRADE_SCALE.GRADE_LABEL character length/CHAR semantics
+PASS: GRADE_SCALE.IS_PASSING datatype
+PASS: GRADE_SCALE.IS_PASSING nullability
+PASS: GRADE_SCALE.IS_PASSING unscaled NUMBER
+PASS: SEMESTERS.SEMESTER_NO datatype
+PASS: SEMESTERS.SEMESTER_NO nullability
+PASS: SEMESTERS.SEMESTER_NO unscaled NUMBER
+PASS: SEMESTERS.STUDY_YEAR_NO datatype
+PASS: SEMESTERS.STUDY_YEAR_NO nullability
+PASS: SEMESTERS.STUDY_YEAR_NO unscaled NUMBER
+PASS: SEMESTERS.TERM_NO datatype
+PASS: SEMESTERS.TERM_NO nullability
+PASS: SEMESTERS.TERM_NO unscaled NUMBER
+PASS: SPECIALTIES.SPECIALTY_ID datatype
+PASS: SPECIALTIES.SPECIALTY_ID nullability
+PASS: SPECIALTIES.SPECIALTY_ID unscaled NUMBER
+PASS: SPECIALTIES.SPECIALTY_NAME datatype
+PASS: SPECIALTIES.SPECIALTY_NAME nullability
+PASS: SPECIALTIES.SPECIALTY_NAME character length/CHAR semantics
+PASS: STUDENTS.FACULTY_NUMBER datatype
+PASS: STUDENTS.FACULTY_NUMBER nullability
+PASS: STUDENTS.FACULTY_NUMBER character length/CHAR semantics
+PASS: STUDENTS.FIRST_NAME datatype
+PASS: STUDENTS.FIRST_NAME nullability
+PASS: STUDENTS.FIRST_NAME character length/CHAR semantics
+PASS: STUDENTS.MIDDLE_NAME datatype
+PASS: STUDENTS.MIDDLE_NAME nullability
+PASS: STUDENTS.MIDDLE_NAME character length/CHAR semantics
+PASS: STUDENTS.LAST_NAME datatype
+PASS: STUDENTS.LAST_NAME nullability
+PASS: STUDENTS.LAST_NAME character length/CHAR semantics
+PASS: STUDENTS.SPECIALTY_ID datatype
+PASS: STUDENTS.SPECIALTY_ID nullability
+PASS: STUDENTS.SPECIALTY_ID unscaled NUMBER
+PASS: STUDENTS.STUDY_YEAR_NO datatype
+PASS: STUDENTS.STUDY_YEAR_NO nullability
+PASS: STUDENTS.STUDY_YEAR_NO unscaled NUMBER
+PASS: STUDENTS.EMAIL datatype
+PASS: STUDENTS.EMAIL nullability
+PASS: STUDENTS.EMAIL character length/CHAR semantics
+PASS: STUDY_YEARS.STUDY_YEAR_NO datatype
+PASS: STUDY_YEARS.STUDY_YEAR_NO nullability
+PASS: STUDY_YEARS.STUDY_YEAR_NO unscaled NUMBER
+PASS: STUDY_YEARS.YEAR_LABEL datatype
+PASS: STUDY_YEARS.YEAR_LABEL nullability
+PASS: STUDY_YEARS.YEAR_LABEL character length/CHAR semantics
+PASS: TEACHERS.TEACHER_ID datatype
+PASS: TEACHERS.TEACHER_ID nullability
+PASS: TEACHERS.TEACHER_ID unscaled NUMBER
+PASS: TEACHERS.FIRST_NAME datatype
+PASS: TEACHERS.FIRST_NAME nullability
+PASS: TEACHERS.FIRST_NAME character length/CHAR semantics
+PASS: TEACHERS.MIDDLE_NAME datatype
+PASS: TEACHERS.MIDDLE_NAME nullability
+PASS: TEACHERS.MIDDLE_NAME character length/CHAR semantics
+PASS: TEACHERS.LAST_NAME datatype
+PASS: TEACHERS.LAST_NAME nullability
+PASS: TEACHERS.LAST_NAME character length/CHAR semantics
+PASS: TEACHERS.TITLE_ID datatype
+PASS: TEACHERS.TITLE_ID nullability
+PASS: TEACHERS.TITLE_ID unscaled NUMBER
+PASS: TEACHERS.PHONE datatype
+PASS: TEACHERS.PHONE nullability
+PASS: TEACHERS.PHONE character length/CHAR semantics
+PASS: TEACHERS.EMAIL datatype
+PASS: TEACHERS.EMAIL nullability
+PASS: TEACHERS.EMAIL character length/CHAR semantics
+PASS: All 10 PK and 5 UNIQUE keys match, including column order
+PASS: All 23 named CHECK constraints present
+PASS: ACADEMIC_TITLES.ACADEMIC_TITLES_ID_CK CHECK expression
+PASS: ACADEMIC_TITLES.ACADEMIC_TITLES_NAME_CK CHECK expression
+PASS: DISCIPLINES.DISCIPLINES_ID_CK CHECK expression
+PASS: DISCIPLINES.DISCIPLINES_NAME_CK CHECK expression
+PASS: GRADE_SCALE.GRADE_SCALE_LABEL_CK CHECK expression
+PASS: GRADE_SCALE.GRADE_SCALE_PASSING_CK CHECK expression
+PASS: GRADE_SCALE.GRADE_SCALE_VALUE_CK CHECK expression
+PASS: SEMESTERS.SEMESTERS_NO_CK CHECK expression
+PASS: SEMESTERS.SEMESTERS_ORDER_CK CHECK expression
+PASS: SEMESTERS.SEMESTERS_TERM_CK CHECK expression
+PASS: SPECIALTIES.SPECIALTIES_ID_CK CHECK expression
+PASS: SPECIALTIES.SPECIALTIES_NAME_CK CHECK expression
+PASS: STUDENTS.STUDENTS_EMAIL_CK CHECK expression
+PASS: STUDENTS.STUDENTS_FIRST_NAME_CK CHECK expression
+PASS: STUDENTS.STUDENTS_LAST_NAME_CK CHECK expression
+PASS: STUDENTS.STUDENTS_NUMBER_CK CHECK expression
+PASS: STUDY_YEARS.STUDY_YEARS_LABEL_CK CHECK expression
+PASS: STUDY_YEARS.STUDY_YEARS_NO_CK CHECK expression
+PASS: TEACHERS.TEACHERS_EMAIL_CK CHECK expression
+PASS: TEACHERS.TEACHERS_FIRST_NAME_CK CHECK expression
+PASS: TEACHERS.TEACHERS_ID_CK CHECK expression
+PASS: TEACHERS.TEACHERS_LAST_NAME_CK CHECK expression
+PASS: TEACHERS.TEACHERS_PHONE_CK CHECK expression
+PASS: 22 PK/UNIQUE/explicit indexes; FK diagram placeholders excluded
+PASS: GRADES_VALUE_FK mandatory child reference
+PASS: GRADES_STUDENT_FK mandatory child reference
+PASS: SEMESTERS_YEAR_FK mandatory child reference
+PASS: STUDENTS_YEAR_FK mandatory child reference
+PASS: DT_DISCIPLINE_FK mandatory child reference
+PASS: STUDENTS_SPECIALTY_FK mandatory child reference
+PASS: DT_TEACHER_FK mandatory child reference
+PASS: DISCIPLINES_SEMESTER_FK mandatory child reference
+PASS: TEACHERS_TITLE_FK mandatory child reference
+PASS: GRADES_DISCIPLINE_FK mandatory child reference
+PASS: All 10 FK match child/parent tables and column mappings
+Logical model: 10 entities, 10 relations
+PASS: Logical entities match all 10 tables
+PASS: Logical model has 10 relations
+PASS: All 35 logical attributes match columns
+PASS: ACADEMIC_TITLES.TITLE_ID logical datatype
+PASS: ACADEMIC_TITLES.TITLE_ID logical optionality
+PASS: ACADEMIC_TITLES.TITLE_ID logical unscaled number
+PASS: ACADEMIC_TITLES.TITLE_NAME logical datatype
+PASS: ACADEMIC_TITLES.TITLE_NAME logical optionality
+PASS: ACADEMIC_TITLES.TITLE_NAME logical character length
+PASS: DISCIPLINES.DISCIPLINE_ID logical datatype
+PASS: DISCIPLINES.DISCIPLINE_ID logical optionality
+PASS: DISCIPLINES.DISCIPLINE_ID logical unscaled number
+PASS: DISCIPLINES.DISCIPLINE_NAME logical datatype
+PASS: DISCIPLINES.DISCIPLINE_NAME logical optionality
+PASS: DISCIPLINES.DISCIPLINE_NAME logical character length
+PASS: DISCIPLINES.SEMESTER_NO logical datatype
+PASS: DISCIPLINES.SEMESTER_NO logical optionality
+PASS: DISCIPLINES.SEMESTER_NO logical unscaled number
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID logical datatype
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID logical optionality
+PASS: DISCIPLINE_TEACHERS.DISCIPLINE_ID logical unscaled number
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID logical datatype
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID logical optionality
+PASS: DISCIPLINE_TEACHERS.TEACHER_ID logical unscaled number
+PASS: GRADES.FACULTY_NUMBER logical datatype
+PASS: GRADES.FACULTY_NUMBER logical optionality
+PASS: GRADES.FACULTY_NUMBER logical character length
+PASS: GRADES.DISCIPLINE_ID logical datatype
+PASS: GRADES.DISCIPLINE_ID logical optionality
+PASS: GRADES.DISCIPLINE_ID logical unscaled number
+PASS: GRADES.GRADE_VALUE logical datatype
+PASS: GRADES.GRADE_VALUE logical optionality
+PASS: GRADES.GRADE_VALUE logical unscaled number
+PASS: GRADES.GRADE_DATE logical datatype
+PASS: GRADES.GRADE_DATE logical optionality
+PASS: GRADE_SCALE.GRADE_VALUE logical datatype
+PASS: GRADE_SCALE.GRADE_VALUE logical optionality
+PASS: GRADE_SCALE.GRADE_VALUE logical unscaled number
+PASS: GRADE_SCALE.GRADE_LABEL logical datatype
+PASS: GRADE_SCALE.GRADE_LABEL logical optionality
+PASS: GRADE_SCALE.GRADE_LABEL logical character length
+PASS: GRADE_SCALE.IS_PASSING logical datatype
+PASS: GRADE_SCALE.IS_PASSING logical optionality
+PASS: GRADE_SCALE.IS_PASSING logical unscaled number
+PASS: SEMESTERS.SEMESTER_NO logical datatype
+PASS: SEMESTERS.SEMESTER_NO logical optionality
+PASS: SEMESTERS.SEMESTER_NO logical unscaled number
+PASS: SEMESTERS.STUDY_YEAR_NO logical datatype
+PASS: SEMESTERS.STUDY_YEAR_NO logical optionality
+PASS: SEMESTERS.STUDY_YEAR_NO logical unscaled number
+PASS: SEMESTERS.TERM_NO logical datatype
+PASS: SEMESTERS.TERM_NO logical optionality
+PASS: SEMESTERS.TERM_NO logical unscaled number
+PASS: SPECIALTIES.SPECIALTY_ID logical datatype
+PASS: SPECIALTIES.SPECIALTY_ID logical optionality
+PASS: SPECIALTIES.SPECIALTY_ID logical unscaled number
+PASS: SPECIALTIES.SPECIALTY_NAME logical datatype
+PASS: SPECIALTIES.SPECIALTY_NAME logical optionality
+PASS: SPECIALTIES.SPECIALTY_NAME logical character length
+PASS: STUDENTS.FACULTY_NUMBER logical datatype
+PASS: STUDENTS.FACULTY_NUMBER logical optionality
+PASS: STUDENTS.FACULTY_NUMBER logical character length
+PASS: STUDENTS.FIRST_NAME logical datatype
+PASS: STUDENTS.FIRST_NAME logical optionality
+PASS: STUDENTS.FIRST_NAME logical character length
+PASS: STUDENTS.MIDDLE_NAME logical datatype
+PASS: STUDENTS.MIDDLE_NAME logical optionality
+PASS: STUDENTS.MIDDLE_NAME logical character length
+PASS: STUDENTS.LAST_NAME logical datatype
+PASS: STUDENTS.LAST_NAME logical optionality
+PASS: STUDENTS.LAST_NAME logical character length
+PASS: STUDENTS.SPECIALTY_ID logical datatype
+PASS: STUDENTS.SPECIALTY_ID logical optionality
+PASS: STUDENTS.SPECIALTY_ID logical unscaled number
+PASS: STUDENTS.STUDY_YEAR_NO logical datatype
+PASS: STUDENTS.STUDY_YEAR_NO logical optionality
+PASS: STUDENTS.STUDY_YEAR_NO logical unscaled number
+PASS: STUDENTS.EMAIL logical datatype
+PASS: STUDENTS.EMAIL logical optionality
+PASS: STUDENTS.EMAIL logical character length
+PASS: STUDY_YEARS.STUDY_YEAR_NO logical datatype
+PASS: STUDY_YEARS.STUDY_YEAR_NO logical optionality
+PASS: STUDY_YEARS.STUDY_YEAR_NO logical unscaled number
+PASS: STUDY_YEARS.YEAR_LABEL logical datatype
+PASS: STUDY_YEARS.YEAR_LABEL logical optionality
+PASS: STUDY_YEARS.YEAR_LABEL logical character length
+PASS: TEACHERS.TEACHER_ID logical datatype
+PASS: TEACHERS.TEACHER_ID logical optionality
+PASS: TEACHERS.TEACHER_ID logical unscaled number
+PASS: TEACHERS.FIRST_NAME logical datatype
+PASS: TEACHERS.FIRST_NAME logical optionality
+PASS: TEACHERS.FIRST_NAME logical character length
+PASS: TEACHERS.MIDDLE_NAME logical datatype
+PASS: TEACHERS.MIDDLE_NAME logical optionality
+PASS: TEACHERS.MIDDLE_NAME logical character length
+PASS: TEACHERS.LAST_NAME logical datatype
+PASS: TEACHERS.LAST_NAME logical optionality
+PASS: TEACHERS.LAST_NAME logical character length
+PASS: TEACHERS.TITLE_ID logical datatype
+PASS: TEACHERS.TITLE_ID logical optionality
+PASS: TEACHERS.TITLE_ID logical unscaled number
+PASS: TEACHERS.PHONE logical datatype
+PASS: TEACHERS.PHONE logical optionality
+PASS: TEACHERS.PHONE logical character length
+PASS: TEACHERS.EMAIL logical datatype
+PASS: TEACHERS.EMAIL logical optionality
+PASS: TEACHERS.EMAIL logical character length
+PASS: DISCIPLINE_TEACHERS primary/secondary UID mapping
+PASS: STUDENTS primary/secondary UID mapping
+PASS: GRADE_SCALE primary/secondary UID mapping
+PASS: SPECIALTIES primary/secondary UID mapping
+PASS: ACADEMIC_TITLES primary/secondary UID mapping
+PASS: GRADES primary/secondary UID mapping
+PASS: DISCIPLINES primary/secondary UID mapping
+PASS: TEACHERS primary/secondary UID mapping
+PASS: SEMESTERS primary/secondary UID mapping
+PASS: STUDY_YEARS primary/secondary UID mapping
+PASS: DT_DISCIPLINE_FK logical endpoints
+PASS: DT_DISCIPLINE_FK child requires one parent
+PASS: DT_DISCIPLINE_FK logical attribute reference mapping
+PASS: STUDENTS_YEAR_FK logical endpoints
+PASS: STUDENTS_YEAR_FK child requires one parent
+PASS: STUDENTS_YEAR_FK logical attribute reference mapping
+PASS: SEMESTERS_YEAR_FK logical endpoints
+PASS: SEMESTERS_YEAR_FK child requires one parent
+PASS: SEMESTERS_YEAR_FK logical attribute reference mapping
+PASS: GRADES_VALUE_FK logical endpoints
+PASS: GRADES_VALUE_FK child requires one parent
+PASS: GRADES_VALUE_FK logical attribute reference mapping
+PASS: DISCIPLINES_SEMESTER_FK logical endpoints
+PASS: DISCIPLINES_SEMESTER_FK child requires one parent
+PASS: DISCIPLINES_SEMESTER_FK logical attribute reference mapping
+PASS: STUDENTS_SPECIALTY_FK logical endpoints
+PASS: STUDENTS_SPECIALTY_FK child requires one parent
+PASS: STUDENTS_SPECIALTY_FK logical attribute reference mapping
+PASS: GRADES_DISCIPLINE_FK logical endpoints
+PASS: GRADES_DISCIPLINE_FK child requires one parent
+PASS: GRADES_DISCIPLINE_FK logical attribute reference mapping
+PASS: TEACHERS_TITLE_FK logical endpoints
+PASS: TEACHERS_TITLE_FK child requires one parent
+PASS: TEACHERS_TITLE_FK logical attribute reference mapping
+PASS: GRADES_STUDENT_FK logical endpoints
+PASS: GRADES_STUDENT_FK child requires one parent
+PASS: GRADES_STUDENT_FK logical attribute reference mapping
+PASS: GRADES_STUDENT_FK parent participation required
+PASS: GRADES_STUDENT_FK explicit minimum-two label
+PASS: GRADES_STUDENT_FK explicit minimum-two comment
+PASS: DT_TEACHER_FK logical endpoints
+PASS: DT_TEACHER_FK child requires one parent
+PASS: DT_TEACHER_FK logical attribute reference mapping
+PASS: DT_TEACHER_FK parent participation required
+PASS: DT_TEACHER_FK explicit minimum-two label
+PASS: DT_TEACHER_FK explicit minimum-two comment
+PASS: All logical entities record reviewed third normal form
+PASS: All relational tables record reviewed third normal form
+PASS: Table registry contains exactly the actual native objects
+PASS: Entity registry contains exactly the actual native objects
+PASS: grades_value_fk native FK registry endpoints
+PASS: grades_student_fk native FK registry endpoints
+PASS: semesters_year_fk native FK registry endpoints
+PASS: students_year_fk native FK registry endpoints
+PASS: dt_discipline_fk native FK registry endpoints
+PASS: students_specialty_fk native FK registry endpoints
+PASS: dt_teacher_fk native FK registry endpoints
+PASS: disciplines_semester_fk native FK registry endpoints
+PASS: teachers_title_fk native FK registry endpoints
+PASS: grades_discipline_fk native FK registry endpoints
+PASS: Oracle physical proxies match all ten relational tables
+PASS: SPECIALTIES Oracle physical column proxies
+PASS: TEACHERS Oracle physical column proxies
+PASS: DISCIPLINE_TEACHERS Oracle physical column proxies
+PASS: STUDY_YEARS Oracle physical column proxies
+PASS: SEMESTERS Oracle physical column proxies
+PASS: GRADE_SCALE Oracle physical column proxies
+PASS: ACADEMIC_TITLES Oracle physical column proxies
+PASS: STUDENTS Oracle physical column proxies
+PASS: DISCIPLINES Oracle physical column proxies
+PASS: GRADES Oracle physical column proxies
+PASS: DISCIPLINE_TEACHERS engineering map
+PASS: STUDENTS engineering map
+PASS: GRADE_SCALE engineering map
+PASS: SPECIALTIES engineering map
+PASS: ACADEMIC_TITLES engineering map
+PASS: GRADES engineering map
+PASS: DISCIPLINES engineering map
+PASS: TEACHERS engineering map
+PASS: SEMESTERS engineering map
+PASS: STUDY_YEARS engineering map
+PASS: Every discipline requires one or more teaching assignments
+This check validates native structure only. Native GUI appearance and separately rendered diagrams need visual review.
+Native structural checks passed: 333
+MODEL_VALIDATION_PASSED
