@@ -1,19 +1,13 @@
-# Public project activity log
+# Project activity
 
-## 13 October 2026: many-to-many teaching
-Introduced DISCIPLINE_TEACHERS with a composite primary key and two foreign keys.
-Preserved the previous teaching assignments and all original student/grade data.
-Updated both native Data Modeler models; the owner opened and saved them.
-333 structural checks and separate diagram geometry checks passed.
-
-## 13 October 2026: complete CRUD
-Added four atomic DELETE methods to UNIVERSITY_API. Executed 40 CRUD operations
-across all ten tables, followed by exact row/field comparisons after rollback.
-51 CRUD checks and 20 DELETE safety checks passed. Existing suites were repeated:
-47 core, 34 lesson, 47 many-to-many and 10 concurrency checks. Total: 209.
-The self-contained build was executed in a fresh isolated schema, then that
-verification schema was removed. The original project schema remains available.
-
-The public export contains fictional sample data, source SQL, native models,
-diagrams and recorded verification output. Private credentials, original course
-materials and the academic report containing a real faculty number are excluded.
+- Normalized university schema, reports, PL/SQL procedures, triggers and cursors.
+- Many-to-many teaching, full CRUD and separate authenticated teacher logins.
+- 20 October 2026: CURRICULUM; SA in SIT semester 6 and KST semester 4.
+- All original rows preserved; two fictional students added for the specialty example.
+- Native models and physical metadata updated; owner opened and saved them successfully.
+- 304 Oracle and 371 native structural checks passed, including six real teacher logins.
+- Cold build verified in a separate schema, then cleaned up.
+- 20 October 2026: pre-commit review fixed CURRICULUM physical UNIQUE/CHECK proxies;
+  66 additional storage-metadata checks cover all eleven tables.
+- Commits are authorized by the owner; see docs/commit-log.md for the completed commit groups.
+- Remote publication requires a separate push; account credentials remain excluded.
