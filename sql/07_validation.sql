@@ -18,25 +18,25 @@ declare
  end;
 begin
  if user <> 'UNIVERSITY_PROJECT' then raise_application_error(-20000,'Use UNIVERSITY_PROJECT.'); end if;
- select count(*) into l_count from user_tables; assert_true(l_count=10,'Ten project tables');
- select count(*) into l_count from user_constraints where constraint_type='R'; assert_true(l_count=10,'Ten foreign keys');
+ select count(*) into l_count from user_tables; assert_true(l_count=11,'Eleven project tables');
+ select count(*) into l_count from user_constraints where constraint_type='R'; assert_true(l_count=12,'Twelve foreign keys');
  select count(*) into l_count from user_objects where status<>'VALID'; assert_true(l_count=0,'All schema objects VALID');
  select count(*) into l_count from user_errors; assert_true(l_count=0,'No compilation errors');
- select count(*) into l_count from students; assert_true(l_count=18,'Eighteen seeded students');
+ select count(*) into l_count from students; assert_true(l_count=20,'Twenty seeded students');
  select count(*) into l_count from teachers; assert_true(l_count=6,'Six seeded teachers');
- select count(*) into l_count from disciplines; assert_true(l_count=14,'Fourteen seeded disciplines');
- select count(*) into l_count from grades; assert_true(l_count=60,'Sixty seeded grades');
+ select count(*) into l_count from disciplines; assert_true(l_count=15,'Fifteen seeded disciplines');
+ select count(*) into l_count from grades; assert_true(l_count=64,'Sixty-four seeded grades');
  select count(*) into l_count from students s where (select count(*) from grades g where g.faculty_number=s.faculty_number)<2;
  assert_true(l_count=0,'Every student has at least two distinct disciplines');
- select count(*) into l_count from teachers t where (select count(*) from discipline_teachers d where d.teacher_id=t.teacher_id)<2;
+ select count(*) into l_count from teachers t where (select count(distinct c.discipline_id) from discipline_teachers d join curriculum c on c.curriculum_id=d.curriculum_id where d.teacher_id=t.teacher_id)<2;
  assert_true(l_count=0,'Every teacher leads at least two disciplines');
  select count(*) into l_count from students where faculty_number='00010001' and first_name=unistr('\0410\043b\0435\043a\0441\0430\043d\0434\044a\0440');
  assert_true(l_count=1,'Leading zeroes and Cyrillic retained');
 
  select min(discipline_id) into l_math from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  select min(discipline_id) into l_algorithm from disciplines where discipline_name=unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438');
- select d.discipline_id,dt.teacher_id into l_os,l_os_teacher from disciplines d join discipline_teachers dt on dt.discipline_id=d.discipline_id where d.discipline_name=unistr('\041e\043f\0435\0440\0430\0446\0438\043e\043d\043d\0438 \0441\0438\0441\0442\0435\043c\0438');
- select min(teacher_id) into l_target_teacher from discipline_teachers where discipline_id=l_math;
+ select d.discipline_id,dt.teacher_id into l_os,l_os_teacher from disciplines d join curriculum c on c.discipline_id=d.discipline_id and c.specialty_id=1 join discipline_teachers dt on dt.curriculum_id=c.curriculum_id where d.discipline_name=unistr('\041e\043f\0435\0440\0430\0446\0438\043e\043d\043d\0438 \0441\0438\0441\0442\0435\043c\0438');
+ select min(teacher_id) into l_target_teacher from discipline_teachers where curriculum_id=(select min(curriculum_id) from curriculum where discipline_id=l_math);
 
  expect_error(q'~declare d university_api.t_discipline_list; t number; ids sys.odcinumberlist;
  begin d(1).discipline_name:='Test'; d(1).semester_no:=1;
@@ -50,7 +50,7 @@ begin
  select min(discipline_id) into g(1).discipline_id from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  select min(discipline_id) into g(2).discipline_id from disciplines where discipline_name=unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438');
  g(1).grade_value:=4; g(1).grade_date:=date '2026-06-10';
- g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11'; 
+ g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11';
  g(2).discipline_id:=g(1).discipline_id;
  university_api.create_student('TEST-DUP','Test',null,'Student',1,1,'test@university.example',g); end;~',
  -1,'Reject duplicate student-discipline pair');
@@ -60,14 +60,14 @@ begin
  select min(discipline_id) into g(1).discipline_id from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  select min(discipline_id) into g(2).discipline_id from disciplines where discipline_name=unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438');
  g(1).grade_value:=4; g(1).grade_date:=date '2026-06-10';
- g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11'; 
+ g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11';
  university_api.create_student('00010001','Test',null,'Student',1,1,'test@university.example',g); end;~',
  -1,'Reject duplicate faculty number');
  expect_error(q'~declare g university_api.t_grade_list; begin
  select min(discipline_id) into g(1).discipline_id from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  select min(discipline_id) into g(2).discipline_id from disciplines where discipline_name=unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438');
  g(1).grade_value:=4; g(1).grade_date:=date '2026-06-10';
- g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11'; 
+ g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11';
  university_api.create_student('TEST-FK','Test',null,'Student',999999,1,'test@university.example',g); end;~',
  -2291,'Reject missing specialty');
  expect_error('begin university_api.set_grade(''00010001'','||l_math||',2.5,date ''2026-06-10''); end;',
@@ -82,23 +82,23 @@ begin
  select min(discipline_id) into g(1).discipline_id from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  select min(discipline_id) into g(2).discipline_id from disciplines where discipline_name=unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438');
  g(1).grade_value:=4; g(1).grade_date:=date '2026-06-10';
- g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11'; 
+ g(2).grade_value:=5; g(2).grade_date:=date '2026-06-11';
  university_api.create_student('TEST-EMAIL','Test',null,'Student',1,1,'invalid',g); end;~',
  -2290,'Reject invalid email form');
  expect_error(q'~update students set email='direct@university.example' where faculty_number='00010001'~',
  -20020,'Direct core DML is guarded');
  expect_error('begin university_api.replace_teacher('||l_os||','||l_os_teacher||','||l_target_teacher||'); end;',
- -20041,'Reject reassignment leaving teacher with one discipline');
- select teacher_id into l_value from discipline_teachers where discipline_id=l_os;
+ -2292,'Referenced grading assignment cannot be replaced');
+ select teacher_id into l_value from discipline_teachers where curriculum_id=(select min(curriculum_id) from curriculum where discipline_id=l_os);
  assert_true(l_value=l_os_teacher,'Rejected reassignment restored original teacher');
 
  expect_error('begin university_api.set_grade(''MISSING-STUDENT'','||l_math||',4,date ''2026-06-10''); end;',
- -2291,'Reject grade for missing student');
+ -20141,'Reject grade for missing student');
  expect_error('begin university_api.set_grade(''00010001'',999999,4,date ''2026-06-10''); end;',
- -2291,'Reject grade for missing discipline');
+ -20141,'Reject grade for missing discipline');
  expect_error('begin university_api.assign_teacher('||l_os||',999999); end;',
  -2291,'Reject discipline with missing teacher');
- expect_error('begin university_api.update_discipline('||l_os||',''Test'',999999); end;',
+ expect_error('begin university_api.update_curriculum('||university_api.curriculum_for('00010001',l_os)||',999999); end;',
  -2291,'Reject discipline with missing semester');
  expect_error(q'~begin university_api.update_teacher(~'||l_os_teacher||q'~,'Test',null,'Teacher',999999,'+359000000000','test@university.example'); end;~',
  -2291,'Reject teacher with missing academic title');
@@ -114,7 +114,7 @@ begin
  select count(*) into l_count from v_failed_exams where discipline_id=l_math and faculty_number in('00010003','00010006');
  assert_true(l_count=2,'Failed report matches two expected mathematics students');
  select sum(discipline_count) into l_value from v_teacher_ranking;
- assert_true(l_value=16,'Teacher counts total distinct assignments independently of grades');
+ assert_true(l_value=18,'Teacher counts total distinct assignments independently of grades');
 
  savepoint validation_correction;
  university_api.set_grade('00010001',l_math,2,date '2026-06-15');
@@ -144,13 +144,13 @@ begin
 
  university_api.validate_rules;
  select count(*) into l_count from students;
- assert_true(l_count=18,'Validation leaves seed student count unchanged');
+ assert_true(l_count=20,'Validation leaves seed student count unchanged');
  select count(*) into l_count from teachers;
  assert_true(l_count=6,'Validation leaves seed teacher count unchanged');
  select count(*) into l_count from disciplines;
- assert_true(l_count=14,'Validation leaves seed discipline count unchanged');
+ assert_true(l_count=15,'Validation leaves seed discipline count unchanged');
  select count(*) into l_count from grades;
- assert_true(l_count=60,'Validation leaves seed grade count unchanged');
+ assert_true(l_count=64,'Validation leaves seed grade count unchanged');
  dbms_output.put_line('VALIDATION_PASSED: '||l_passed||' checks');
 end;
 /

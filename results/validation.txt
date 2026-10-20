@@ -1,17 +1,17 @@
-PASS 01: Ten project tables
-PASS 02: Ten foreign keys
+PASS 01: Eleven project tables
+PASS 02: Twelve foreign keys
 PASS 03: All schema objects VALID
 PASS 04: No compilation errors
-PASS 05: Eighteen seeded students
+PASS 05: Twenty seeded students
 PASS 06: Six seeded teachers
-PASS 07: Fourteen seeded disciplines
-PASS 08: Sixty seeded grades
+PASS 07: Fifteen seeded disciplines
+PASS 08: Sixty-four seeded grades
 PASS 09: Every student has at least two distinct disciplines
 PASS 10: Every teacher leads at least two disciplines
 PASS 11: Leading zeroes and Cyrillic retained
 PASS 12: Reject teacher with one discipline (expected -20030, actual -20030)
 PASS 13: Reject student with one discipline (expected -20031, actual -20031)
-AFTER INSERT: student=TEST-DUP, discipline=1, grade=4 (transaction pending)
+AFTER INSERT: student=TEST-DUP, curriculum=1, grade=4 (transaction pending)
 PASS 14: Reject duplicate student-discipline pair (expected -1, actual -1)
 PASS 15: Failed create_student rolled back all its rows
 PASS 16: Reject duplicate faculty number (expected -1, actual -1)
@@ -23,11 +23,11 @@ PASS 21: CHECK rejects invalid scale value (expected -2290, actual -2290)
 PASS 22: CHECK rejects invalid semester mapping (expected -2290, actual -2290)
 PASS 23: Reject invalid email form (expected -2290, actual -2290)
 PASS 24: Direct core DML is guarded (expected -20020, actual -20020)
-PASS 25: Reject reassignment leaving teacher with one discipline (expected
--20041, actual -20041)
+PASS 25: Referenced grading assignment cannot be replaced (expected -2292,
+actual -2292)
 PASS 26: Rejected reassignment restored original teacher
-PASS 27: Reject grade for missing student (expected -2291, actual -2291)
-PASS 28: Reject grade for missing discipline (expected -2291, actual -2291)
+PASS 27: Reject grade for missing student (expected -20141, actual -20141)
+PASS 28: Reject grade for missing discipline (expected -20141, actual -20141)
 PASS 29: Reject discipline with missing teacher (expected -2291, actual -2291)
 PASS 30: Reject discipline with missing semester (expected -2291, actual -2291)
 PASS 31: Reject teacher with missing academic title (expected -2291, actual
@@ -41,10 +41,10 @@ PASS 37: Teacher counts total distinct assignments independently of grades
 PASS 38: Grade correction changes average from six to five
 PASS 39: Grade correction changes ranking
 PASS 40: Caller rollback restores original average
-AFTER INSERT: student=TEST-RENAME, discipline=1, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, discipline=2, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, discipline=3, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, discipline=13, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, curriculum=1, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, curriculum=3, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, curriculum=13, grade=6 (transaction pending)
 PASS 41: Faculty number correction preserves all grades
 PASS 42: Old faculty number removed consistently during correction
 PASS 43: Teacher and two disciplines created atomically
@@ -58,4 +58,3 @@ PL/SQL procedure successfully completed.
 
 
 Rollback complete.
-
