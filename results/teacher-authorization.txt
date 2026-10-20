@@ -1,0 +1,50 @@
+PASS 1: Owner connection is not mistaken for a teacher login
+PASS 2: Teacher 1 is resolved from authenticated SESSION_USER
+PASS 3: Teacher 1 reads only assigned courses with no duplicate grades
+PASS 4: Teacher 1 can grade its own course and cannot choose another identity
+PASS 5: Teacher 1 cannot grade an unassigned specialty/course context
+PASS 6: Teacher 1 has no direct base-table access
+PASS 7: Teacher 1 has no access to the administrator API or supplied teacher IDs
+PASS 8: Teacher 2 is resolved from authenticated SESSION_USER
+PASS 9: Teacher 2 reads only assigned courses with no duplicate grades
+PASS 10: Teacher 2 can grade its own course and cannot choose another identity
+PASS 11: Teacher 2 cannot grade an unassigned specialty/course context
+PASS 12: Teacher 2 has no direct base-table access
+PASS 13: Teacher 2 has no access to the administrator API or supplied teacher IDs
+PASS 14: Teacher 3 is resolved from authenticated SESSION_USER
+PASS 15: Teacher 3 reads only assigned courses with no duplicate grades
+PASS 16: Teacher 3 can grade its own course and cannot choose another identity
+PASS 17: Teacher 3 cannot grade an unassigned specialty/course context
+PASS 18: Teacher 3 has no direct base-table access
+PASS 19: Teacher 3 has no access to the administrator API or supplied teacher IDs
+PASS 20: Teacher 4 is resolved from authenticated SESSION_USER
+PASS 21: Teacher 4 reads only assigned courses with no duplicate grades
+PASS 22: Teacher 4 can grade its own course and cannot choose another identity
+PASS 23: Teacher 4 cannot grade an unassigned specialty/course context
+PASS 24: Teacher 4 has no direct base-table access
+PASS 25: Teacher 4 has no access to the administrator API or supplied teacher IDs
+PASS 26: Teacher 5 is resolved from authenticated SESSION_USER
+PASS 27: Teacher 5 reads only assigned courses with no duplicate grades
+PASS 28: Teacher 5 can grade its own course and cannot choose another identity
+PASS 29: Teacher 5 cannot grade an unassigned specialty/course context
+PASS 30: Teacher 5 has no direct base-table access
+PASS 31: Teacher 5 has no access to the administrator API or supplied teacher IDs
+PASS 32: Teacher 6 is resolved from authenticated SESSION_USER
+PASS 33: Teacher 6 reads only assigned courses with no duplicate grades
+PASS 34: Teacher 6 can grade its own course and cannot choose another identity
+PASS 35: Teacher 6 cannot grade an unassigned specialty/course context
+PASS 36: Teacher 6 has no direct base-table access
+PASS 37: Teacher 6 has no access to the administrator API or supplied teacher IDs
+PASS 38: CLIENT_IDENTIFIER cannot spoof the grading teacher
+PASS 39: CURRENT_SCHEMA cannot spoof SESSION_USER
+PASS 40: Teacher INSERT stores the actual authenticated grading teacher
+PASS 41: Teacher DELETE works only within its assigned course and minimum counts
+PASS 42: One student-course grade remains unique across teachers
+PASS 43: Teacher UPDATE rejects a missing grade
+PASS 44: Different authenticated teachers cannot race past writer locks
+PASS 45: Authorized teacher succeeds after the first transaction releases its lock
+PASS 46: Teacher 2 may grade SA for KST in semester 4
+PASS 47: Same teacher and catalogue course cannot authorize SA for SIT in semester 6
+PASS 48: Teacher 1 explicitly assigned to both specialties can read both SA contexts
+PASS 49: All grade values, dates, student keys and teacher identities restored after testing
+TEACHER_AUTHORIZATION_PASSED: 49 checks; six real authenticated teacher accounts
