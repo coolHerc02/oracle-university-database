@@ -45,7 +45,7 @@ insert into grade_scale values (6,unistr('\041e\0442\043b\0438\0447\0435\043d'),
 declare
  l_disciplines university_api.t_discipline_list;
  l_grades university_api.t_grade_list;
- l_teacher_id number;
+ l_teacher_id number; l_copy_id number;
  l_created_ids sys.odcinumberlist;
  type t_ids is table of number index by pls_integer;
  l_ids t_ids;
@@ -94,6 +94,17 @@ begin
  university_api.assign_teacher(l_ids(1),l_teacher_id);
  select teacher_id into l_teacher_id from teachers where email='teacher1@university.example';
  university_api.assign_teacher(l_ids(4),l_teacher_id);
+ -- Explicitly copy the legacy common programme into specialties 2 and 3.
+ -- Future curricula are managed separately; teacher APIs never create curricula.
+ for c in(select c.*, (select min(teacher_id) from discipline_teachers dt where dt.curriculum_id=c.curriculum_id) initial_teacher
+          from curriculum c where c.specialty_id=(select min(specialty_id) from specialties)) loop
+   for sp in(select specialty_id from specialties where specialty_id<>c.specialty_id order by specialty_id) loop
+     university_api.add_curriculum(sp.specialty_id,c.discipline_id,c.semester_no,c.initial_teacher,l_copy_id);
+     for t in(select teacher_id from discipline_teachers where curriculum_id=c.curriculum_id and teacher_id<>c.initial_teacher) loop
+       university_api.assign_curriculum_teacher(l_copy_id,t.teacher_id);
+     end loop;
+   end loop;
+ end loop;
  l_grades.delete;
  l_grades(1).discipline_id := l_ids(1); l_grades(1).grade_value := 6; l_grades(1).grade_date := date '2026-06-10';
  l_grades(2).discipline_id := l_ids(2); l_grades(2).grade_value := 6; l_grades(2).grade_date := date '2026-06-11';
@@ -204,5 +215,6 @@ union all select 'STUDENTS',count(*) from students
 union all select 'TEACHERS',count(*) from teachers
 union all select 'DISCIPLINES',count(*) from disciplines
 union all select 'GRADES',count(*) from grades
-union all select 'DISCIPLINE_TEACHERS',count(*) from discipline_teachers;
+union all select 'DISCIPLINE_TEACHERS',count(*) from discipline_teachers
+union all select 'CURRICULUM',count(*) from curriculum;
 prompt SEED_COMMITTED_OK
