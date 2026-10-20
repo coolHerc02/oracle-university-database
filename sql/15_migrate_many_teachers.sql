@@ -46,7 +46,8 @@ alter table disciplines drop column teacher_id;
 comment on table disciplines is 'Each discipline belongs to one semester and has one or more teachers through DISCIPLINE_TEACHERS.';
 comment on table discipline_teachers is 'Many-to-many teaching assignments. Composite PK prevents duplicate pairs. Each discipline has at least one teacher; each teacher leads at least two distinct disciplines.';
 
--- Recreate dependent views, package, guards and procedures.
+alter table grades add (teacher_id number);
+
 set define off
 set serveroutput on
 whenever sqlerror exit sql.sqlcode rollback
@@ -100,12 +101,15 @@ select s.faculty_number,
        d.discipline_id, d.discipline_name, d.semester_no,
        dt.teacher_count, dt.teacher_name, dt.academic_title, dt.teacher_phone, dt.teacher_email,
        g.grade_value, gs.grade_label, g.grade_date, gs.is_passing,
+       g.teacher_id grading_teacher_id,
+       gt.first_name||' '||case when gt.middle_name is not null then gt.middle_name||' ' end||gt.last_name grading_teacher_name,
        a.average_grade
 from students s
 join specialties sp on sp.specialty_id = s.specialty_id
 join study_years sy on sy.study_year_no = s.study_year_no
 join grades g on g.faculty_number = s.faculty_number
 join grade_scale gs on gs.grade_value = g.grade_value
+join teachers gt on gt.teacher_id=g.teacher_id
 join disciplines d on d.discipline_id = g.discipline_id
 join v_discipline_teachers dt on dt.discipline_id = d.discipline_id
 join v_student_averages a on a.faculty_number = s.faculty_number;
@@ -143,11 +147,13 @@ create or replace package university_api as
     type t_grade_input is record (
         discipline_id disciplines.discipline_id%type,
         grade_value grades.grade_value%type,
-        grade_date grades.grade_date%type
+        grade_date grades.grade_date%type,
+        teacher_id grades.teacher_id%type
     );
     type t_grade_list is table of t_grade_input index by pls_integer;
 
     function write_allowed return boolean;
+    procedure backfill_grade_teachers;
     procedure validate_rules;
 
     procedure create_teacher(
@@ -191,7 +197,7 @@ create or replace package university_api as
     );
     procedure set_grade(
         p_faculty_number varchar2, p_discipline_id number,
-        p_grade_value number, p_grade_date date
+        p_grade_value number, p_grade_date date, p_teacher_id number default null
     );
     procedure get_academic_report(p_faculty_number varchar2, p_result out sys_refcursor);
     procedure print_academic_report(p_faculty_number varchar2);
@@ -258,6 +264,49 @@ create or replace package body university_api as
         rollback to university_api_change;
     end;
 
+    function resolve_grade_teacher(p_discipline_id number,p_teacher_id number) return number is
+        l_teacher number; l_count number;
+    begin
+        if sys_context('USERENV','SESSION_USER')=sys_context('USERENV','CURRENT_USER') then
+            -- Schema owner is the administrator. NULL keeps legacy demo calls
+            -- compatible by selecting a documented sample-data assignment.
+            l_teacher:=p_teacher_id;
+            if l_teacher is null then
+                select min(teacher_id) into l_teacher from discipline_teachers where discipline_id=p_discipline_id;
+            end if;
+        else
+            select min(teacher_id) into l_teacher from teachers
+            where sys_context('USERENV','SESSION_USER')='UP_TEACHER_'||to_char(teacher_id,'TM9');
+            if l_teacher is null then raise_application_error(-20100,'No teacher mapped to this authenticated Oracle login.'); end if;
+            if p_teacher_id is not null and p_teacher_id<>l_teacher then
+                raise_application_error(-20101,'Cannot impersonate another teacher.');
+            end if;
+        end if;
+        select count(*) into l_count from discipline_teachers
+        where discipline_id=p_discipline_id and teacher_id=l_teacher;
+        if l_count<>1 then
+            if sys_context('USERENV','SESSION_USER')=sys_context('USERENV','CURRENT_USER') then
+                -- Return an impossible non-null key so the actual composite FK
+                -- raises ORA-02291; never simulate system errors with RAISE_APPLICATION_ERROR.
+                return nvl(l_teacher,-1);
+            end if;
+            raise_application_error(-20102,'This teacher does not teach this discipline.');
+        end if;
+        return l_teacher;
+    end;
+
+    procedure backfill_grade_teachers is
+    begin
+        if sys_context('USERENV','SESSION_USER')<>sys_context('USERENV','CURRENT_USER') then
+            raise_application_error(-20103,'Grade author migration is an owner-only operation.');
+        end if;
+        begin_change;
+        update grades g set teacher_id=(select min(dt.teacher_id) from discipline_teachers dt
+            where dt.discipline_id=g.discipline_id) where teacher_id is null;
+        finish_change;
+    exception when others then cancel_change; raise;
+    end;
+
     procedure create_teacher(
         p_first_name varchar2, p_middle_name varchar2, p_last_name varchar2,
         p_title_id number, p_phone varchar2, p_email varchar2,
@@ -294,6 +343,7 @@ create or replace package body university_api as
         p_specialty_id number, p_study_year_no number, p_email varchar2,
         p_grades t_grade_list
     ) is
+        l_grade_teacher number;
     begin
         begin_change;
         if p_grades.count < 2 or p_grades.first <> 1 or p_grades.last <> p_grades.count then
@@ -304,9 +354,11 @@ create or replace package body university_api as
         values(p_faculty_number, p_first_name, p_middle_name, p_last_name,
                p_specialty_id, p_study_year_no, p_email);
         for i in 1 .. p_grades.count loop
-            insert into grades(faculty_number, discipline_id, grade_value, grade_date)
+            l_grade_teacher:=resolve_grade_teacher(p_grades(i).discipline_id,p_grades(i).teacher_id);
+            insert into grades(faculty_number, discipline_id, grade_value, grade_date, teacher_id)
             values(p_faculty_number, p_grades(i).discipline_id,
-                   p_grades(i).grade_value, trunc(p_grades(i).grade_date));
+                   p_grades(i).grade_value, trunc(p_grades(i).grade_date),
+                   l_grade_teacher);
         end loop;
         finish_change;
     exception when others then
@@ -344,8 +396,8 @@ create or replace package body university_api as
                specialty_id, study_year_no, email
         from students where faculty_number = p_old_number;
         if sql%rowcount <> 1 then raise_application_error(-20043, 'Student not found.'); end if;
-        insert into grades(faculty_number, discipline_id, grade_value, grade_date)
-        select p_new_number, discipline_id, grade_value, grade_date
+        insert into grades(faculty_number, discipline_id, grade_value, grade_date, teacher_id)
+        select p_new_number, discipline_id, grade_value, grade_date, teacher_id
         from grades where faculty_number = p_old_number;
         delete from grades where faculty_number = p_old_number;
         delete from students where faculty_number = p_old_number;
@@ -454,17 +506,19 @@ create or replace package body university_api as
 
     procedure set_grade(
         p_faculty_number varchar2, p_discipline_id number,
-        p_grade_value number, p_grade_date date
+        p_grade_value number, p_grade_date date, p_teacher_id number default null
     ) is
+        l_teacher number;
     begin
         begin_change;
+        l_teacher:=resolve_grade_teacher(p_discipline_id,p_teacher_id);
         merge into grades g
         using (select p_faculty_number faculty_number, p_discipline_id discipline_id from dual) source
         on (g.faculty_number = source.faculty_number and g.discipline_id = source.discipline_id)
-        when matched then update set g.grade_value = p_grade_value, g.grade_date = trunc(p_grade_date)
+        when matched then update set g.grade_value = p_grade_value, g.grade_date = trunc(p_grade_date), g.teacher_id=l_teacher
         when not matched then
-            insert(faculty_number, discipline_id, grade_value, grade_date)
-            values(p_faculty_number, p_discipline_id, p_grade_value, trunc(p_grade_date));
+            insert(faculty_number, discipline_id, grade_value, grade_date, teacher_id)
+            values(p_faculty_number, p_discipline_id, p_grade_value, trunc(p_grade_date), l_teacher);
         finish_change;
     exception when others then
         cancel_change;
@@ -592,6 +646,9 @@ declare
     l_errors number;
     l_invalid number;
 begin
+    for e in (select name,type,line,position,text from user_errors order by name,sequence) loop
+        dbms_output.put_line('COMPILE_ERROR|'||e.name||'|'||e.type||'|'||e.line||'|'||e.position||'|'||e.text);
+    end loop;
     select count(*) into l_errors from user_errors where type <> 'PROCEDURE';
     select count(*) into l_invalid from user_objects where status <> 'VALID' and object_type <> 'PROCEDURE';
     if l_errors <> 0 or l_invalid <> 0 then
@@ -828,6 +885,110 @@ begin
  dbms_output.put_line('LESSON_PROGRAMS_COMPILED_OK: 14 standalone procedures, 1 AFTER INSERT trigger');
 end;
 /
+
+-- Narrow, definer-rights API. Grant only this package to teacher database users.
+-- A teacher login is UP_TEACHER_<teacher_id>; SESSION_USER cannot be selected
+-- by supplying an API parameter or changing CURRENT_SCHEMA/CLIENT_IDENTIFIER.
+set define off
+set serveroutput on
+whenever sqlerror exit sql.sqlcode rollback
+create or replace package teacher_grading authid definer as
+    function current_teacher_id return number;
+    procedure insert_grade(p_student varchar2,p_discipline number,p_grade number,p_date date);
+    procedure update_grade(p_student varchar2,p_discipline number,p_grade number,p_date date);
+    procedure delete_grade(p_student varchar2,p_discipline number);
+    procedure read_grades(p_result out sys_refcursor);
+end teacher_grading;
+/
+create or replace package body teacher_grading as
+    function current_teacher_id return number is t number;
+    begin
+        select min(teacher_id) into t from teachers
+        where sys_context('USERENV','SESSION_USER')='UP_TEACHER_'||to_char(teacher_id,'TM9');
+        if t is null then raise_application_error(-20100,'No teacher mapped to this authenticated Oracle login.'); end if;
+        return t;
+    end;
+    function assigned_teacher(p_discipline number) return number is t number;n number;
+    begin
+        t:=current_teacher_id;
+        select count(*) into n from discipline_teachers where discipline_id=p_discipline and teacher_id=t;
+        if n<>1 then raise_application_error(-20102,'This teacher does not teach this discipline.'); end if;
+        return t;
+    end;
+    procedure insert_grade(p_student varchar2,p_discipline number,p_grade number,p_date date) is t number;n number;
+    begin
+        savepoint teacher_grade_change;
+        lock table students,teachers,disciplines,discipline_teachers,grades in exclusive mode nowait;
+        t:=assigned_teacher(p_discipline);
+        select count(*) into n from grades where faculty_number=p_student and discipline_id=p_discipline;
+        if n<>0 then raise_application_error(-20061,'Grade already exists; use UPDATE_GRADE.'); end if;
+        university_api.set_grade(p_student,p_discipline,p_grade,p_date,t);
+    exception when others then rollback to teacher_grade_change;raise;
+    end;
+    procedure update_grade(p_student varchar2,p_discipline number,p_grade number,p_date date) is t number;n number;
+    begin
+        savepoint teacher_grade_change;
+        lock table students,teachers,disciplines,discipline_teachers,grades in exclusive mode nowait;
+        t:=assigned_teacher(p_discipline);
+        select count(*) into n from grades where faculty_number=p_student and discipline_id=p_discipline;
+        if n<>1 then raise_application_error(-20062,'Grade does not exist; use INSERT_GRADE.'); end if;
+        university_api.set_grade(p_student,p_discipline,p_grade,p_date,t);
+    exception when others then rollback to teacher_grade_change;raise;
+    end;
+    procedure delete_grade(p_student varchar2,p_discipline number) is t number;
+    begin
+        savepoint teacher_grade_change;
+        lock table students,teachers,disciplines,discipline_teachers,grades in exclusive mode nowait;
+        t:=assigned_teacher(p_discipline);
+        university_api.delete_grade(p_student,p_discipline);
+    exception when others then rollback to teacher_grade_change;raise;
+    end;
+    procedure read_grades(p_result out sys_refcursor) is t number;
+    begin
+        t:=current_teacher_id;
+        open p_result for select r.* from v_academic_report r
+        where exists(select 1 from discipline_teachers dt where dt.discipline_id=r.discipline_id and dt.teacher_id=t)
+        order by r.faculty_number,r.semester_no,r.discipline_name,r.discipline_id;
+    end;
+end teacher_grading;
+/
+declare n number;
+begin
+ select count(*) into n from user_errors;
+ if n<>0 then raise_application_error(-20109,'Compilation errors exist.');end if;
+ dbms_output.put_line('TEACHER_GRADING_COMPILED');
+end;
+/
+
+-- Existing fictional samples lack author information. Deterministically assign
+-- the lowest currently assigned teacher; this is a demo-data assumption,
+-- not a reconstructed historical audit record. No grade value/date is changed.
+begin university_api.backfill_grade_teachers; end;
+/
+alter table grades modify (teacher_id not null);
+alter table grades drop constraint grades_discipline_fk;
+alter table grades add constraint grades_assignment_fk foreign key (discipline_id,teacher_id)
+ references discipline_teachers(discipline_id,teacher_id);
+drop index grades_discipline_ix;
+create index grades_assignment_ix on grades(discipline_id,teacher_id);
+comment on column grades.teacher_id is 'Responsible grading teacher assigned to the same discipline. Existing sample authors were assigned during migration.';
+begin dbms_utility.compile_schema(schema=>user,compile_all=>false); end;
+/
+declare n number;
+begin
+ select count(*) into n from user_objects where status<>'VALID';
+ if n<>0 then raise_application_error(-20109,'Invalid objects after grade author migration.');end if;
+ select count(*) into n from user_errors;
+ if n<>0 then raise_application_error(-20109,'Compilation errors after grade author migration.');end if;
+ select count(*) into n from grades g where not exists(select 1 from discipline_teachers dt
+  where dt.discipline_id=g.discipline_id and dt.teacher_id=g.teacher_id);
+ if n<>0 then raise_application_error(-20108,'Grade author is not assigned to the discipline.');end if;
+end;
+/
+commit;
+begin dbms_session.reset_package; end;
+/
+prompt GRADE_TEACHER_MIGRATION_COMPLETED
 
 -- Add two shared teaching examples to the supplied seed data, when present.
 declare d number; t number; n number;
