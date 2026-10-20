@@ -1,20 +1,20 @@
 PASS: Missing student rejected (SQLCODE -20043)
 PASS: Missing teacher rejected (SQLCODE -20045)
 PASS: Missing discipline rejected (SQLCODE -20046)
-PASS: Missing grade rejected (SQLCODE -20062)
+PASS: Missing student curriculum rejected (SQLCODE -20141)
 PASS: Direct DELETE guard stays active (SQLCODE -20020)
-AFTER INSERT: student=CRUD_FAIL_47C0CA3AE0, discipline=36, grade=5 (transaction
+AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=65, grade=5 (transaction
 pending)
-AFTER INSERT: student=CRUD_FAIL_47C0CA3AE0, discipline=37, grade=5 (transaction
+AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=66, grade=5 (transaction
 pending)
 PASS: Student cannot lose his second grade (SQLCODE -20042)
 PASS: Failed grade DELETE preserves both grades
 PASS: Failed operation keeps caller prior changes
 PASS: Discipline DELETE checks affected students (SQLCODE -20042)
 PASS: Failed discipline DELETE restores course, assignment and grade
-PASS: Last teacher of a discipline cannot be deleted (SQLCODE -20047)
+PASS: Teacher referenced by grades cannot be deleted (SQLCODE -2292)
 PASS: Failed teacher DELETE restores all assignments
-AFTER INSERT: student=CRUD_FAIL_47C0CA3AE0, discipline=38, grade=6 (transaction
+AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=67, grade=6 (transaction
 pending)
 PASS: Allowed discipline DELETE removes selected course
 PASS: Allowed discipline DELETE retains two student grades
@@ -27,4 +27,3 @@ PASS: Baseline restored and write guard closed
 CRUD_VALIDATION_PASSED: 20 checks
 
 PL/SQL procedure successfully completed.
-

@@ -27,18 +27,18 @@ declare
     begin
         select (select count(*) from students)||'/'||(select count(*) from teachers)||'/'||
             (select count(*) from disciplines)||'/'||(select count(*) from grades)||'/'||
-            (select count(*) from discipline_teachers) into r from dual;
+            (select count(*) from discipline_teachers)||'/'||(select count(*) from curriculum) into r from dual;
         return r;
     end;
 begin
     if user<>'UNIVERSITY_PROJECT' then raise_application_error(-20000,'Use UNIVERSITY_PROJECT.'); end if;
     savepoint crud_validation_start;
-    lock table students,teachers,disciplines,discipline_teachers,grades in exclusive mode nowait;
+    lock table students,teachers,disciplines,curriculum,discipline_teachers,grades in exclusive mode nowait;
     l_base:=core_counts;
     rejects('begin university_api.delete_student('''||l_student||'''); end;',-20043,'Missing student rejected');
     rejects('begin university_api.delete_teacher(-1); end;',-20045,'Missing teacher rejected');
     rejects('begin university_api.delete_discipline(-1); end;',-20046,'Missing discipline rejected');
-    rejects('begin university_api.delete_grade('''||l_student||''',-1); end;',-20062,'Missing grade rejected');
+    rejects('begin university_api.delete_grade('''||l_student||''',-1); end;',-20141,'Missing student curriculum rejected');
     rejects('delete from grades where faculty_number='''||l_student||'''',-20020,'Direct DELETE guard stays active');
     select min(title_id) into l_title from academic_titles;
     select min(specialty_id) into l_specialty from specialties;
@@ -67,12 +67,12 @@ begin
     ok(l_name='Prior change','Failed operation keeps caller prior changes');
     rejects('begin university_api.delete_discipline('||l_ids(1)||'); end;',
         -20042,'Discipline DELETE checks affected students');
-    select count(*) into l_n from disciplines d join discipline_teachers dt on dt.discipline_id=d.discipline_id
-        join grades g on g.discipline_id=d.discipline_id
+    select count(*) into l_n from disciplines d join curriculum c on c.discipline_id=d.discipline_id join discipline_teachers dt on dt.curriculum_id=c.curriculum_id
+        join grades g on g.curriculum_id=c.curriculum_id
         where d.discipline_id=l_ids(1) and dt.teacher_id=l_teacher and g.faculty_number=l_student;
     ok(l_n=1,'Failed discipline DELETE restores course, assignment and grade');
     rejects('begin university_api.delete_teacher('||l_teacher||'); end;',
-        -20047,'Last teacher of a discipline cannot be deleted');
+        -2292,'Teacher referenced by grades cannot be deleted');
     select count(*) into l_n from discipline_teachers where teacher_id=l_teacher;
     ok(l_n=3,'Failed teacher DELETE restores all assignments');
     university_api.set_grade(l_student,l_ids(3),6,date '2026-10-13');
@@ -85,7 +85,7 @@ begin
     ok(l_n=2,'Allowed discipline DELETE retains two teacher courses');
     rejects('begin university_api.delete_discipline('||l_ids(2)||'); end;',
         -20041,'Teacher cannot lose his second discipline');
-    select count(*) into l_n from disciplines d join grades g on g.discipline_id=d.discipline_id
+    select count(*) into l_n from disciplines d join curriculum c on c.discipline_id=d.discipline_id join grades g on g.curriculum_id=c.curriculum_id
         where d.discipline_id=l_ids(2) and g.faculty_number=l_student;
     ok(l_n=1,'Rejected second-course DELETE restores related rows');
     university_api.delete_student(l_student);
