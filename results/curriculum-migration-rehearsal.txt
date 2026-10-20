@@ -1,0 +1,280 @@
+Temporary verification schema: UNIV_VERIFY_1020124304
+Previous ten-table grading schema built, then migrated to specialty-scoped curriculum. Only the schema-name guard was adapted for this isolated rehearsal.
+
+
+PL/SQL procedure successfully completed.
+
+
+Table created.
+
+
+Sequence created.
+
+
+Trigger created.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+PL/SQL procedure successfully completed.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+Package created.
+
+
+Package body created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+PROGRAMS_COMPILED_OK
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Trigger created.
+
+LESSON_PROGRAMS_COMPILED_OK: 14 standalone procedures, 1 AFTER INSERT trigger
+
+PL/SQL procedure successfully completed.
+
+
+Package created.
+
+
+Package body created.
+
+TEACHER_GRADING_COMPILED
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Index dropped.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Index dropped.
+
+
+Table altered.
+
+
+Index created.
+
+
+Index created.
+
+
+Index created.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+CURRICULUM_MIGRATION_COMPLETED
+AFTER INSERT: student=SIT-DEMO, curriculum=43, grade=5 (transaction pending)
+AFTER INSERT: student=SIT-DEMO, curriculum=45, grade=6 (transaction pending)
+AFTER INSERT: student=KST-DEMO, curriculum=44, grade=5 (transaction pending)
+AFTER INSERT: student=KST-DEMO, curriculum=46, grade=6 (transaction pending)
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+
+SPECIALTY_NAME
+--------------------------------------------------------------------------------
+DISCIPLINE_NAME
+--------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID
+----------- ------------- ----------
+КСТ
+СА
+	  4	       44	   1
+
+КСТ
+СА
+	  4	       44	   2
+
+SPECIALTY_NAME
+--------------------------------------------------------------------------------
+DISCIPLINE_NAME
+--------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID
+----------- ------------- ----------
+
+СИТ
+СА
+	  6	       43	   1
+
+
+CURRICULUM_EXAMPLE_READY
+PASS: Eleven normalized tables
+PASS: Thirty-nine physical columns
+PASS: Twelve foreign keys
+PASS: Semester removed from catalogue
+PASS: No redundant catalogue discipline column in grades or assignments
+PASS: All objects valid
+PASS: No compilation errors
+PASS: Original 60 grades plus four fictional example grades
+PASS: Original 18 students plus SIT/KST examples
+PASS: Exactly one report row per grade
+PASS: One SA catalogue course has distinct SIT/6 and KST/4 curricula
+PASS: Same teacher teaches SA in both specialty semesters
+PASS: KST co-teacher has no SIT authorization
+PASS: Every grade curriculum matches the student specialty
+PASS: Every grade points to its authorized teaching assignment
+PASS: Owner API also rejects a curriculum from another specialty
+PASS: One catalogue discipline occurs once per specialty curriculum
+PASS: Specialty change cannot leave grades in the previous specialty
+PASS: Failed changes retain SIT semester six
+PASS: Changing SIT semester never changes KST
+PASS: Caller rollback restores the SIT semester
+PASS: Teacher minimum counts distinct courses, not specialty assignments
+PASS: Every curriculum entry has a teacher
+PASS: Every student retains two or more grades
+PASS: Write guard closed after failures
+CURRICULUM_VALIDATION_PASSED: 25 checks
+
+PL/SQL procedure successfully completed.
+
+FULL_BUILD_COMPLETED
+
+
+User dropped.
+
+OWN_TEMPORARY_SCHEMA_REMOVED
+
+PL/SQL procedure successfully completed.
