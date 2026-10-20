@@ -1,22 +1,18 @@
-# Матрица на отношенията
+# Дванадесет преки отношения
 
-Версия M:N от 13.10.2026. Клетката показва броя обекти от колоната за един обект от реда. Празната клетка означава липса на пряка връзка.
+| Родител | Дете | Външен ключ в детето | Деца за един родител |
+| --- | --- | --- | --- |
+| SPECIALTIES | STUDENTS | specialty_id | 0..N |
+| STUDY_YEARS | STUDENTS | study_year_no | 0..N |
+| STUDY_YEARS | SEMESTERS | study_year_no | 0..2 |
+| ACADEMIC_TITLES | TEACHERS | title_id | 0..N |
+| SPECIALTIES | CURRICULUM | specialty_id | 0..N |
+| DISCIPLINES | CURRICULUM | discipline_id | 0..N |
+| SEMESTERS | CURRICULUM | semester_no | 0..N |
+| CURRICULUM | DISCIPLINE_TEACHERS | curriculum_id | 1..N |
+| TEACHERS | DISCIPLINE_TEACHERS | teacher_id | 2..N* |
+| STUDENTS | GRADES | faculty_number | 2..N |
+| DISCIPLINE_TEACHERS | GRADES | curriculum_id,teacher_id | 0..N |
+| GRADE_SCALE | GRADES | grade_value | 0..N |
 
-SP=SPECIALTIES; AT=ACADEMIC_TITLES; Y=STUDY_YEARS; SM=SEMESTERS; GS=GRADE_SCALE; ST=STUDENTS; T=TEACHERS; D=DISCIPLINES; DT=DISCIPLINE_TEACHERS; G=GRADES.
-
-| От/към | SP | AT | Y | SM | GS | ST | T | D | DT | G |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| SP |  |  |  |  |  | 0..N |  |  |  |  |
-| AT |  |  |  |  |  |  | 0..N |  |  |  |
-| Y |  |  |  | 0..2 |  | 0..N |  |  |  |  |
-| SM |  |  | 1 |  |  |  |  | 0..N |  |  |
-| GS |  |  |  |  |  |  |  |  |  | 0..N |
-| ST | 1 |  | 1 |  |  |  |  |  |  | 2..N |
-| T |  | 1 |  |  |  |  |  |  | 2..N |  |
-| D |  |  |  | 1 |  |  |  |  | 1..N | 0..N |
-| DT |  |  |  |  |  |  | 1 | 1 |  |  |
-| G |  |  |  |  | 1 | 1 |  | 1 |  |  |
-
-Десет преки отношения са показани в двете им посоки. Всички детски FK са задължителни. Преподавателят има 2..N назначения към различни дисциплини; дисциплината има 1..N назначения към различни преподаватели. DISCIPLINE_TEACHERS разрешава M:N чрез съставен PK (discipline_id, teacher_id).
-
-GRADES запазва M:N студент–дисциплина и съставен PK (faculty_number, discipline_id). Студентът има поне две оценени дисциплини. Минималните бройки се налагат чрез UNIVERSITY_API. Курсът има максимум два семестъра чрез term_no IN (1,2) и UNIQUE(study_year_no,term_no).
+Всеки детски FK сочи точно един родител и е задължителен. *Минимумът за преподавател е две различни дисциплини, а не просто две назначения.
