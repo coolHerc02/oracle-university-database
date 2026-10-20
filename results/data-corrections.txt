@@ -4,10 +4,10 @@ Session altered.
 
 Savepoint created.
 
-AFTER INSERT: student=DEMO-00010001, discipline=1, grade=5 (transaction pending)
-AFTER INSERT: student=DEMO-00010001, discipline=2, grade=6 (transaction pending)
-AFTER INSERT: student=DEMO-00010001, discipline=3, grade=6 (transaction pending)
-AFTER INSERT: student=DEMO-00010001, discipline=13, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-00010001, curriculum=1, grade=5 (transaction pending)
+AFTER INSERT: student=DEMO-00010001, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-00010001, curriculum=3, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-00010001, curriculum=13, grade=6 (transaction pending)
 Student: DEMO-00010001 Александър Иванов Петров
 Specialty: Компютърни науки, I курс
 Average: 5.75
@@ -15,8 +15,8 @@ Semester 1: Английски език | grade 6 | 2026-06-12
 Semester 1: Математика | grade 5 | 2026-06-15
 Semester 2: Алгоритми | grade 6 | 2026-06-11
 Semester 2: Дискретна математика | grade 6 | 2026-06-13
-AFTER INSERT: student=DEMO-NEW, discipline=1, grade=4 (transaction pending)
-AFTER INSERT: student=DEMO-NEW, discipline=2, grade=5 (transaction pending)
+AFTER INSERT: student=DEMO-NEW, curriculum=1, grade=4 (transaction pending)
+AFTER INSERT: student=DEMO-NEW, curriculum=2, grade=5 (transaction pending)
 
 PL/SQL procedure successfully completed.
 
