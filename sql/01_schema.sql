@@ -1,4 +1,4 @@
--- University database: Oracle 11g XE, ten normalized tables.
+-- University database: Oracle 11g XE, eleven normalized tables.
 -- Import-only DDL is in models/university_import.sql.
 -- Executed in UNIVERSITY_PROJECT; saved native model matches this schema.
 -- Minimum two disciplines per student/teacher are enforced by sql/02_programs.sql.
@@ -15,8 +15,8 @@ begin
     select count(*) into l_count from user_objects
     where object_name in (
         'SPECIALTIES','ACADEMIC_TITLES','STUDY_YEARS','SEMESTERS',
-        'GRADE_SCALE','STUDENTS','TEACHERS','DISCIPLINES','DISCIPLINE_TEACHERS','GRADES',
-        'SPECIALTIES_SEQ','ACADEMIC_TITLES_SEQ','TEACHERS_SEQ','DISCIPLINES_SEQ'
+        'CURRICULUM','GRADE_SCALE','STUDENTS','TEACHERS','DISCIPLINES','DISCIPLINE_TEACHERS','GRADES',
+        'SPECIALTIES_SEQ','ACADEMIC_TITLES_SEQ','TEACHERS_SEQ','DISCIPLINES_SEQ','CURRICULUM_SEQ'
     );
     if l_count > 0 then
         raise_application_error(-20001, 'Project objects already exist. No reset is performed.');
@@ -116,46 +116,67 @@ create table teachers (
 create table disciplines (
     discipline_id number not null,
     discipline_name varchar2(150 char) not null,
-    semester_no number not null,
     constraint disciplines_pk primary key (discipline_id),
-    constraint disciplines_semester_fk foreign key (semester_no) references semesters (semester_no),
     constraint disciplines_id_ck check (discipline_id > 0 and discipline_id = trunc(discipline_id)),
     constraint disciplines_name_ck check (trim(discipline_name) is not null)
 );
 
-create table discipline_teachers (
+create table curriculum (
+    curriculum_id number not null,
+    specialty_id number not null,
     discipline_id number not null,
+    semester_no number not null,
+    constraint curriculum_pk primary key (curriculum_id),
+    constraint curriculum_course_uq unique (specialty_id, discipline_id),
+    constraint curriculum_id_ck check (curriculum_id > 0 and curriculum_id = trunc(curriculum_id)),
+    constraint curriculum_specialty_fk foreign key (specialty_id) references specialties(specialty_id),
+    constraint curriculum_discipline_fk foreign key (discipline_id) references disciplines(discipline_id),
+    constraint curriculum_semester_fk foreign key (semester_no) references semesters(semester_no)
+);
+
+create table discipline_teachers (
+    curriculum_id number not null,
     teacher_id number not null,
-    constraint discipline_teachers_pk primary key (discipline_id, teacher_id),
-    constraint dt_discipline_fk foreign key (discipline_id) references disciplines (discipline_id),
+    constraint discipline_teachers_pk primary key (curriculum_id, teacher_id),
+    constraint dt_curriculum_fk foreign key (curriculum_id) references curriculum (curriculum_id),
     constraint dt_teacher_fk foreign key (teacher_id) references teachers (teacher_id)
 );
 
 create table grades (
     faculty_number varchar2(20 char) not null,
-    discipline_id number not null,
+    curriculum_id number not null,
     grade_value number not null,
     grade_date date not null,
-    constraint grades_pk primary key (faculty_number, discipline_id),
+    teacher_id number not null,
+    constraint grades_pk primary key (faculty_number, curriculum_id),
     constraint grades_student_fk foreign key (faculty_number) references students (faculty_number),
-    constraint grades_discipline_fk foreign key (discipline_id) references disciplines (discipline_id),
+    constraint grades_assignment_fk foreign key (curriculum_id, teacher_id)
+        references discipline_teachers (curriculum_id, teacher_id),
     constraint grades_value_fk foreign key (grade_value) references grade_scale (grade_value)
 );
 
 create index students_specialty_ix on students (specialty_id);
 create index students_year_ix on students (study_year_no);
 create index teachers_title_ix on teachers (title_id);
-create index disciplines_semester_ix on disciplines (semester_no);
+create index curriculum_discipline_ix on curriculum(discipline_id);
+create index curriculum_semester_ix on curriculum(semester_no);
 create index dt_teacher_ix on discipline_teachers (teacher_id);
-create index grades_discipline_ix on grades (discipline_id);
+create index grades_assignment_ix on grades (curriculum_id, teacher_id);
 create index grades_value_ix on grades (grade_value);
 -- grades_pk covers the student FK; semesters_year_term_uq covers the year FK.
 
+create sequence curriculum_seq start with 1 increment by 1 nocache;
 create sequence specialties_seq start with 100 increment by 1 nocache;
 create sequence academic_titles_seq start with 100 increment by 1 nocache;
 create sequence teachers_seq start with 1 increment by 1 nocache;
 create sequence disciplines_seq start with 1 increment by 1 nocache;
 
+create or replace trigger curriculum_bi
+before insert on curriculum for each row
+begin
+ if :new.curriculum_id is null then :new.curriculum_id:=curriculum_seq.nextval;end if;
+end;
+/
 create or replace trigger specialties_bi
 before insert on specialties for each row
 begin
@@ -188,8 +209,9 @@ comment on table semesters is 'Global semester number and its study year/term ma
 comment on table grade_scale is 'Bulgarian integer grade scale 2-6 with labels and passing status.';
 comment on table students is 'Students. Each must have grades in at least two distinct disciplines after a completed operation.';
 comment on table teachers is 'Teachers. Each must lead at least two distinct disciplines after a completed operation.';
-comment on table disciplines is 'Each discipline belongs to one semester and has one or more teachers through DISCIPLINE_TEACHERS.';
-comment on table discipline_teachers is 'Many-to-many teaching assignments. Composite PK prevents duplicate pairs. Each discipline has at least one teacher; each teacher leads at least two distinct disciplines.';
+comment on table disciplines is 'Course catalogue. Semester belongs to the specialty curriculum, not to this catalogue.';
+comment on table curriculum is 'One course in a specialty curriculum and its semester. Each entry has one or more assigned teachers.';
+comment on table discipline_teachers is 'Teaching assignments per specialty curriculum entry. Composite PK prevents duplicate pairs. Each curriculum entry has a teacher; each teacher leads at least two distinct catalogue disciplines.';
 comment on table grades is 'One mandatory grade and date for every recorded student-discipline pair. Corrections use UPDATE.';
 
 comment on column students.faculty_number is 'Text identifier preserving leading zeroes and letters.';
@@ -197,6 +219,7 @@ comment on column students.middle_name is 'Optional middle or patronymic name.';
 comment on column teachers.phone is 'Text phone number preserving prefix, plus sign and leading zeroes.';
 comment on column semesters.term_no is 'First or second semester within the study year.';
 comment on column grades.grade_date is 'Date of the examination/grade.';
+comment on column grades.teacher_id is 'Responsible grading teacher. Must be assigned to the same discipline. Teacher sessions derive this identity from SESSION_USER.';
 comment on column grade_scale.is_passing is '0 for grade 2; 1 for grades 3 through 6.';
 
 prompt UNIVERSITY_SCHEMA_READY
