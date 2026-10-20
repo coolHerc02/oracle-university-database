@@ -11,7 +11,7 @@ public class CheckConcurrentWrites {
     }
     private static int grade(Connection c) throws SQLException {
         try (PreparedStatement s = c.prepareStatement(
-                "select grade_value from grades where faculty_number='00010001' and discipline_id=1");
+                "select grade_value from grades where faculty_number='00010001' and curriculum_id=1");
              ResultSet r = s.executeQuery()) {
             if (!r.next()) throw new SQLException("Missing seeded grade");
             return r.getInt(1);
@@ -25,7 +25,7 @@ public class CheckConcurrentWrites {
     }
     private static int assignments(Connection c) throws SQLException {
         try (Statement s=c.createStatement(); ResultSet r=s.executeQuery(
-                "select count(*) from discipline_teachers where discipline_id=1")) {
+                "select count(*) from discipline_teachers where curriculum_id=1")) {
             r.next(); return r.getInt(1);
         }
     }
