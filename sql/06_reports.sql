@@ -12,6 +12,7 @@ column specialty_name format a32
 column year_label format a10
 column discipline_name format a30
 column teacher_name format a65
+column grading_teacher_name format a35
 column academic_title format a35
 column title_name format a18
 column student_email format a30
@@ -35,7 +36,8 @@ end;
 prompt REPORT_1_ACADEMIC_TRANSCRIPT_ALL_SOURCE_FIELDS
 select faculty_number,student_name,student_email,specialty_name,year_label,
        discipline_name,semester_no,teacher_name,academic_title,teacher_phone,
-       teacher_email,grade_value,grade_label,grade_date,round(average_grade,2) average_grade
+       teacher_email,grading_teacher_id,grading_teacher_name,
+       grade_value,grade_label,grade_date,round(average_grade,2) average_grade
 from v_academic_report where faculty_number=:p_faculty_number
 order by semester_no,discipline_name,discipline_id;
 

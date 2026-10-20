@@ -6,14 +6,23 @@ PL/SQL procedure successfully completed.
 
 REPORT_1_ACADEMIC_TRANSCRIPT_ALL_SOURCE_FIELDS
 
-FACULTY_NUMB STUDENT_NAME			 STUDENT_EMAIL			SPECIALTY_NAME			 YEAR_LABEL DISCIPLINE_NAME		   SEMESTER_NO TEACHER_NAME							 ACADEMIC_TITLE 		     TEACHER_PHONE	TEACHER_EMAIL		       GRADE_VALUE GRADE_LABEL	  GRADE_DATE AVERAGE_GRADE
------------- ----------------------------------- ------------------------------ -------------------------------- ---------- ------------------------------ ----------- ----------------------------------------------------------------- ----------------------------------- ------------------ ------------------------------ ----------- -------------- ---------- -------------
-00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Английски език                           1 Анна Димитрова Колева                                             асистент                            +359000000006      teacher6@university.example              6 Отличен        2026-06-12          6.00
-00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Математика                               1 Петър Иванов Николов; Мария Петрова Георгиева                     професор; доцент                    +359000000001; +35 teacher1@university.example; t           6 Отличен        2026-06-10          6.00
-																																	     9000000002 	eacher2@university.example
+FACULTY_NUMB STUDENT_NAME			 STUDENT_EMAIL			SPECIALTY_NAME			 YEAR_LABEL DISCIPLINE_NAME		   SEMESTER_NO TEACHER_NAME							 ACADEMIC_TITLE 		     TEACHER_PHONE	TEACHER_EMAIL		       GRADING_TEACHER_ID GRADING_TEACHER_NAME		      GRADE_VALUE GRADE_LABEL	 GRADE_DATE
+------------ ----------------------------------- ------------------------------ -------------------------------- ---------- ------------------------------ ----------- ----------------------------------------------------------------- ----------------------------------- ------------------ ------------------------------ ------------------ ----------------------------------- ----------- -------------- ----------
+AVERAGE_GRADE
+-------------
+00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Английски език                           1 Анна Димитрова Колева                                             асистент                            +359000000006      teacher6@university.example                     6 Анна Димитрова Колева                         6 Отличен        2026-06-12
+	 6.00
 
-00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Алгоритми                                2 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен        2026-06-11          6.00
-00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Дискретна математика                     2 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен        2026-06-13          6.00
+00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Математика                               1 Петър Иванов Николов; Мария Петрова Георгиева                     професор; доцент                    +359000000001; +35 teacher1@university.example; t                  1 Петър Иванов Николов                          6 Отличен        2026-06-10
+																																	     9000000002 	eacher2@university.example
+	 6.00
+
+00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Алгоритми                                2 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example                     1 Петър Иванов Николов                          6 Отличен        2026-06-11
+	 6.00
+
+00010001     Александър Иванов Петров            student1@university.example    Компютърни науки                 I курс     Дискретна математика                     2 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example                     1 Петър Иванов Николов                          6 Отличен        2026-06-13
+	 6.00
+
 
 REPORT_2_STUDENT_AVERAGES_FILTERED_BY_SPECIALTY_AND_YEAR
 
@@ -46,8 +55,8 @@ REPORT_5_TEACHER_RANKING_BY_DISCIPLINE_COUNT
 
 RANK_POSITION TEACHER_ID TEACHER_NAME							   TITLE_NAME	      DISCIPLINE_COUNT
 ------------- ---------- ----------------------------------------------------------------- ------------------ ----------------
-            1          2 Мария Петрова Георгиева                                           доцент                            4
-            1          1 Петър Иванов Николов                                              професор                          4
+            1          2 Мария Петрова Георгиева                                           доцент                            5
+            1          1 Петър Иванов Николов                                              професор                          5
             2          6 Анна Димитрова Колева                                             асистент                          2
             2          5 Георги Тодоров Петров                                             професор                          2
             2          4 Елена Николова Стоянова                                           доцент                            2
@@ -71,21 +80,19 @@ PLSQL_REF_CURSOR_ACADEMIC_REPORT
 PL/SQL procedure successfully completed.
 
 
-FACULTY_NUMB STUDENT_NAME			 STUDENT_EMAIL			SPECIALTY_ID SPECIALTY_NAME		      STUDY_YEAR_NO YEAR_LABEL DISCIPLINE_ID DISCIPLINE_NAME		    SEMESTER_NO TEACHER_COUNT TEACHER_NAME							ACADEMIC_TITLE			    TEACHER_PHONE      TEACHER_EMAIL		      GRADE_VALUE GRADE_LABEL	 GRADE_DATE
------------- ----------------------------------- ------------------------------ ------------ -------------------------------- ------------- ---------- ------------- ------------------------------ ----------- ------------- ----------------------------------------------------------------- ----------------------------------- ------------------ ------------------------------ ----------- -------------- ----------
-IS_PASSING AVERAGE_GRADE
----------- -------------
-00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                13 Английски език                           1             1 Анна Димитрова Колева                                             асистент                            +359000000006      teacher6@university.example              6 Отличен        2026-06-12
-	 1	    6.00
+FACULTY_NUMB STUDENT_NAME			 STUDENT_EMAIL			SPECIALTY_ID SPECIALTY_NAME		      STUDY_YEAR_NO YEAR_LABEL CURRICULUM_ID DISCIPLINE_ID DISCIPLINE_NAME		  SEMESTER_NO TEACHER_COUNT TEACHER_NAME						      ACADEMIC_TITLE			  TEACHER_PHONE      TEACHER_EMAIL		    GRADE_VALUE GRADE_LABEL
+------------ ----------------------------------- ------------------------------ ------------ -------------------------------- ------------- ---------- ------------- ------------- ------------------------------ ----------- ------------- ----------------------------------------------------------------- ----------------------------------- ------------------ ------------------------------ ----------- --------------
+GRADE_DATE IS_PASSING GRADING_TEACHER_ID GRADING_TEACHER_NAME		     AVERAGE_GRADE
+---------- ---------- ------------------ ----------------------------------- -------------
+00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                13            13 Английски език                           1             1 Анна Димитрова Колева                                             асистент                            +359000000006      teacher6@university.example              6 Отличен
+2026-06-12          1                  6 Анна Димитрова Колева                        6.00
 
-00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 1 Математика                               1             2 Петър Иванов Николов; Мария Петрова Георгиева                     професор; доцент                    +359000000001; +35 teacher1@university.example; t           6 Отличен        2026-06-10
-																																								    9000000002	       eacher2@university.example
-	 1	    6.00
+00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 1             1 Математика                               1             2 Петър Иванов Николов; Мария Петрова Георгиева                     професор; доцент                    +359000000001; +35 teacher1@university.example; t           6 Отличен
+																																										  9000000002	     eacher2@university.example
+2026-06-10          1                  1 Петър Иванов Николов                         6.00
 
-00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 2 Алгоритми                                2             1 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен        2026-06-11
-	 1	    6.00
+00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 2             2 Алгоритми                                2             1 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен
+2026-06-11          1                  1 Петър Иванов Николов                         6.00
 
-00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 3 Дискретна математика                     2             1 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен        2026-06-13
-	 1	    6.00
-
-
+00010001     Александър Иванов Петров            student1@university.example               1 Компютърни науки                             1 I курс                 3             3 Дискретна математика                     2             1 Петър Иванов Николов                                              професор                            +359000000001      teacher1@university.example              6 Отличен
+2026-06-13          1                  1 Петър Иванов Николов                         6.00
