@@ -1,0 +1,19 @@
+PASS: GRADES.teacher_id is mandatory
+PASS: Composite assignment FK is enabled and validated
+PASS: Composite FK column order is discipline then teacher
+PASS: FK points to DISCIPLINE_TEACHERS, not just TEACHERS
+PASS: One grade per student-course remains the primary key
+PASS: Teacher is not added to the grade primary key
+PASS: Every grade belongs to a valid teaching assignment
+PASS: All sixty-four sample grades retained
+PASS: Academic report still has one row per grade
+PASS: Academic report identifies the grading teacher
+PASS: All schema objects are valid
+PASS: No compilation errors
+PASS: Even the owner cannot store an unassigned teacher in a grade
+PASS: Assignment referenced by grades cannot be removed
+PASS: Rejected operations preserve all grade values, dates and authors
+PASS: Write guard is closed after rejected operations
+GRADE_TEACHER_VALIDATION_PASSED: 16 checks
+
+PL/SQL procedure successfully completed.
