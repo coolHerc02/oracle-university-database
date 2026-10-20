@@ -1,0 +1,28 @@
+PASS: Eleven normalized tables
+PASS: Thirty-nine physical columns
+PASS: Twelve foreign keys
+PASS: Semester removed from catalogue
+PASS: No redundant catalogue discipline column in grades or assignments
+PASS: All objects valid
+PASS: No compilation errors
+PASS: Original 60 grades plus four fictional example grades
+PASS: Original 18 students plus SIT/KST examples
+PASS: Exactly one report row per grade
+PASS: One SA catalogue course has distinct SIT/6 and KST/4 curricula
+PASS: Same teacher teaches SA in both specialty semesters
+PASS: KST co-teacher has no SIT authorization
+PASS: Every grade curriculum matches the student specialty
+PASS: Every grade points to its authorized teaching assignment
+PASS: Owner API also rejects a curriculum from another specialty
+PASS: One catalogue discipline occurs once per specialty curriculum
+PASS: Specialty change cannot leave grades in the previous specialty
+PASS: Failed changes retain SIT semester six
+PASS: Changing SIT semester never changes KST
+PASS: Caller rollback restores the SIT semester
+PASS: Teacher minimum counts distinct courses, not specialty assignments
+PASS: Every curriculum entry has a teacher
+PASS: Every student retains two or more grades
+PASS: Write guard closed after failures
+CURRICULUM_VALIDATION_PASSED: 25 checks
+
+PL/SQL procedure successfully completed.
