@@ -1,6 +1,6 @@
-PASS: 1CFB6451-908CFC3FAB15 ten boxes do not overlap
-PASS: 1CFB6451-908CFC3FAB15 ten connectors meet box borders and avoid box interiors
-PASS: logical ten boxes do not overlap
-PASS: logical ten connectors meet box borders and avoid box interiors
-PASS: all ten logical relations have directional names
+PASS: rel/*/subviews/*.xml eleven boxes do not overlap
+PASS: rel/*/subviews/*.xml twelve connectors meet borders and avoid box interiors
+PASS: logical/subviews/*.xml eleven boxes do not overlap
+PASS: logical/subviews/*.xml twelve connectors meet borders and avoid box interiors
+PASS: all twelve logical relations have directional names
 NATIVE_LAYOUT_VALIDATION_PASSED

@@ -83,8 +83,8 @@ for path in model_root.glob("rel/*/table/*/*.xml"):
     for constraint in table.findall("./tableCheckConstraints/tableCheckConstraint"):
         model_checks[(name, upper(constraint.get("name")))] = constraint.findtext("rule", "")
 
-check(set(model_tables) == set(tables), "All 10 table names match Oracle")
-check(set(model_columns) == set(columns), "All 35 columns match Oracle")
+check(set(model_tables) == set(tables), "All 11 table names match Oracle")
+check(set(model_columns) == set(columns), "All 39 columns match Oracle")
 logical_types = {"LOGDT019": "NUMBER", "LOGDT024": "VARCHAR2", "LOGDT007": "DATE"}
 for key, expected in columns.items():
     column = model_columns.get(key)
@@ -106,11 +106,11 @@ for key, expected in columns.items():
         scale = domain.findtext("dataTypeScale", "0")
         check(precision in ("", "0") and scale in ("", "0"), ".".join(key) + " unscaled NUMBER")
 
-check(model_keys == keys, "All 10 PK and 5 UNIQUE keys match, including column order")
-check(set(model_checks) == set(checks), "All 23 named CHECK constraints present")
+check(model_keys == keys, "All 11 PK and 6 UNIQUE keys match, including column order")
+check(set(model_checks) == set(checks), "All 24 named CHECK constraints present")
 for key, expected in checks.items():
     check(norm_sql(model_checks.get(key)) == norm_sql(expected), ".".join(key) + " CHECK expression")
-check(non_fk_indexes == 22, "22 PK/UNIQUE/explicit indexes; FK diagram placeholders excluded")
+check(non_fk_indexes == 25, "25 PK/UNIQUE/explicit indexes; FK diagram placeholders excluded")
 
 model_fk = {}
 for path in model_root.glob("rel/*/foreignkey/*/*.xml"):
@@ -122,7 +122,7 @@ for path in model_root.glob("rel/*/foreignkey/*/*.xml"):
     parent_columns = index_ids[fk.findtext("referredKeyID")]
     model_fk[key] = (child_columns, parent, parent_columns)
     check(fk.findtext("mandatory") == "true", key[1] + " mandatory child reference")
-check(model_fk == foreign_keys, "All 10 FK match child/parent tables and column mappings")
+check(model_fk == foreign_keys, "All 12 FK match child/parent tables and column mappings")
 
 entities = list(model_root.glob("logical/entity/*/*.xml"))
 relations = list(model_root.glob("logical/relation/*/*.xml"))
@@ -136,12 +136,12 @@ entity_roots = [ET.parse(p).getroot() for p in entities]
 entity_names = {logical_table_name(e) for e in entity_roots}
 lines.append("Logical model: " + str(len(entities)) + " entities, " + str(len(relations)) + " relations")
 if args.require_logical or entities:
-    check(entity_names == set(tables), "Logical entities match all 10 tables")
-    check(len(relations) == 10, "Logical model has 10 relations")
+    check(entity_names == set(tables), "Logical entities match all 11 tables")
+    check(len(relations) == 12, "Logical model has 12 relations")
     entity_ids = {e.get("id"): logical_table_name(e) for e in entity_roots}
     logical_columns = {(logical_table_name(e), upper(a.get("name")).replace(" ", "_"))
                        for e in entity_roots for a in e.findall("./attributes/Attribute")}
-    check(logical_columns == set(columns), "All 35 logical attributes match columns")
+    check(logical_columns == set(columns), "All 39 logical attributes match columns")
     attributes = {(logical_table_name(e), upper(a.get("name")).replace(" ", "_")): a
                   for e in entity_roots for a in e.findall("./attributes/Attribute")}
     for key, expected in columns.items():
@@ -199,7 +199,7 @@ if args.require_logical or entities:
         check(n is not None and n.get('containerID')==f.get('containerWithKeyObject') and
               n.get('refContainerID')==f.findtext('referredTableID'),f.get('name')+' native FK registry endpoints')
     physical_tables={p.stem:ET.parse(p).getroot() for p in model_root.glob('rel/*/phys/*/Table/seg_0/*.xml')}
-    check(set(physical_tables)==set(table_ids),'Oracle physical proxies match all ten relational tables')
+    check(set(physical_tables)==set(table_ids),'Oracle physical proxies match all eleven relational tables')
     for tid,name in table_ids.items():
         actual={c.get('name').upper() for c in physical_tables[tid].findall('./columnProxies/ColumnProxy')}
         expected={c for table,c in columns if table==name}
@@ -208,9 +208,9 @@ if args.require_logical or entities:
     pairs={(n.get('lID'),n.get('rID')) for n in mapping.findall('./mappings/CM')}
     for e in entity_roots:
         check((e.get('id'),e.findtext('generatorID')) in pairs,logical_table_name(e)+' engineering map')
-    discipline_relation=next(ET.parse(p).getroot() for p in relations if ET.parse(p).getroot().get('name').upper()=='DT_DISCIPLINE_FK')
+    discipline_relation=next(ET.parse(p).getroot() for p in relations if ET.parse(p).getroot().get('name').upper()=='DT_CURRICULUM_FK')
     check(discipline_relation.findtext('optionalSource')=='false' and '1..N' in discipline_relation.findtext('nameOnSource',''),
-          'Every discipline requires one or more teaching assignments')
+          'Every curriculum entry requires one or more teaching assignments')
 else:
     lines.append("PENDING: Reverse engineering into the logical model")
 lines.append("This check validates native structure only. Native GUI appearance and separately rendered diagrams need visual review.")
