@@ -1,0 +1,11 @@
+PASS: ACADEMIC_TITLES all original rows and fields retained
+PASS: DISCIPLINES all original rows and fields retained
+PASS: DISCIPLINE_TEACHERS all original rows and fields retained
+PASS: GRADES all original rows and fields retained
+PASS: GRADE_SCALE all original rows and fields retained
+PASS: SEMESTERS all original rows and fields retained
+PASS: SPECIALTIES all original rows and fields retained
+PASS: STUDENTS all original rows and fields retained
+PASS: STUDY_YEARS all original rows and fields retained
+PASS: TEACHERS all original rows and fields retained
+GRADE_TEACHER_DATA_PRESERVATION_PASSED: 10 checks

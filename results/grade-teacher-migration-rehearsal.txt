@@ -1,0 +1,340 @@
+Temporary verification schema: UNIV_VERIFY_1020121125
+Previous M:N schema built, then upgraded with the grade-teacher composite foreign key. Only the schema-name guard was adapted for this isolated rehearsal.
+
+
+PL/SQL procedure successfully completed.
+
+
+Table altered.
+
+
+PL/SQL procedure successfully completed.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+View created.
+
+
+Package created.
+
+
+Package body created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+
+Trigger created.
+
+PROGRAMS_COMPILED_OK
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Trigger created.
+
+LESSON_PROGRAMS_COMPILED_OK: 14 standalone procedures, 1 AFTER INSERT trigger
+
+PL/SQL procedure successfully completed.
+
+
+Package created.
+
+
+Package body created.
+
+TEACHER_GRADING_COMPILED
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Table altered.
+
+
+Index dropped.
+
+
+Index created.
+
+
+Comment created.
+
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+
+PL/SQL procedure successfully completed.
+
+GRADE_TEACHER_MIGRATION_COMPLETED
+PASS 01: Ten project tables
+PASS 02: Ten foreign keys
+PASS 03: All schema objects VALID
+PASS 04: No compilation errors
+PASS 05: Eighteen seeded students
+PASS 06: Six seeded teachers
+PASS 07: Fourteen seeded disciplines
+PASS 08: Sixty seeded grades
+PASS 09: Every student has at least two distinct disciplines
+PASS 10: Every teacher leads at least two disciplines
+PASS 11: Leading zeroes and Cyrillic retained
+PASS 12: Reject teacher with one discipline (expected -20030, actual -20030)
+PASS 13: Reject student with one discipline (expected -20031, actual -20031)
+AFTER INSERT: student=TEST-DUP, discipline=1, grade=4 (transaction pending)
+PASS 14: Reject duplicate student-discipline pair (expected -1, actual -1)
+PASS 15: Failed create_student rolled back all its rows
+PASS 16: Reject duplicate faculty number (expected -1, actual -1)
+PASS 17: Reject missing specialty (expected -2291, actual -2291)
+PASS 18: Reject fractional grade without rounding (expected -2291, actual -2291)
+PASS 19: Reject grade outside scale (expected -2291, actual -2291)
+PASS 20: Reject null grade date (expected -1407, actual -1407)
+PASS 21: CHECK rejects invalid scale value (expected -2290, actual -2290)
+PASS 22: CHECK rejects invalid semester mapping (expected -2290, actual -2290)
+PASS 23: Reject invalid email form (expected -2290, actual -2290)
+PASS 24: Direct core DML is guarded (expected -20020, actual -20020)
+PASS 25: Referenced grading assignment cannot be replaced (expected -2292,
+actual -2292)
+PASS 26: Rejected reassignment restored original teacher
+PASS 27: Reject grade for missing student (expected -2291, actual -2291)
+PASS 28: Reject grade for missing discipline (expected -2291, actual -2291)
+PASS 29: Reject discipline with missing teacher (expected -2291, actual -2291)
+PASS 30: Reject discipline with missing semester (expected -2291, actual -2291)
+PASS 31: Reject teacher with missing academic title (expected -2291, actual
+-2291)
+PASS 32: Write guard reset after failures
+PASS 33: Academic average matches hand calculation
+PASS 34: Equal averages share DENSE_RANK position
+PASS 35: Next distinct average has dense rank two
+PASS 36: Failed report matches two expected mathematics students
+PASS 37: Teacher counts total distinct assignments independently of grades
+PASS 38: Grade correction changes average from six to five
+PASS 39: Grade correction changes ranking
+PASS 40: Caller rollback restores original average
+AFTER INSERT: student=TEST-RENAME, discipline=1, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, discipline=2, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, discipline=3, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, discipline=13, grade=6 (transaction pending)
+PASS 41: Faculty number correction preserves all grades
+PASS 42: Old faculty number removed consistently during correction
+PASS 43: Teacher and two disciplines created atomically
+PASS 44: Validation leaves seed student count unchanged
+PASS 45: Validation leaves seed teacher count unchanged
+PASS 46: Validation leaves seed discipline count unchanged
+PASS 47: Validation leaves seed grade count unchanged
+VALIDATION_PASSED: 47 checks
+
+PL/SQL procedure successfully completed.
+
+
+Rollback complete.
+
+PASS 1: Fourteen standalone procedures VALID
+PASS 2: AFTER INSERT row trigger enabled
+PASS 3: BEFORE INSERT sequence trigger supplies lookup ID
+PASS 4: TEACHER_INS creates two distinct disciplines atomically
+PASS 5: TEACHER_UPD changes contact data
+AFTER INSERT: student=LESSON-STUDENT, discipline=29, grade=4 (transaction
+pending)
+AFTER INSERT: student=LESSON-STUDENT, discipline=30, grade=5 (transaction
+pending)
+PASS 6: STUDENT_INS creates student and two grades
+PASS 7: AFTER trigger reports actual inserted grades
+PASS 8: STUDENT_UPD corrects names and email
+PASS 9: DISCIPLINE_INS adds a discipline
+PASS 10: DISCIPLINE_UPD changes name and semester
+AFTER INSERT: student=LESSON-STUDENT, discipline=31, grade=6 (transaction
+pending)
+PASS 11: GRADE_INS adds one new student-discipline pair
+PASS 12: GRADE_UPD corrects existing value and date
+PASS 13: GRADE_INS refuses duplicate pair (expected -20061, actual -20061)
+PASS 14: Refused INSERT does not overwrite grade
+PASS 15: GRADE_UPD refuses missing pair (expected -20062, actual -20062)
+PASS 16: Standalone procedure rejects fractional grade (expected -2291, actual
+-2291)
+PASS 17: Standalone procedure rejects NULL grade date (expected -1407, actual
+-1407)
+PASS 18: Failed UPDATE restores previous value and date
+AFTER INSERT: student=LESSON-DUP, discipline=29, grade=4 (transaction pending)
+PASS 19: STUDENT_INS rejects repeated discipline atomically (expected -1, actual
+-1)
+PASS 20: Failed student insertion leaves no partial student
+PASS 21: Explicit cursor reports missing student (expected -20043, actual
+-20043)
+Student: LESSON-STUDENT LESSON Updated
+Specialty: Компютърни науки; I курс
+Average: 4.67
+Semester 1: LESSON discipline 1 | grade 4 | 2026-06-10
+Semester 2: LESSON discipline 2 | grade 5 | 2026-06-11
+Semester 4: LESSON updated discipline | grade 5 | 2026-06-13
+PASS 22: OPEN/FETCH/CLOSE cursor prints ordered academic report and average
+29 | LESSON discipline 1 | semester 1
+30 | LESSON discipline 2 | semester 2
+31 | LESSON updated discipline | semester 4
+PASS 23: FOR cursor lists teacher disciplines
+00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
+Student matches: 1
+PASS 24: LIKE cursor finds Cyrillic student keyword
+Student matches: 0
+PASS 25: LIKE cursor treats percent as literal text
+31 | LESSON updated discipline | semester 4 | LESSON Updated
+Discipline matches: 1
+PASS 26: LIKE cursor finds discipline keyword
+PASS 27: Teacher cursor rejects missing teacher (expected -20045, actual -20045)
+PASS 28: Write guard inactive after successful and failed procedures
+PASS 29: ROLLBACK restores eighteen seed students
+PASS 30: ROLLBACK restores six seed teachers
+PASS 31: ROLLBACK restores fourteen seed disciplines
+PASS 32: ROLLBACK restores sixty seed grades
+PASS 33: ROLLBACK removes temporary lookup
+PASS 34: No Oracle compilation errors
+LESSON_VALIDATION_PASSED: 34 checks
+
+PL/SQL procedure successfully completed.
+
+PASS 1: Sixteen seeded teaching assignments
+PASS 2: Discipline no longer contains a single-teacher column
+PASS 3: Composite assignment PK has ordered discipline and teacher columns
+PASS 4: Two seeded disciplines have multiple teachers
+PASS 5: Every discipline has at least one teacher
+PASS 6: Every teacher leads at least two distinct disciplines
+PASS 7: Student average remains six
+PASS 8: Academic report has one row per grade
+PASS 9: Academic row lists both teachers without repeating the grade
+PASS 10: Failed students are not duplicated by teachers
+PASS 11: Teacher ranking counts assignments, not grade joins
+PASS 12: Duplicate assignment is rejected (expected -1, actual -1)
+PASS 13: Duplicate refusal preserves all assignments
+PASS 14: Direct assignment INSERT guarded (expected -20020, actual -20020)
+PASS 15: Direct assignment UPDATE guarded (expected -20020, actual -20020)
+PASS 16: Direct assignment DELETE guarded (expected -20020, actual -20020)
+PASS 17: Missing teacher rejected (expected -2291, actual -2291)
+PASS 18: Missing discipline rejected (expected -2291, actual -2291)
+PASS 19: Missing assignment reported (expected -20072, actual -20072)
+PASS 20: Second teacher can be removed while minima hold
+PASS 21: Changing teacher list preserves transcript grain and average
+PASS 22: Assignment referenced by grades cannot be removed (expected -2292,
+actual -2292)
+PASS 23: Last-teacher rejection restores assignment
+PASS 24: Grading teacher assignment is protected by FK (expected -2292, actual
+-2292)
+PASS 25: Referenced replacement rolls back atomically (expected -2292, actual
+-2292)
+PASS 26: Rejected replacement preserves original teacher
+PASS 27: Standalone assignment INSERT succeeds
+PASS 28: Standalone assignment DELETE succeeds
+PASS 29: New teacher can join two existing disciplines
+PASS 30: Joining existing disciplines creates no duplicate disciplines
+PASS 31: CLOB teacher aggregation preserves ampersand text
+PASS 32: Repeated discipline in new teacher bundle rejected (expected -1, actual
+-1)
+PASS 33: Failed bundle leaves no partial teacher
+PASS 34: Existing-discipline bundle needs at least two (expected -20030, actual
+-20030)
+PASS 35: NULL discipline list rejected (expected -20030, actual -20030)
+PASS 36: Missing discipline rolls back teacher bundle (expected -2291, actual
+-2291)
+PASS 37: New teacher minimum remains enforced (expected -20041, actual -20041)
+PASS 38: Discipline metadata update preserves all its teachers
+PASS 39: Teacher list safely exceeds VARCHAR2/LISTAGG limit
+PASS 40: Many teachers still leave four academic rows and average six
+PASS 41: Write guard reset after successes and failures
+PASS 42: Rollback restores sixteen assignments
+PASS 43: Rollback restores six teachers
+PASS 44: Rollback restores fourteen disciplines
+PASS 45: Rollback preserves sixty grades
+PASS 46: Rollback preserves eighteen students
+PASS 47: No compilation errors
+MANY_TEACHERS_VALIDATION_PASSED: 47 checks
+
+PL/SQL procedure successfully completed.
+
+FULL_BUILD_COMPLETED
+
+
+User dropped.
+
+OWN_TEMPORARY_SCHEMA_REMOVED
+
+PL/SQL procedure successfully completed.
