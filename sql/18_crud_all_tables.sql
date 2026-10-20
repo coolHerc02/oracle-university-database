@@ -1,5 +1,5 @@
 -- C=INSERT, R=SELECT, U=UPDATE, D=DELETE: one actual operation of each kind
--- for all ten tables. Protected tables are changed through UNIVERSITY_API.
+-- for all eleven tables. Protected tables are changed through UNIVERSITY_API.
 -- Run with F5 in SQL Developer after installing the current 02_programs.sql.
 -- No COMMIT or DDL. Own changes are rolled back; caller's earlier work is kept.
 -- Sequences advance normally even when table changes are rolled back.
@@ -10,7 +10,7 @@ whenever sqlerror exit sql.sqlcode rollback
 declare
     l_checks pls_integer:=0;
     l_id number; l_year number; l_sem number; l_title number; l_specialty number;
-    l_teacher number; l_other number; l_fixture_teacher number; l_discipline number;
+    l_teacher number; l_other number; l_fixture_teacher number; l_discipline number; l_curriculum number; l_temp_specialty number;
     l_courses sys.odcinumberlist;
     l_grades university_api.t_grade_list;
     l_student varchar2(20):='CRUD_'||substr(rawtohex(sys_guid()),1,15);
@@ -34,9 +34,10 @@ declare
         l_tables(6):='STUDENTS'; l_order(6):='faculty_number';
         l_tables(7):='TEACHERS'; l_order(7):='teacher_id';
         l_tables(8):='DISCIPLINES'; l_order(8):='discipline_id';
-        l_tables(9):='DISCIPLINE_TEACHERS'; l_order(9):='discipline_id,teacher_id';
-        l_tables(10):='GRADES'; l_order(10):='faculty_number,discipline_id';
-        for i in 1..10 loop
+        l_tables(9):='DISCIPLINE_TEACHERS'; l_order(9):='curriculum_id,teacher_id';
+        l_tables(10):='GRADES'; l_order(10):='faculty_number,curriculum_id';
+        l_tables(11):='CURRICULUM'; l_order(11):='curriculum_id';
+        for i in 1..11 loop
             l_before(i):=dbms_xmlgen.getxml('select * from '||l_tables(i)||' order by '||l_order(i));
         end loop;
     end;
@@ -44,7 +45,7 @@ begin
     if user<>'UNIVERSITY_PROJECT' then raise_application_error(-20000,'Use UNIVERSITY_PROJECT.'); end if;
     savepoint crud_demo_start;
     lock table students,teachers,disciplines,discipline_teachers,grades,
-        specialties,academic_titles,study_years,semesters,grade_scale in exclusive mode nowait;
+        specialties,academic_titles,study_years,semesters,grade_scale,curriculum in exclusive mode nowait;
     snapshot_before;
     select min(specialty_id) into l_specialty from specialties;
     select min(title_id) into l_title from academic_titles;
@@ -109,7 +110,7 @@ begin
     -- In a savepoint, move references 6 -> 5, free 6, and demonstrate CRUD.
     -- Restore BOTH the original scale row and grades immediately afterwards.
     savepoint crud_scale_fixture;
-    for g in (select faculty_number,discipline_id,grade_date from grades where grade_value=6) loop
+    for g in (select g.faculty_number,c.discipline_id,g.grade_date from grades g join curriculum c on c.curriculum_id=g.curriculum_id where g.grade_value=6) loop
         university_api.set_grade(g.faculty_number,g.discipline_id,5,g.grade_date);
     end loop;
     delete from grade_scale where grade_value=6;
@@ -146,7 +147,7 @@ begin
     ok(l_n=1,'DISCIPLINES C');
     select discipline_name into l_name from disciplines where discipline_id=l_discipline;
     ok(l_name='CRUD discipline','DISCIPLINES R');
-    university_api.update_discipline(l_discipline,'CRUD discipline updated',l_sem);
+    university_api.update_discipline(l_discipline,'CRUD discipline updated');
     select discipline_name into l_name from disciplines where discipline_id=l_discipline;
     ok(l_name='CRUD discipline updated','DISCIPLINES U');
     university_api.delete_discipline(l_discipline);
@@ -171,15 +172,15 @@ begin
 
     -- GRADES: third grade can be deleted while the student retains two.
     grade_ins(l_student,l_courses(3),4,date '2026-10-13');
-    select count(*) into l_n from grades where faculty_number=l_student and discipline_id=l_courses(3);
+    select count(*) into l_n from grades where faculty_number=l_student and curriculum_id=university_api.curriculum_for(l_student,l_courses(3));
     ok(l_n=1,'GRADES C');
-    select grade_value into l_n from grades where faculty_number=l_student and discipline_id=l_courses(3);
+    select grade_value into l_n from grades where faculty_number=l_student and curriculum_id=university_api.curriculum_for(l_student,l_courses(3));
     ok(l_n=4,'GRADES R');
     grade_upd(l_student,l_courses(3),5,date '2026-10-14');
-    select grade_value into l_n from grades where faculty_number=l_student and discipline_id=l_courses(3);
+    select grade_value into l_n from grades where faculty_number=l_student and curriculum_id=university_api.curriculum_for(l_student,l_courses(3));
     ok(l_n=5,'GRADES U');
     university_api.delete_grade(l_student,l_courses(3));
-    select count(*) into l_n from grades where faculty_number=l_student and discipline_id=l_courses(3);
+    select count(*) into l_n from grades where faculty_number=l_student and curriculum_id=university_api.curriculum_for(l_student,l_courses(3));
     ok(l_n=0,'GRADES D');
     university_api.delete_student(l_student);
     select count(*) into l_n from students where faculty_number=l_student;
@@ -192,30 +193,46 @@ begin
         sys.odcinumberlist(l_courses(1),l_courses(2)),l_fixture_teacher);
     select min(teacher_id) into l_other from teachers t
     where t.teacher_id<>l_fixture_teacher and not exists
-        (select 1 from discipline_teachers dt where dt.teacher_id=t.teacher_id and dt.discipline_id=l_courses(3));
+        (select 1 from discipline_teachers dt where dt.teacher_id=t.teacher_id and dt.curriculum_id=(select curriculum_id from curriculum where specialty_id=l_specialty and discipline_id=l_courses(3)));
     if l_other is null then raise_application_error(-20802,'No free co-teacher for this demonstration.'); end if;
     university_api.assign_teacher(l_courses(3),l_fixture_teacher);
-    select count(*) into l_n from discipline_teachers where discipline_id=l_courses(3) and teacher_id=l_fixture_teacher;
+    select count(*) into l_n from discipline_teachers where curriculum_id=(select curriculum_id from curriculum where specialty_id=l_specialty and discipline_id=l_courses(3)) and teacher_id=l_fixture_teacher;
     ok(l_n=1,'DISCIPLINE_TEACHERS C');
-    select teacher_id into l_n from discipline_teachers where discipline_id=l_courses(3) and teacher_id=l_fixture_teacher;
+    select teacher_id into l_n from discipline_teachers where curriculum_id=(select curriculum_id from curriculum where specialty_id=l_specialty and discipline_id=l_courses(3)) and teacher_id=l_fixture_teacher;
     ok(l_n=l_fixture_teacher,'DISCIPLINE_TEACHERS R');
     university_api.replace_teacher(l_courses(3),l_fixture_teacher,l_other);
-    select count(*) into l_n from discipline_teachers where discipline_id=l_courses(3) and teacher_id=l_other;
+    select count(*) into l_n from discipline_teachers where curriculum_id=(select curriculum_id from curriculum where specialty_id=l_specialty and discipline_id=l_courses(3)) and teacher_id=l_other;
     ok(l_n=1,'DISCIPLINE_TEACHERS U');
     university_api.unassign_teacher(l_courses(3),l_other);
-    select count(*) into l_n from discipline_teachers where discipline_id=l_courses(3) and teacher_id=l_other;
+    select count(*) into l_n from discipline_teachers where curriculum_id=(select curriculum_id from curriculum where specialty_id=l_specialty and discipline_id=l_courses(3)) and teacher_id=l_other;
     ok(l_n=0,'DISCIPLINE_TEACHERS D');
     university_api.delete_teacher(l_fixture_teacher);
 
+
+    -- CURRICULUM: a course may have different semesters in different specialties.
+    insert into specialties(specialty_name) values('CRUD curriculum fixture') returning specialty_id into l_temp_specialty;
+    university_api.add_curriculum(l_temp_specialty,l_courses(1),1,l_teacher,l_curriculum);
+    select count(*) into l_n from curriculum where curriculum_id=l_curriculum;
+    ok(l_n=1,'CURRICULUM C');
+    select semester_no into l_n from curriculum where curriculum_id=l_curriculum;
+    ok(l_n=1,'CURRICULUM R');
+    university_api.update_curriculum(l_curriculum,2);
+    select semester_no into l_n from curriculum where curriculum_id=l_curriculum;
+    ok(l_n=2,'CURRICULUM U');
+    university_api.delete_curriculum(l_curriculum);
+    select count(*) into l_n from curriculum where curriculum_id=l_curriculum;
+    ok(l_n=0,'CURRICULUM D');
+    delete from specialties where specialty_id=l_temp_specialty;
+
     university_api.validate_rules;
-    ok(l_checks=40,'40 CRUD operations actually succeeded');
+    ok(l_checks=44,'44 CRUD operations actually succeeded');
     rollback to crud_demo_start;
-    for i in 1..10 loop
+    for i in 1..11 loop
         l_after:=dbms_xmlgen.getxml('select * from '||l_tables(i)||' order by '||l_order(i));
         ok(dbms_lob.compare(l_before(i),l_after)=0,l_tables(i)||' all rows and fields restored');
         dbms_lob.freetemporary(l_before(i)); dbms_lob.freetemporary(l_after);
     end loop;
-    dbms_output.put_line('CRUD_ALL_TABLES_PASSED: 40 operations; 10 tables; 51 checks; own changes rolled back');
+    dbms_output.put_line('CRUD_ALL_TABLES_PASSED: 44 operations; 11 tables; 56 checks; own changes rolled back');
 exception when others then
     rollback to crud_demo_start;
     raise;
