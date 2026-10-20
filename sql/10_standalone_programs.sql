@@ -13,8 +13,8 @@ create or replace procedure student_ins(
  p_number students.faculty_number%type,
  p_first students.first_name%type, p_middle students.middle_name%type, p_last students.last_name%type,
  p_specialty students.specialty_id%type, p_year students.study_year_no%type, p_email students.email%type,
- p_discipline1 grades.discipline_id%type, p_grade1 grades.grade_value%type, p_date1 grades.grade_date%type,
- p_discipline2 grades.discipline_id%type, p_grade2 grades.grade_value%type, p_date2 grades.grade_date%type
+ p_discipline1 disciplines.discipline_id%type, p_grade1 grades.grade_value%type, p_date1 grades.grade_date%type,
+ p_discipline2 disciplines.discipline_id%type, p_grade2 grades.grade_value%type, p_date2 grades.grade_date%type
 ) as
  l_grades university_api.t_grade_list;
 begin
@@ -35,8 +35,8 @@ end;
 create or replace procedure teacher_ins(
  p_first teachers.first_name%type, p_middle teachers.middle_name%type, p_last teachers.last_name%type,
  p_title teachers.title_id%type, p_phone teachers.phone%type, p_email teachers.email%type,
- p_name1 disciplines.discipline_name%type, p_semester1 disciplines.semester_no%type,
- p_name2 disciplines.discipline_name%type, p_semester2 disciplines.semester_no%type,
+ p_name1 disciplines.discipline_name%type, p_semester1 curriculum.semester_no%type,
+ p_name2 disciplines.discipline_name%type, p_semester2 curriculum.semester_no%type,
  p_teacher_id out teachers.teacher_id%type,
  p_discipline1 out disciplines.discipline_id%type, p_discipline2 out disciplines.discipline_id%type
 ) as
@@ -59,7 +59,7 @@ begin
 end;
 /
 create or replace procedure discipline_ins(
- p_name disciplines.discipline_name%type, p_semester disciplines.semester_no%type,
+ p_name disciplines.discipline_name%type, p_semester curriculum.semester_no%type,
  p_teacher teachers.teacher_id%type, p_id out disciplines.discipline_id%type
 ) as
 begin
@@ -68,7 +68,7 @@ end;
 /
 create or replace procedure discipline_upd(
  p_id disciplines.discipline_id%type, p_name disciplines.discipline_name%type,
- p_semester disciplines.semester_no%type
+ p_semester curriculum.semester_no%type default null
 ) as
 begin
  university_api.update_discipline(p_id,p_name,p_semester);
@@ -77,14 +77,14 @@ end;
 -- INSERT must reject an existing pair; UPDATE must reject a missing pair.
 -- Acquire the same writer locks before checking existence to avoid races.
 create or replace procedure grade_ins(
- p_number grades.faculty_number%type, p_discipline grades.discipline_id%type,
+ p_number grades.faculty_number%type, p_discipline disciplines.discipline_id%type,
  p_grade grades.grade_value%type, p_date grades.grade_date%type
 ) as
  l_count number;
 begin
  savepoint grade_procedure_change;
- lock table students, teachers, disciplines, discipline_teachers, grades in exclusive mode nowait;
- select count(*) into l_count from grades where faculty_number=p_number and discipline_id=p_discipline;
+ lock table students, teachers, disciplines, curriculum, discipline_teachers, grades in exclusive mode nowait;
+ select count(*) into l_count from grades where faculty_number=p_number and curriculum_id=university_api.curriculum_for(p_number,p_discipline);
  if l_count<>0 then raise_application_error(-20061,'Grade already exists; use GRADE_UPD.'); end if;
  university_api.set_grade(p_number,p_discipline,p_grade,p_date);
 exception when others then
@@ -93,14 +93,14 @@ exception when others then
 end;
 /
 create or replace procedure grade_upd(
- p_number grades.faculty_number%type, p_discipline grades.discipline_id%type,
+ p_number grades.faculty_number%type, p_discipline disciplines.discipline_id%type,
  p_grade grades.grade_value%type, p_date grades.grade_date%type
 ) as
  l_count number;
 begin
  savepoint grade_procedure_change;
- lock table students, teachers, disciplines, discipline_teachers, grades in exclusive mode nowait;
- select count(*) into l_count from grades where faculty_number=p_number and discipline_id=p_discipline;
+ lock table students, teachers, disciplines, curriculum, discipline_teachers, grades in exclusive mode nowait;
+ select count(*) into l_count from grades where faculty_number=p_number and curriculum_id=university_api.curriculum_for(p_number,p_discipline);
  if l_count=0 then raise_application_error(-20062,'Grade does not exist; use GRADE_INS.'); end if;
  university_api.set_grade(p_number,p_discipline,p_grade,p_date);
 exception when others then
@@ -161,11 +161,11 @@ end;
 create or replace procedure find_discipline(p_keywords varchar2) as
  l_pattern varchar2(4000);
  cursor cur_disciplines is
-  select d.discipline_id,d.discipline_name,d.semester_no,
+  select d.discipline_id,d.discipline_name,c.semester_no,
          dbms_lob.substr(t.teacher_name,3000,1) teacher_name
-  from disciplines d join v_discipline_teachers t on t.discipline_id=d.discipline_id
+  from disciplines d join curriculum c on c.discipline_id=d.discipline_id join v_discipline_teachers t on t.curriculum_id=c.curriculum_id
   where upper(d.discipline_name) like l_pattern escape '\'
-  order by d.semester_no,d.discipline_name,d.discipline_id;
+  order by c.semester_no,d.discipline_name,d.discipline_id;
  l_count pls_integer:=0;
 begin
  if length(p_keywords)>1000 then raise_application_error(-20063,'Keyword is too long.'); end if;
@@ -180,9 +180,9 @@ end;
 /
 create or replace procedure teacher_disciplines(p_teacher teachers.teacher_id%type) as
  cursor cur_disciplines is
-  select d.discipline_id,d.discipline_name,d.semester_no
-  from disciplines d join discipline_teachers dt on dt.discipline_id=d.discipline_id
-  where dt.teacher_id=p_teacher order by d.semester_no,d.discipline_name,d.discipline_id;
+  select d.discipline_id,d.discipline_name,c.semester_no
+  from disciplines d join curriculum c on c.discipline_id=d.discipline_id join discipline_teachers dt on dt.curriculum_id=c.curriculum_id
+  where dt.teacher_id=p_teacher order by c.semester_no,d.discipline_name,d.discipline_id;
  l_exists number;
 begin
  select count(*) into l_exists from teachers where teacher_id=p_teacher;
@@ -194,16 +194,16 @@ end;
 /
 
 create or replace procedure discipline_teacher_ins(
- p_discipline discipline_teachers.discipline_id%type,
+ p_discipline discipline_teachers.curriculum_id%type,
  p_teacher discipline_teachers.teacher_id%type
 ) as
-begin university_api.assign_teacher(p_discipline,p_teacher); end;
+begin university_api.assign_curriculum_teacher(p_discipline,p_teacher); end;
 /
 create or replace procedure discipline_teacher_del(
- p_discipline discipline_teachers.discipline_id%type,
+ p_discipline discipline_teachers.curriculum_id%type,
  p_teacher discipline_teachers.teacher_id%type
 ) as
-begin university_api.unassign_teacher(p_discipline,p_teacher); end;
+begin university_api.unassign_curriculum_teacher(p_discipline,p_teacher); end;
 /
 
 -- AFTER INSERT feedback, generated only after the row has been inserted.
@@ -213,7 +213,7 @@ after insert on grades
 for each row
 begin
  dbms_output.put_line('AFTER INSERT: student='||:new.faculty_number||
-  ', discipline='||:new.discipline_id||', grade='||:new.grade_value||' (transaction pending)');
+  ', curriculum='||:new.curriculum_id||', grade='||:new.grade_value||' (transaction pending)');
 end;
 /
 
