@@ -43,20 +43,6 @@
       <domain>6B1ECF08-FE5B-AF71-7AA5-3A12EB19978B</domain>
       <ownDataTypeParameters>,,</ownDataTypeParameters>
     </Attribute>
-    <Attribute name="semester no" id="1AB96724-771D-F6BA-CB0A-7BD486FB5A61">
-      <createdBy>User</createdBy>
-      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
-      <generatorID>9BD4137A-A875-13AA-DE2A-E6D275EDF1CD</generatorID>
-      <ownerDesignName>university</ownerDesignName>
-      <engineerTo>
-        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
-      </engineerTo>
-      <referedAttribute>3BAF6612-E9CF-388E-DCA9-22EA9AF13774</referedAttribute>
-      <use>0</use>
-      <logicalDatatype>LOGDT019</logicalDatatype>
-      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
-      <ownDataTypeParameters>,,</ownDataTypeParameters>
-    </Attribute>
   </attributes>
   <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
     <identifier id="7B2B6F56-1925-85CC-3CA1-570A9245CCE2" name="disciplines pk">

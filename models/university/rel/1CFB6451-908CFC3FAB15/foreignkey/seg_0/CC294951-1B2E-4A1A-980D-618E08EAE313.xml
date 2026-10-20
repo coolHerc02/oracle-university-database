@@ -1,17 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CC294951-1B2E-4A1A-980D-618E08EAE313" containerWithKeyObject="482E6F98-6F19-4959-94AC-F85C091ED33D" localFKIndex="B12BC54B-E132-466A-86DA-B79B45CE7499" name="dt_discipline_fk">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="CC294951-1B2E-4A1A-980D-618E08EAE313" containerWithKeyObject="482E6F98-6F19-4959-94AC-F85C091ED33D" localFKIndex="B12BC54B-E132-466A-86DA-B79B45CE7499" name="dt_curriculum_fk">
   <sourceDDLFile>university_import.sql</sourceDDLFile>
   <createdBy>User</createdBy>
   <createdTime>2026-10-06 10:52:27 UTC</createdTime>
   <ownerDesignName>university</ownerDesignName>
   <importedID>F99E53FB-6452-2E18-D5DC-E66FE0320C68</importedID>
-  <referredTableLongName>disciplines</referredTableLongName>
+  <referredTableLongName>curriculum</referredTableLongName>
   <deleteRule>NO ACTION</deleteRule>
-  <referredTableID>DF24936E-BD5C-637F-9EA7-B579796B8071</referredTableID>
-  <keyObject>200EAD05-A7B3-9C43-22DE-37EAFBFDFF0C</keyObject>
-  <referredKeyID>200EAD05-A7B3-9C43-22DE-37EAFBFDFF0C</referredKeyID>
+  <referredTableID>D9C955F5-06C8-4E18-AEBC-FB9A63CC760C</referredTableID>
+  <keyObject>DE4315F8-E466-42AE-B634-7D3F43565FD3</keyObject>
+  <referredKeyID>DE4315F8-E466-42AE-B634-7D3F43565FD3</referredKeyID>
   <mandatory>true</mandatory>
-  <refColNames>discipline_id</refColNames>
+  <refColNames>curriculum_id</refColNames>
   <transferable>true</transferable>
   <rely>false</rely>
   <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

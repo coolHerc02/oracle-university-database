@@ -17,6 +17,6 @@
   <targetEntity>3C568D34-718B-1372-270D-6EF980979BE6</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>описва оценки</nameOnSource>
-  <nameOnTarget>има стойност от скалата</nameOnTarget>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
 </Relation>

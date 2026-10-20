@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DF80BE23-6E40-4899-BF3C-162F5DF4509D" containerWithKeyObject="D9C955F5-06C8-4E18-AEBC-FB9A63CC760C" localFKIndex="6511709B-F300-4A70-B361-76ACACDC25D9" name="curriculum_specialty_fk">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>2A020A5B-5530-86E1-2C36-E3223AA860EE</importedID>
+  <referredTableLongName>specialties</referredTableLongName>
+  <deleteRule>NO ACTION</deleteRule>
+  <referredTableID>0DCD2481-E061-2D83-1706-CEF19F14DFD0</referredTableID>
+  <keyObject>E331BE80-4E43-F561-BE97-BD280A55B533</keyObject>
+  <referredKeyID>E331BE80-4E43-F561-BE97-BD280A55B533</referredKeyID>
+  <mandatory>true</mandatory>
+  <refColNames>specialty_id</refColNames>
+  <transferable>true</transferable>
+  <rely>false</rely>
+  <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

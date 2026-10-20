@@ -14,7 +14,7 @@
       <createdTime>2026-10-06 10:48:38 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>
     </ColumnProxy>
-    <ColumnProxy name="discipline_id" id="9038D43D-520F-4388-A9A1-B8341A4EA25E">
+    <ColumnProxy name="curriculum_id" id="9038D43D-520F-4388-A9A1-B8341A4EA25E">
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:48:38 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>
@@ -34,7 +34,7 @@
       <createdTime>2026-10-06 10:48:38 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>
     </ForeignKey>
-    <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="dt_discipline_fk" id="B12BC54B-E132-466A-86DA-B79B45CE7499">
+    <ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="dt_curriculum_fk" id="B12BC54B-E132-466A-86DA-B79B45CE7499">
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:48:38 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>

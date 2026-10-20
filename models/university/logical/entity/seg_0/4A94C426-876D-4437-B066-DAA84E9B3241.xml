@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4A94C426-876D-4437-B066-DAA84E9B3241" name="curriculum">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <commentInRDBMS>A course in a specific specialty and semester. Unique specialty/course; at least ONE teacher. Grades must match the student specialty.</commentInRDBMS>
+  <generatorID>D9C955F5-06C8-4E18-AEBC-FB9A63CC760C</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <adequatelyNormalized>YES</adequatelyNormalized>
+  <expectedVolumes>0</expectedVolumes>
+  <fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+  <growthPercent>0</growthPercent>
+  <growthType>Year</growthType>
+  <maxVolumes>9999999</maxVolumes>
+  <minVolumes>0</minVolumes>
+  <normalForm>Third</normalForm>
+  <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+    <Attribute name="curriculum id" id="5AB376CF-C4C6-4EC9-B7D9-F7C01D8503D0">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="specialty id" id="AC3587BC-21D0-4AFD-A870-646889198C30">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <generatorID>D84E43B7-73F4-4731-A483-3403A0B30A3D</generatorID>
+      <referedAttribute>F419C43E-D699-E1DB-536A-C6434355AEA8</referedAttribute>
+    </Attribute>
+    <Attribute name="discipline id" id="3EB00074-F6C3-447E-B045-1BAD1ED1DEE7">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <generatorID>24762094-EF98-4B57-AC91-2C1EE2755913</generatorID>
+      <referedAttribute>546EDE85-8082-2F42-D0F2-CE878D15A027</referedAttribute>
+    </Attribute>
+    <Attribute name="semester no" id="FA31A6F9-CDEB-4C81-AD1C-254BFC167B36">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <generatorID>9BD4137A-A875-13AA-DE2A-E6D275EDF1CD</generatorID>
+      <referedAttribute>3BAF6612-E9CF-388E-DCA9-22EA9AF13774</referedAttribute>
+    </Attribute>
+  </attributes>
+  <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+    <identifier id="05B587A7-3BF5-42BC-A7A9-6749ACB40C2E" name="curriculum pk">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>DE4315F8-E466-42AE-B634-7D3F43565FD3</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <pk>true</pk>
+      <usedAttributes>
+        <attributeRef>5AB376CF-C4C6-4EC9-B7D9-F7C01D8503D0</attributeRef>
+      </usedAttributes>
+    </identifier>
+    <identifier id="56AED36A-123B-4A32-BD64-5B16267357C5" name="curriculum course uq">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>66742047-C5DA-480E-A7FE-3FBD37A49588</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <pk>false</pk>
+      <usedAttributes>
+        <attributeRef>AC3587BC-21D0-4AFD-A870-646889198C30</attributeRef>
+        <attributeRef>3EB00074-F6C3-447E-B045-1BAD1ED1DEE7</attributeRef>
+      </usedAttributes>
+    </identifier>
+  </identifiers>
+</Entity>

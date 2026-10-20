@@ -17,7 +17,7 @@
   <targetEntity>3C568D34-718B-1372-270D-6EF980979BE6</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>има 2..N</nameOnSource>
-  <nameOnTarget>принадлежи на 1</nameOnTarget>
+  <nameOnSource>има 2..N оценки</nameOnSource>
+  <nameOnTarget>за 1 студент</nameOnTarget>
   <commentInRDBMS>Every student must have grades in at least TWO distinct disciplines (2..N). The composite GRADES primary key allows exactly ONE current grade per student-discipline pair. Enforced by UNIVERSITY_API and write guard triggers.</commentInRDBMS>
 </Relation>

@@ -17,6 +17,6 @@
   <targetEntity>A7788236-1D66-7223-651F-26E754E7C746</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>е титла на преподаватели</nameOnSource>
-  <nameOnTarget>има титла</nameOnTarget>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
 </Relation>

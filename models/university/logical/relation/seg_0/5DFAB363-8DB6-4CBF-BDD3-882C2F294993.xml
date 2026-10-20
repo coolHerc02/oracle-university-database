@@ -17,6 +17,6 @@
   <targetEntity>E9465718-8DE7-918F-3D6B-AC7B9ED198AA</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>включва 0..2 семестъра</nameOnSource>
-  <nameOnTarget>принадлежи към курс</nameOnTarget>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
 </Relation>

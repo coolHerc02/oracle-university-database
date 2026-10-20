@@ -18,4 +18,5 @@
   <object objectType="Sequence" objectID="C3651A62-F797-FC72-8D52-C6292B5EED24" name="specialties_seq" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.SequenceOraclev10g" propertyParentId="32076570-BF29817DFF70" />
   <object objectType="Sequence" objectID="A49461E7-8BFE-6D8A-7894-2EA14E2EFBBD" name="teachers_seq" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v10g.SequenceOraclev10g" propertyParentId="32076570-BF29817DFF70" />
   <object objectType="Table" objectID="482E6F98-6F19-4959-94AC-F85C091ED33D" name="discipline_teachers" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" propertyParentId="32076570-BF29817DFF70" />
+  <object objectType="Table" objectID="D9C955F5-06C8-4E18-AEBC-FB9A63CC760C" name="curriculum" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" propertyParentId="32076570-BF29817DFF70" />
 </oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>

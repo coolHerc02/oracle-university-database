@@ -17,7 +17,7 @@
   <targetEntity>08017D41-A7A4-49A6-8E6A-A64E3A314A23</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>води 2..N дисциплини</nameOnSource>
+  <nameOnSource>води 2..N различни дисциплини</nameOnSource>
   <nameOnTarget>за 1 преподавател</nameOnTarget>
   <commentInRDBMS>Teaching M:N association. Each discipline has at least ONE teacher (1..N). Each teacher leads at least TWO distinct disciplines (2..N). The composite key prevents repeated assignments.</commentInRDBMS>
 </Relation>

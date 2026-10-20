@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="disciplines_semester_fk" directorySegmentName="seg_0" id="9BD4137A-A875-13AA-DE2A-E6D275EDF1CD">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="curriculum_semester_fk" directorySegmentName="seg_0" id="9BD4137A-A875-13AA-DE2A-E6D275EDF1CD">
   <createdBy>User</createdBy>
   <createdTime>2026-10-06 10:57:01 UTC</createdTime>
   <generatorID>DCEC6D86-F9DF-D6BD-3F1B-FB514E361B18</generatorID>
@@ -14,9 +14,9 @@
   <sourceCardinality>1</sourceCardinality>
   <sourceEntity>E9465718-8DE7-918F-3D6B-AC7B9ED198AA</sourceEntity>
   <targetCardinalityString>*</targetCardinalityString>
-  <targetEntity>A08F57AD-DE97-A646-8978-268D88D7089F</targetEntity>
+  <targetEntity>4A94C426-876D-4437-B066-DAA84E9B3241</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>включва дисциплини</nameOnSource>
-  <nameOnTarget>се изучава през семестър</nameOnTarget>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
 </Relation>

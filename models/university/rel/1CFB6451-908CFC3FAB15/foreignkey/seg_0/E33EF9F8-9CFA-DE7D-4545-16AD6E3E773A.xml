@@ -1,18 +1,18 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" containerWithKeyObject="ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16" localFKIndex="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8" name="grades_discipline_fk">
-<sourceDDLFile>university_import.sql</sourceDDLFile>
-<createdBy>User</createdBy>
-<createdTime>2026-10-06 10:52:27 UTC</createdTime>
-<ownerDesignName>university</ownerDesignName>
-<importedID>53D30CFD-D2D3-351D-1175-8EE87365375B</importedID>
-<referredTableLongName>disciplines</referredTableLongName>
-<deleteRule>NO ACTION</deleteRule>
-<referredTableID>DF24936E-BD5C-637F-9EA7-B579796B8071</referredTableID>
-<keyObject>200EAD05-A7B3-9C43-22DE-37EAFBFDFF0C</keyObject>
-<referredKeyID>200EAD05-A7B3-9C43-22DE-37EAFBFDFF0C</referredKeyID>
-<mandatory>true</mandatory>
-<refColNames>discipline_id</refColNames>
-<transferable>true</transferable>
-<rely>false</rely>
-<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+<?xml version='1.0' encoding='utf-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" containerWithKeyObject="ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16" localFKIndex="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8" name="grades_assignment_fk">
+  <sourceDDLFile>university_import.sql</sourceDDLFile>
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+  <ownerDesignName>university</ownerDesignName>
+  <importedID>53D30CFD-D2D3-351D-1175-8EE87365375B</importedID>
+  <referredTableLongName>discipline_teachers</referredTableLongName>
+  <deleteRule>NO ACTION</deleteRule>
+  <referredTableID>482E6F98-6F19-4959-94AC-F85C091ED33D</referredTableID>
+  <keyObject>0E1FD125-E593-488D-827F-ACC0208ED633</keyObject>
+  <referredKeyID>0E1FD125-E593-488D-827F-ACC0208ED633</referredKeyID>
+  <mandatory>true</mandatory>
+  <refColNames>curriculum_id,teacher_id</refColNames>
+  <transferable>true</transferable>
+  <rely>false</rely>
+  <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
 </FKIndexAssociation>

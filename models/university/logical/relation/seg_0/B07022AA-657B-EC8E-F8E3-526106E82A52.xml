@@ -17,6 +17,6 @@
   <targetEntity>0B3DAEBC-2CB0-FDBF-C57D-6384D99C0561</targetEntity>
   <transferable>true</transferable>
   <deleteRule>NO ACTION</deleteRule>
-  <nameOnSource>има студенти</nameOnSource>
-  <nameOnTarget>е от специалност</nameOnTarget>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
 </Relation>

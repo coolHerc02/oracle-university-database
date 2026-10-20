@@ -17,7 +17,7 @@
   <minVolumes>0</minVolumes>
   <normalForm>Third</normalForm>
   <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-    <Attribute name="discipline id" id="7F3C18D2-3AEA-414D-88D9-1A80BFC95C40">
+    <Attribute name="curriculum id" id="7F3C18D2-3AEA-414D-88D9-1A80BFC95C40">
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:57:01 UTC</createdTime>
       <generatorID>07933D0C-3571-48DC-8B78-79364B7DA8A7</generatorID>
@@ -25,7 +25,7 @@
       <engineerTo>
         <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
       </engineerTo>
-      <referedAttribute>546EDE85-8082-2F42-D0F2-CE878D15A027</referedAttribute>
+      <referedAttribute>5AB376CF-C4C6-4EC9-B7D9-F7C01D8503D0</referedAttribute>
       <use>0</use>
       <logicalDatatype>LOGDT019</logicalDatatype>
       <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>

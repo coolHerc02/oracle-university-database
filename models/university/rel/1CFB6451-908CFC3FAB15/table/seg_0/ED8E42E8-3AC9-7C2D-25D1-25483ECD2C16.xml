@@ -3,7 +3,7 @@
   <sourceDDLFile>university_import.sql</sourceDDLFile>
   <createdBy>User</createdBy>
   <createdTime>2026-10-06 10:52:27 UTC</createdTime>
-  <commentInRDBMS>One mandatory grade and date for every recorded student-discipline pair. Corrections use UPDATE.</commentInRDBMS>
+  <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
   <ownerDesignName>university</ownerDesignName>
   <importedID>34612302-1143-E6C1-803D-9B8274A586FA</importedID>
   <allowColumnReorder>false</allowColumnReorder>
@@ -25,7 +25,7 @@
         <colAssociation fkAssociation="3A61B0F6-214E-8A65-5739-1CBFDBF92842" referredColumn="D810B62C-1CDC-3128-C45C-F46933E6BAEC" />
       </associations>
     </Column>
-    <Column name="discipline_id" id="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E">
+    <Column name="curriculum_id" id="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E">
       <sourceDDLFile>university_import.sql</sourceDDLFile>
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:52:27 UTC</createdTime>
@@ -37,7 +37,7 @@
       <ownDataTypeParameters>,,</ownDataTypeParameters>
       <autoIncrementCycle>false</autoIncrementCycle>
       <associations>
-        <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="E1E4649B-9108-17DB-ED52-CD69E413E68D" />
+        <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="9038D43D-520F-4388-A9A1-B8341A4EA25E" />
       </associations>
     </Column>
     <Column name="grade_value" id="95F2293B-5DDE-0320-FFED-43F46F355A61">
@@ -68,6 +68,22 @@
       <ownDataTypeParameters>,,</ownDataTypeParameters>
       <autoIncrementCycle>false</autoIncrementCycle>
     </Column>
+    <Column name="teacher_id" id="7BD05E89-0CDF-41BD-B4EB-B0AF2C102732">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>7D764E56-E74F-4E74-9973-B72525E75FFC</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
+      <associations>
+        <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="9A366DD8-839C-4A1D-8072-94A9AF908F18" />
+      </associations>
+    </Column>
   </columns>
   <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
     <ind_PK_UK id="04DA56D7-B0F5-B418-6D6A-A33EEB47A76D" name="grades_pk">
@@ -84,7 +100,7 @@
         <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
       </indexColumnUsage>
     </ind_PK_UK>
-    <ind_PK_UK id="6828D8DD-A044-EAFA-858E-C1D640307A51" name="grades_discipline_ix">
+    <ind_PK_UK id="6828D8DD-A044-EAFA-858E-C1D640307A51" name="grades_assignment_ix">
       <sourceDDLFile>university_import.sql</sourceDDLFile>
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:52:27 UTC</createdTime>
@@ -93,6 +109,7 @@
       <isSurrogateKey>false</isSurrogateKey>
       <indexColumnUsage>
         <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
+        <colUsage columnID="7BD05E89-0CDF-41BD-B4EB-B0AF2C102732" />
       </indexColumnUsage>
     </ind_PK_UK>
     <ind_PK_UK id="4B54CF1A-F57E-83DE-8CFE-34F6203D0D9E" name="grades_value_ix">
@@ -106,7 +123,7 @@
         <colUsage columnID="95F2293B-5DDE-0320-FFED-43F46F355A61" />
       </indexColumnUsage>
     </ind_PK_UK>
-    <ind_PK_UK id="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8" name="grades_discipline_fk">
+    <ind_PK_UK id="982FE941-9BAA-E4A0-0C6E-2B4EA025EBA8" name="grades_assignment_fk">
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:52:27 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>
@@ -114,6 +131,7 @@
       <isSurrogateKey>false</isSurrogateKey>
       <indexColumnUsage>
         <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
+        <colUsage columnID="7BD05E89-0CDF-41BD-B4EB-B0AF2C102732" />
       </indexColumnUsage>
     </ind_PK_UK>
     <ind_PK_UK id="E7FEC07F-8029-7D2B-2DB5-0C529B3A105C" name="grades_student_fk">

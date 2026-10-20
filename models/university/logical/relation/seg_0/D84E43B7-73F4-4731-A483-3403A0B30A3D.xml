@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="curriculum_specialty_fk" directorySegmentName="seg_0" id="D84E43B7-73F4-4731-A483-3403A0B30A3D">
+  <createdBy>User</createdBy>
+  <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+  <generatorID>DF80BE23-6E40-4899-BF3C-162F5DF4509D</generatorID>
+  <ownerDesignName>university</ownerDesignName>
+  <engineerTo>
+    <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+  </engineerTo>
+  <sourcePk>7AF7DF62-C094-C869-5388-16D2447FA56B</sourcePk>
+  <identifying>false</identifying>
+  <optionalSource>true</optionalSource>
+  <optionalTarget>false</optionalTarget>
+  <sourceCardinality>1</sourceCardinality>
+  <sourceEntity>15CF4E98-FE7D-2159-2F09-F2DCF1499ADB</sourceEntity>
+  <targetCardinalityString>*</targetCardinalityString>
+  <targetEntity>4A94C426-876D-4437-B066-DAA84E9B3241</targetEntity>
+  <transferable>true</transferable>
+  <deleteRule>NO ACTION</deleteRule>
+  <nameOnSource>има свързани записи</nameOnSource>
+  <nameOnTarget>принадлежи на 1</nameOnTarget>
+</Relation>

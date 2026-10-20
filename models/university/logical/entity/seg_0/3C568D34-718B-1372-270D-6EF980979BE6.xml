@@ -2,7 +2,7 @@
 <Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3C568D34-718B-1372-270D-6EF980979BE6" name="grade">
   <createdBy>User</createdBy>
   <createdTime>2026-10-06 10:57:01 UTC</createdTime>
-  <commentInRDBMS>One mandatory grade and date for every recorded student-discipline pair. Corrections use UPDATE.</commentInRDBMS>
+  <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
   <generatorID>ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16</generatorID>
   <ownerDesignName>university</ownerDesignName>
   <engineerTo>
@@ -31,7 +31,7 @@
       <domain>F6FF1DDD-7433-DFC7-8F59-4B9596EEDB6D</domain>
       <ownDataTypeParameters>,,</ownDataTypeParameters>
     </Attribute>
-    <Attribute name="discipline id" id="2506602D-9696-36A4-CC67-16832066472F">
+    <Attribute name="curriculum id" id="2506602D-9696-36A4-CC67-16832066472F">
       <createdBy>User</createdBy>
       <createdTime>2026-10-06 10:57:01 UTC</createdTime>
       <generatorID>B82190C7-7275-158B-EDF4-859F9B484280</generatorID>
@@ -39,7 +39,7 @@
       <engineerTo>
         <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
       </engineerTo>
-      <referedAttribute>546EDE85-8082-2F42-D0F2-CE878D15A027</referedAttribute>
+      <referedAttribute>7F3C18D2-3AEA-414D-88D9-1A80BFC95C40</referedAttribute>
       <use>0</use>
       <logicalDatatype>LOGDT019</logicalDatatype>
       <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
@@ -72,6 +72,21 @@
       <logicalDatatype>LOGDT007</logicalDatatype>
       <domain>5156BAD2-0261-6D45-70CE-B2D41AECF2F7</domain>
       <ownDataTypeParameters>,,</ownDataTypeParameters>
+    </Attribute>
+    <Attribute name="teacher id" id="68607262-2A56-4024-BE0F-902D64B89682">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:57:01 UTC</createdTime>
+      <generatorID>B82190C7-7275-158B-EDF4-859F9B484280</generatorID>
+      <ownerDesignName>university</ownerDesignName>
+      <engineerTo>
+        <item key="1CFB6451-B9AC-ED07-5D24-908CFC3FAB15" value="true" />
+      </engineerTo>
+      <referedAttribute>B4421A9A-0A8B-4748-BB7F-AFB4E84A6B27</referedAttribute>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
     </Attribute>
   </attributes>
   <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
