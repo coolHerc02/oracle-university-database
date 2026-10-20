@@ -164,4 +164,3 @@ comment on column semesters.term_no is 'First or second semester within the stud
 comment on column grades.grade_date is 'Date of the examination/grade.';
 comment on column grades.teacher_id is 'Responsible grading teacher. Must be assigned to the same discipline. Teacher sessions derive this identity from SESSION_USER.';
 comment on column grade_scale.is_passing is '0 for grade 2; 1 for grades 3 through 6.';
-

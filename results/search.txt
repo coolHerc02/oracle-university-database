@@ -28,4 +28,3 @@ DISCIPLINE_ID DISCIPLINE_NAME		     FACULTY_NUMB STUDENT_NAME			      SPECIALTY_
             4 Бази от данни                  00010012     София Тодорова Иванова              Икономика                        II курс              2 2026-06-10
 
 6 rows selected.
-

@@ -49,4 +49,3 @@ Trigger created.
 LESSON_PROGRAMS_COMPILED_OK: 14 standalone procedures, 1 AFTER INSERT trigger
 
 PL/SQL procedure successfully completed.
-

@@ -327,4 +327,3 @@ User dropped.
 OWN_TEMPORARY_SCHEMA_REMOVED
 
 PL/SQL procedure successfully completed.
-
