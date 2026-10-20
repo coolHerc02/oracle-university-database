@@ -3,28 +3,28 @@ PASS 2: AFTER INSERT row trigger enabled
 PASS 3: BEFORE INSERT sequence trigger supplies lookup ID
 PASS 4: TEACHER_INS creates two distinct disciplines atomically
 PASS 5: TEACHER_UPD changes contact data
-AFTER INSERT: student=LESSON-STUDENT, discipline=41, grade=4 (transaction
+AFTER INSERT: student=LESSON-STUDENT, curriculum=53, grade=4 (transaction
 pending)
-AFTER INSERT: student=LESSON-STUDENT, discipline=42, grade=5 (transaction
+AFTER INSERT: student=LESSON-STUDENT, curriculum=54, grade=5 (transaction
 pending)
 PASS 6: STUDENT_INS creates student and two grades
 PASS 7: AFTER trigger reports actual inserted grades
 PASS 8: STUDENT_UPD corrects names and email
 PASS 9: DISCIPLINE_INS adds a discipline
 PASS 10: DISCIPLINE_UPD changes name and semester
-AFTER INSERT: student=LESSON-STUDENT, discipline=43, grade=6 (transaction
+AFTER INSERT: student=LESSON-STUDENT, curriculum=55, grade=6 (transaction
 pending)
 PASS 11: GRADE_INS adds one new student-discipline pair
 PASS 12: GRADE_UPD corrects existing value and date
 PASS 13: GRADE_INS refuses duplicate pair (expected -20061, actual -20061)
 PASS 14: Refused INSERT does not overwrite grade
-PASS 15: GRADE_UPD refuses missing pair (expected -20062, actual -20062)
+PASS 15: GRADE_UPD refuses absent curriculum (expected -20141, actual -20141)
 PASS 16: Standalone procedure rejects fractional grade (expected -2291, actual
 -2291)
 PASS 17: Standalone procedure rejects NULL grade date (expected -1407, actual
 -1407)
 PASS 18: Failed UPDATE restores previous value and date
-AFTER INSERT: student=LESSON-DUP, discipline=41, grade=4 (transaction pending)
+AFTER INSERT: student=LESSON-DUP, curriculum=53, grade=4 (transaction pending)
 PASS 19: STUDENT_INS rejects repeated discipline atomically (expected -1, actual
 -1)
 PASS 20: Failed student insertion leaves no partial student
@@ -37,27 +37,26 @@ Semester 1: LESSON discipline 1 | grade 4 | 2026-06-10
 Semester 2: LESSON discipline 2 | grade 5 | 2026-06-11
 Semester 4: LESSON updated discipline | grade 5 | 2026-06-13
 PASS 22: OPEN/FETCH/CLOSE cursor prints ordered academic report and average
-41 | LESSON discipline 1 | semester 1
-42 | LESSON discipline 2 | semester 2
-43 | LESSON updated discipline | semester 4
+59 | LESSON discipline 1 | semester 1
+60 | LESSON discipline 2 | semester 2
+61 | LESSON updated discipline | semester 4
 PASS 23: FOR cursor lists teacher disciplines
 00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
 Student matches: 1
 PASS 24: LIKE cursor finds Cyrillic student keyword
 Student matches: 0
 PASS 25: LIKE cursor treats percent as literal text
-43 | LESSON updated discipline | semester 4 | LESSON Updated
+61 | LESSON updated discipline | semester 4 | LESSON Updated
 Discipline matches: 1
 PASS 26: LIKE cursor finds discipline keyword
 PASS 27: Teacher cursor rejects missing teacher (expected -20045, actual -20045)
 PASS 28: Write guard inactive after successful and failed procedures
-PASS 29: ROLLBACK restores eighteen seed students
+PASS 29: ROLLBACK restores twenty seed students
 PASS 30: ROLLBACK restores six seed teachers
-PASS 31: ROLLBACK restores fourteen seed disciplines
-PASS 32: ROLLBACK restores sixty seed grades
+PASS 31: ROLLBACK restores fifteen seed disciplines
+PASS 32: ROLLBACK restores sixty-four seed grades
 PASS 33: ROLLBACK removes temporary lookup
 PASS 34: No Oracle compilation errors
 LESSON_VALIDATION_PASSED: 34 checks
 
 PL/SQL procedure successfully completed.
-

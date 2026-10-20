@@ -65,8 +65,9 @@ begin
  discipline_ins('LESSON discipline 3',3,l_teacher,l_d3);
  select count(*) into l_count from discipline_teachers where teacher_id=l_teacher;
  assert_true(l_count=3,'DISCIPLINE_INS adds a discipline');
- discipline_upd(l_d3,'LESSON updated discipline',4);
- select count(*) into l_count from disciplines where discipline_id=l_d3 and semester_no=4
+ discipline_upd(l_d3,'LESSON updated discipline');
+ university_api.update_curriculum(university_api.curriculum_for('LESSON-STUDENT',l_d3),4);
+ select count(*) into l_count from disciplines d join curriculum c on c.discipline_id=d.discipline_id where d.discipline_id=l_d3 and c.semester_no=4
  and discipline_name='LESSON updated discipline';
  assert_true(l_count=1,'DISCIPLINE_UPD changes name and semester');
 
@@ -75,20 +76,20 @@ begin
  assert_true(l_count=3,'GRADE_INS adds one new student-discipline pair');
  grade_upd('LESSON-STUDENT',l_d3,5,date '2026-06-13');
  select grade_value,grade_date into l_value,l_date from grades
- where faculty_number='LESSON-STUDENT' and discipline_id=l_d3;
+ where faculty_number='LESSON-STUDENT' and curriculum_id=university_api.curriculum_for('LESSON-STUDENT',l_d3);
  assert_true(l_value=5 and l_date=date '2026-06-13','GRADE_UPD corrects existing value and date');
  expect_error('begin grade_ins(''LESSON-STUDENT'','||l_d3||',2,date ''2026-06-14''); end;',
  -20061,'GRADE_INS refuses duplicate pair');
- select grade_value into l_value from grades where faculty_number='LESSON-STUDENT' and discipline_id=l_d3;
+ select grade_value into l_value from grades where faculty_number='LESSON-STUDENT' and curriculum_id=university_api.curriculum_for('LESSON-STUDENT',l_d3);
  assert_true(l_value=5,'Refused INSERT does not overwrite grade');
  expect_error('begin grade_upd(''LESSON-STUDENT'',999999,4,date ''2026-06-14''); end;',
- -20062,'GRADE_UPD refuses missing pair');
+ -20141,'GRADE_UPD refuses absent curriculum');
  expect_error('begin grade_upd(''LESSON-STUDENT'','||l_d3||',2.5,date ''2026-06-14''); end;',
  -2291,'Standalone procedure rejects fractional grade');
  expect_error('begin grade_upd(''LESSON-STUDENT'','||l_d3||',5,null); end;',
  -1407,'Standalone procedure rejects NULL grade date');
  select grade_value,grade_date into l_value,l_date from grades
- where faculty_number='LESSON-STUDENT' and discipline_id=l_d3;
+ where faculty_number='LESSON-STUDENT' and curriculum_id=university_api.curriculum_for('LESSON-STUDENT',l_d3);
  assert_true(l_value=5 and l_date=date '2026-06-13','Failed UPDATE restores previous value and date');
 
  expect_error('begin student_ins(''LESSON-DUP'',''LESSON'',null,''Student'','||l_specialty||','||l_year||
@@ -113,11 +114,11 @@ begin
  assert_true(not university_api.write_allowed,'Write guard inactive after successful and failed procedures');
 
  rollback;
- select count(*) into l_count from students; assert_true(l_count=18,'ROLLBACK restores eighteen seed students');
+ select count(*) into l_count from students; assert_true(l_count=20,'ROLLBACK restores twenty seed students');
  select count(*) into l_count from teachers; assert_true(l_count=6,'ROLLBACK restores six seed teachers');
- select count(*) into l_count from disciplines; assert_true(l_count=14,'ROLLBACK restores fourteen seed disciplines');
- select count(*) into l_count from grades; assert_true(l_count=60,'ROLLBACK restores sixty seed grades');
- select count(*) into l_count from specialties; assert_true(l_count=3,'ROLLBACK removes temporary lookup');
+ select count(*) into l_count from disciplines; assert_true(l_count=15,'ROLLBACK restores fifteen seed disciplines');
+ select count(*) into l_count from grades; assert_true(l_count=64,'ROLLBACK restores sixty-four seed grades');
+ select count(*) into l_count from specialties; assert_true(l_count=5,'ROLLBACK removes temporary lookup');
  select count(*) into l_count from user_errors; assert_true(l_count=0,'No Oracle compilation errors');
  dbms_output.put_line('LESSON_VALIDATION_PASSED: '||l_passed||' checks');
 exception when others then rollback; raise;
