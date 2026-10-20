@@ -1,0 +1,13 @@
+PASS: SPECIALTIES: 3 original rows, every legacy field identical
+PASS: ACADEMIC_TITLES: 4 original rows, every legacy field identical
+PASS: STUDY_YEARS: 6 original rows, every legacy field identical
+PASS: SEMESTERS: 12 original rows, every legacy field identical
+PASS: GRADE_SCALE: 5 original rows, every legacy field identical
+PASS: STUDENTS: 18 original rows, every legacy field identical
+PASS: TEACHERS: 6 original rows, every legacy field identical
+PASS: DISCIPLINES: 14 original rows, every legacy field identical
+PASS: DISCIPLINE_TEACHERS: 16 original rows, every legacy field identical
+PASS: GRADES: 60 original rows, every legacy field identical
+Projection: original catalogue semester, course/student/author keys and original teaching assignments reconstructed from CURRICULUM.
+Comparison performed immediately after migration and before adding the two fictional specialty examples.
+CURRICULUM_DATA_PRESERVATION_PASSED: 10 checks
