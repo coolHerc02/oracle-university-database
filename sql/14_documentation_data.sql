@@ -39,8 +39,9 @@ union all select 'DATA_COUNT|'||'DISCIPLINE_TEACHERS|'||count(*) from discipline
 select 'INVALID|'||count(*) from user_objects where status<>'VALID';
 select 'ERRORS|'||count(*) from user_errors;
 
-select 'ASSIGNMENT|'||d.discipline_name||'|'||t.first_name||' '||t.last_name
-from discipline_teachers dt join disciplines d on d.discipline_id=dt.discipline_id
+select 'ASSIGNMENT|'||d.discipline_name||'|'||s.specialty_name||'|'||c.semester_no||'|'||t.first_name||' '||t.last_name
+from discipline_teachers dt join curriculum c on c.curriculum_id=dt.curriculum_id
+join disciplines d on d.discipline_id=c.discipline_id join specialties s on s.specialty_id=c.specialty_id
 join teachers t on t.teacher_id=dt.teacher_id
-where dt.discipline_id in (select discipline_id from discipline_teachers group by discipline_id having count(*)>1)
-order by d.discipline_name,t.teacher_id;
+order by c.specialty_id,d.discipline_name,t.teacher_id;
+select 'DATA_COUNT|CURRICULUM|'||count(*) from curriculum;
