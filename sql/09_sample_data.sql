@@ -33,7 +33,10 @@ select * from teachers order by teacher_id;
 prompt DISCIPLINES
 select * from disciplines order by discipline_id;
 prompt STUDENT_DISCIPLINE_GRADES
-select * from grades order by faculty_number,discipline_id;
+select * from grades order by faculty_number,curriculum_id;
 
 prompt DISCIPLINE_TEACHER_ASSIGNMENTS
-select * from discipline_teachers order by discipline_id,teacher_id;
+select * from discipline_teachers order by curriculum_id,teacher_id;
+
+prompt CURRICULUM
+select * from curriculum order by specialty_id,discipline_id;
