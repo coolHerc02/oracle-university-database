@@ -1,0 +1,5 @@
+PASS: Main report: 21 pages rendered through Poppler and visually reviewed.
+PASS: Two single-page diagram PDFs rendered and visually reviewed.
+PASS: No clipped or overlapping table text; long diagram fields fit within boxes.
+PASS: Diagram renderer reads each corresponding native subview and verifies full object/connector membership.
+PDF_VISUAL_VALIDATION_PASSED
