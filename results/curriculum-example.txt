@@ -1,0 +1,38 @@
+AFTER INSERT: student=SIT-DEMO, curriculum=43, grade=5 (transaction pending)
+AFTER INSERT: student=SIT-DEMO, curriculum=45, grade=6 (transaction pending)
+AFTER INSERT: student=KST-DEMO, curriculum=44, grade=5 (transaction pending)
+AFTER INSERT: student=KST-DEMO, curriculum=46, grade=6 (transaction pending)
+
+PL/SQL procedure successfully completed.
+
+
+Commit complete.
+
+
+SPECIALTY_NAME
+--------------------------------------------------------------------------------
+DISCIPLINE_NAME
+--------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID
+----------- ------------- ----------
+КСТ
+СА
+	  4	       44	   1
+
+КСТ
+СА
+	  4	       44	   2
+
+SPECIALTY_NAME
+--------------------------------------------------------------------------------
+DISCIPLINE_NAME
+--------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID
+----------- ------------- ----------
+
+СИТ
+СА
+	  6	       43	   1
+
+
+CURRICULUM_EXAMPLE_READY
