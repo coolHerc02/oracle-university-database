@@ -1,23 +1,25 @@
 LESSON DEMONSTRATION: changes will be rolled back
-AFTER INSERT: student=DEMO-LESSON, discipline=32, grade=4 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, discipline=33, grade=5 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, discipline=34, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, curriculum=61, grade=4 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, curriculum=62, grade=5 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, curriculum=63, grade=6 (transaction pending)
 EXPLICIT OPEN/FETCH/CLOSE CURSOR:
 Student: DEMO-LESSON Demo Student
 Specialty: Компютърни науки; I курс
 Average: 5.33
 Semester 1: Demo modelling | grade 5 | 2026-06-13
 Semester 2: Demo databases | grade 5 | 2026-06-11
-Semester 4: Demo SQL and PL/SQL | grade 6 | 2026-06-12
+Semester 3: Demo SQL and PL/SQL | grade 6 | 2026-06-12
 FOR CURSOR - TEACHER DISCIPLINES:
-32 | Demo modelling | semester 1
-33 | Demo databases | semester 2
-34 | Demo SQL and PL/SQL | semester 4
+66 | Demo modelling | semester 1
+67 | Demo databases | semester 2
+68 | Demo SQL and PL/SQL | semester 3
 LIKE CURSOR - STUDENT KEYWORD:
+KST-DEMO | Demo KST | КСТ | II курс | 5.50
+SIT-DEMO | Demo SIT | СИТ | III курс | 5.50
 DEMO-LESSON | Demo Student | Компютърни науки | I курс | 5.33
-Student matches: 1
+Student matches: 3
 LIKE CURSOR - DISCIPLINE KEYWORD:
-34 | Demo SQL and PL/SQL | semester 4 | Demo Teacher
+68 | Demo SQL and PL/SQL | semester 3 | Demo Teacher
 Discipline matches: 1
 
 PL/SQL procedure successfully completed.
@@ -44,7 +46,8 @@ Student matches: 1
 PL/SQL procedure successfully completed.
 
 4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-Discipline matches: 1
+4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
+4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
+Discipline matches: 3
 
 PL/SQL procedure successfully completed.
-

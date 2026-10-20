@@ -17,7 +17,7 @@ begin
  student_upd('DEMO-LESSON','Demo',null,'Student',l_specialty,l_year,'updated.student@university.example');
  teacher_upd(l_teacher,'Demo',null,'Teacher',l_title,'+359000000098','updated.teacher@university.example');
  discipline_ins('Demo SQL',3,l_teacher,l_d3);
- discipline_upd(l_d3,'Demo SQL and PL/SQL',4);
+ discipline_upd(l_d3,'Demo SQL and PL/SQL');
  grade_ins('DEMO-LESSON',l_d3,6,date '2026-06-12');
  grade_upd('DEMO-LESSON',l_d1,5,date '2026-06-13');
  dbms_output.put_line('EXPLICIT OPEN/FETCH/CLOSE CURSOR:');
