@@ -26,15 +26,15 @@ PASS: DISCIPLINES C
 PASS: DISCIPLINES R
 PASS: DISCIPLINES U
 PASS: DISCIPLINES D
-AFTER INSERT: student=CRUD_CA33FB94C6714A3, curriculum=1, grade=5 (transaction
-pending)
-AFTER INSERT: student=CRUD_CA33FB94C6714A3, curriculum=2, grade=6 (transaction
-pending)
+AFTER INSERT: student=CRUD_D8A70364C3054E4, academic_year=2025, curriculum=1,
+grade=5 (transaction pending)
+AFTER INSERT: student=CRUD_D8A70364C3054E4, academic_year=2025, curriculum=2,
+grade=6 (transaction pending)
 PASS: STUDENTS C
 PASS: STUDENTS R
 PASS: STUDENTS U
-AFTER INSERT: student=CRUD_CA33FB94C6714A3, curriculum=3, grade=4 (transaction
-pending)
+AFTER INSERT: student=CRUD_D8A70364C3054E4, academic_year=2025, curriculum=3,
+grade=4 (transaction pending)
 PASS: GRADES C
 PASS: GRADES R
 PASS: GRADES U
