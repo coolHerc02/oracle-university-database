@@ -1,0 +1,71 @@
+PASS: Both related-object keyword procedures are installed
+PASS: Student
+reporting includes email
+PASS: Teacher reporting includes both contact
+fields
+PASS: Academic reporting identifies the actual grader with title and
+contacts
+PASS: Teachers with the same name retain two independent aggregate
+rows
+PASS: Students with the same name retain their separate averages
+PASS:
+Title keyword filters the joined reference object
+PASS: Title cursor prints full
+teacher characteristics
+PASS: Title keyword search ignores letter case
+PASS:
+Percent in teacher keyword is literal text
+PASS: Underscore in teacher keyword
+is literal text
+PASS: Backslash in teacher keyword is literal text
+PASS: No
+teacher matches is a valid empty result
+PASS: Empty title keyword lists all
+teachers
+PASS: Oversized teacher keyword rejected
+PASS: Oversized specialty
+keyword rejected
+PASS: Specialty keyword filters the joined reference
+object
+PASS: Specialty cursor prints faculty number email specialty and study
+year
+PASS: Percent in specialty keyword is literal text
+PASS: Underscore in
+specialty keyword is literal text
+PASS: Backslash in specialty keyword is
+literal text
+PASS: Existing student cursor now includes contact data
+PASS:
+Discipline cursor prints specialty semester teacher contacts and academic
+year
+PASS: Explicit cursor includes student and grader characteristics
+PASS: FOR
+cursor includes student and grader characteristics
+PASS: Another year of the
+same catalogue course does not inflate teacher count
+PASS: Extra assignment year
+never duplicates academic grades
+PASS: Business rules pass and write guard is
+closed
+PASS: SPECIALTIES all rows and fields restored
+PASS: ACADEMIC_TITLES all
+rows and fields restored
+PASS: STUDY_YEARS all rows and fields restored
+PASS:
+SEMESTERS all rows and fields restored
+PASS: GRADE_SCALE all rows and fields
+restored
+PASS: STUDENTS all rows and fields restored
+PASS: TEACHERS all rows and
+fields restored
+PASS: DISCIPLINES all rows and fields restored
+PASS: CURRICULUM
+all rows and fields restored
+PASS: DISCIPLINE_TEACHERS all rows and fields
+restored
+PASS: GRADES all rows and fields restored
+
+
+TEACHER_SELECT_RULES_VALIDATION_PASSED: 39 checks
+
+PL/SQL procedure successfully completed.
