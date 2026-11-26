@@ -1,3 +1,3 @@
 from pathlib import Path
 import runpy
-runpy.run_path(str(Path(__file__).with_name("Assemble-Curriculum-SQL.py")),run_name="__main__")
+runpy.run_path(str(Path(__file__).with_name("Assemble-Academic-Year-SQL.py")),run_name="__main__")
