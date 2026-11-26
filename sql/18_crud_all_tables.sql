@@ -34,7 +34,7 @@ declare
         l_tables(6):='STUDENTS'; l_order(6):='faculty_number';
         l_tables(7):='TEACHERS'; l_order(7):='teacher_id';
         l_tables(8):='DISCIPLINES'; l_order(8):='discipline_id';
-        l_tables(9):='DISCIPLINE_TEACHERS'; l_order(9):='curriculum_id,teacher_id';
+        l_tables(9):='DISCIPLINE_TEACHERS'; l_order(9):='curriculum_id,teacher_id,academic_year';
         l_tables(10):='GRADES'; l_order(10):='faculty_number,curriculum_id';
         l_tables(11):='CURRICULUM'; l_order(11):='curriculum_id';
         for i in 1..11 loop
