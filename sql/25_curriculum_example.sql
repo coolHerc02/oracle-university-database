@@ -14,15 +14,15 @@ begin
  select min(discipline_id) into sa from disciplines where discipline_name=unistr('\0421\0410');
  if sa is null then university_api.create_catalog_discipline(unistr('\0421\0410'),sa);end if;
  select min(curriculum_id) into cs from curriculum where specialty_id=sit and discipline_id=sa;
- if cs is null then university_api.add_curriculum(sit,sa,6,1,cs);end if;
+ if cs is null then university_api.add_curriculum(sit,sa,6,1,cs,2026);end if;
  select min(curriculum_id) into ck from curriculum where specialty_id=kst and discipline_id=sa;
- if ck is null then university_api.add_curriculum(kst,sa,4,1,ck);end if;
+ if ck is null then university_api.add_curriculum(kst,sa,4,1,ck,2026);end if;
  select count(*) into n from discipline_teachers where curriculum_id=ck and teacher_id=2;
- if n=0 then university_api.assign_curriculum_teacher(ck,2);end if;
+ if n=0 then university_api.assign_curriculum_teacher(ck,2,2026);end if;
  select min(discipline_id) into math from disciplines where discipline_name=unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
  for sp in(select specialty_id from specialties where specialty_id in(sit,kst)) loop
    select min(curriculum_id) into cm from curriculum where specialty_id=sp.specialty_id and discipline_id=math;
-   if cm is null then university_api.add_curriculum(sp.specialty_id,math,1,1,cm);end if;
+   if cm is null then university_api.add_curriculum(sp.specialty_id,math,1,1,cm,2026);end if;
  end loop;
  g(1).discipline_id:=sa;g(1).grade_value:=5;g(1).grade_date:=date '2026-10-20';g(1).teacher_id:=1;
  g(2).discipline_id:=math;g(2).grade_value:=6;g(2).grade_date:=date '2026-10-20';g(2).teacher_id:=1;
@@ -34,7 +34,7 @@ begin
 end;
 /
 commit;
-select sp.specialty_name,d.discipline_name,c.semester_no,c.curriculum_id,dt.teacher_id
+select sp.specialty_name,d.discipline_name,c.semester_no,c.curriculum_id,dt.teacher_id,dt.academic_year
 from curriculum c join specialties sp on sp.specialty_id=c.specialty_id
 join disciplines d on d.discipline_id=c.discipline_id
 join discipline_teachers dt on dt.curriculum_id=c.curriculum_id
