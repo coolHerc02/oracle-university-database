@@ -84,7 +84,7 @@ for path in model_root.glob("rel/*/table/*/*.xml"):
         model_checks[(name, upper(constraint.get("name")))] = constraint.findtext("rule", "")
 
 check(set(model_tables) == set(tables), "All 11 table names match Oracle")
-check(set(model_columns) == set(columns), "All 39 columns match Oracle")
+check(set(model_columns) == set(columns), "All 41 columns match Oracle")
 logical_types = {"LOGDT019": "NUMBER", "LOGDT024": "VARCHAR2", "LOGDT007": "DATE"}
 for key, expected in columns.items():
     column = model_columns.get(key)
@@ -107,7 +107,7 @@ for key, expected in columns.items():
         check(precision in ("", "0") and scale in ("", "0"), ".".join(key) + " unscaled NUMBER")
 
 check(model_keys == keys, "All 11 PK and 6 UNIQUE keys match, including column order")
-check(set(model_checks) == set(checks), "All 24 named CHECK constraints present")
+check(set(model_checks) == set(checks), "All 25 named CHECK constraints present")
 for key, expected in checks.items():
     check(norm_sql(model_checks.get(key)) == norm_sql(expected), ".".join(key) + " CHECK expression")
 check(non_fk_indexes == 25, "25 PK/UNIQUE/explicit indexes; FK diagram placeholders excluded")
@@ -141,7 +141,7 @@ if args.require_logical or entities:
     entity_ids = {e.get("id"): logical_table_name(e) for e in entity_roots}
     logical_columns = {(logical_table_name(e), upper(a.get("name")).replace(" ", "_"))
                        for e in entity_roots for a in e.findall("./attributes/Attribute")}
-    check(logical_columns == set(columns), "All 39 logical attributes match columns")
+    check(logical_columns == set(columns), "All 41 logical attributes match columns")
     attributes = {(logical_table_name(e), upper(a.get("name")).replace(" ", "_")): a
                   for e in entity_roots for a in e.findall("./attributes/Attribute")}
     for key, expected in columns.items():
