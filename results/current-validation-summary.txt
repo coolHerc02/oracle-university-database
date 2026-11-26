@@ -1,0 +1,21 @@
+PASS: validation.txt: 47 checks (current cold-build output)
+PASS: lesson-validation.txt: 34 checks (current cold-build output)
+PASS: many-teachers-validation.txt: 47 checks (current cold-build output)
+PASS: crud-all-tables.txt: 56 checks (current cold-build output)
+PASS: crud-validation.txt: 20 checks (current cold-build output)
+PASS: grade-teacher-validation.txt: 16 checks (current cold-build output)
+PASS: curriculum-validation.txt: 25 checks (current cold-build output)
+PASS: academic-year-validation.txt: 30 checks (current cold-build output)
+PASS: teacher-select-validation.txt: 39 checks (current cold-build output)
+PASS: concurrency-validation.txt: 10 checks (current authenticated JDBC run)
+PASS: teacher-authorization.txt: 53 checks (current authenticated JDBC run)
+PASS: table-cursor-validation.txt: 91 checks (current cold-build output)
+CURRENT_ORACLE_VALIDATION_PASSED: 468 checks
+NATIVE_STRUCTURAL_CHECKS: 384
+PHYSICAL_CHECKS: 66
+TEACHER_SELECT_SOURCE_AUDIT_CHECKS: 31
+CREATE_TABLE_DEFINITIONS: 11
+EXECUTED_CRUD_OPERATIONS: 44
+TABLE_CURSOR_SOURCE_AUDIT_CHECKS: 57
+TABLE_CURSOR_PRIVILEGE_CHECKS: 3
+PROJECT_STANDALONE_PROCEDURES: 25
