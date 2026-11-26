@@ -1,0 +1,110 @@
+
+PL/SQL procedure successfully completed.
+
+PASS: SPECIALTIES: one result per base row
+PASS: SPECIALTIES: correct empty/nonempty summary
+PASS: list_specialties: blank p_keyword lists all rows
+PASS: list_specialties: oversized p_keyword rejected
+PASS: ACADEMIC_TITLES: one result per base row
+PASS: ACADEMIC_TITLES: correct empty/nonempty summary
+PASS: list_academic_titles: blank p_keyword lists all rows
+PASS: list_academic_titles: oversized p_keyword
+rejected
+PASS: STUDY_YEARS: one result per base row
+PASS: STUDY_YEARS: correct empty/nonempty summary
+PASS: list_study_years: blank p_keyword lists all rows
+PASS: list_study_years: oversized p_keyword rejected
+PASS: SEMESTERS: one result per base row
+PASS: SEMESTERS: correct empty/nonempty summary
+PASS: list_semesters: blank p_year_keyword lists all rows
+PASS: list_semesters: oversized p_year_keyword rejected
+PASS:
+GRADE_SCALE: one result per base row
+PASS: GRADE_SCALE: correct empty/nonempty summary
+PASS: STUDENTS: one result per base row
+PASS: STUDENTS: correct empty/nonempty summary
+PASS: list_students: blank p_keyword lists all rows
+PASS: list_students: oversized p_keyword rejected
+PASS: list_students: blank p_specialty_keyword lists all rows
+PASS: list_students: oversized p_specialty_keyword rejected
+PASS: list_students:
+blank p_year_keyword lists all rows
+PASS: list_students: oversized p_year_keyword rejected
+PASS: TEACHERS: one result per base row
+PASS: TEACHERS: correct empty/nonempty summary
+PASS: list_teachers: blank p_keyword lists all rows
+PASS: list_teachers: oversized p_keyword rejected
+PASS: list_teachers: blank p_title_keyword lists all rows
+PASS: list_teachers: oversized p_title_keyword rejected
+PASS: DISCIPLINES: one
+result per base row
+PASS: DISCIPLINES: correct empty/nonempty summary
+PASS: list_disciplines: blank p_keyword lists all rows
+PASS: list_disciplines: oversized p_keyword rejected
+PASS: CURRICULUM: one result per base row
+PASS: CURRICULUM: correct empty/nonempty summary
+PASS: list_curriculum: blank p_discipline_keyword lists all rows
+PASS: list_curriculum: oversized p_discipline_keyword rejected
+PASS: list_curriculum:
+blank p_specialty_keyword lists all rows
+PASS: list_curriculum: oversized p_specialty_keyword rejected
+PASS: DISCIPLINE_TEACHERS: one result per base row
+PASS: DISCIPLINE_TEACHERS: correct empty/nonempty summary
+PASS: list_teaching_assignments: blank p_discipline_keyword lists all rows
+PASS: list_teaching_assignments: oversized p_discipline_keyword rejected
+PASS: list_teaching_assignments: blank p_teacher_keyword
+lists all rows
+PASS: list_teaching_assignments: oversized p_teacher_keyword rejected
+PASS: list_teaching_assignments: blank p_specialty_keyword lists all rows
+PASS: list_teaching_assignments: oversized p_specialty_keyword rejected
+PASS: GRADES: one result per base row
+PASS: GRADES: correct empty/nonempty summary
+PASS: list_grades: blank p_discipline_keyword lists all rows
+PASS: list_grades: oversized
+p_discipline_keyword rejected
+PASS: list_grades: blank p_specialty_keyword lists all rows
+PASS: list_grades: oversized p_specialty_keyword rejected
+PASS: Literal percent does not become a wildcard
+PASS: Literal underscore does not become a wildcard
+PASS: Literal backslash is escaped
+PASS: Case-insensitive keyword search
+PASS: Empty search reports zero rows
+PASS: Apostrophe input remains literal data
+PASS: Student
+specialty filter uses the related name
+PASS: Teacher title filter uses the related name
+PASS: Semester term filter
+PASS: Failed grade-scale filter
+PASS: Curriculum semester filter
+PASS: Assignment year filter
+PASS: Grade faculty number and historical year filter
+PASS: Grade output identifies historical grader and year
+PASS: Different academic year does not leak historical grades
+PASS: Grade minimum filter
+PASS:
+Invalid term rejected
+PASS: Invalid passing flag rejected
+PASS: Fractional academic year rejected
+PASS: Out-of-range academic year rejected
+PASS: Invalid minimum grade rejected
+PASS: Fractional semester rejected
+PASS: SPECIALTIES: all rows and fields preserved
+PASS: ACADEMIC_TITLES: all rows and fields preserved
+PASS: STUDY_YEARS: all rows and fields preserved
+PASS: SEMESTERS: all rows and fields preserved
+PASS:
+GRADE_SCALE: all rows and fields preserved
+PASS: STUDENTS: all rows and fields preserved
+PASS: TEACHERS: all rows and fields preserved
+PASS: DISCIPLINES: all rows and fields preserved
+PASS: CURRICULUM: all rows and fields preserved
+PASS: DISCIPLINE_TEACHERS: all rows and fields preserved
+PASS: GRADES: all rows and fields preserved
+PASS: Temporary literal-keyword fixture rolled back
+PASS: All database objects remain
+VALID
+
+
+TABLE_CURSOR_VALIDATION_PASSED: 91 checks
+
+PL/SQL procedure successfully completed.
