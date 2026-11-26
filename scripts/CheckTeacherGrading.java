@@ -114,6 +114,20 @@ public class CheckTeacherGrading {
                 check(saRows.containsKey("SIT-DEMO/"+sa)&&saRows.containsKey("KST-DEMO/"+sa),
                     "Teacher 1 explicitly assigned to both specialties can read both SA contexts");
             }
+            try(Connection t1=connect("UP_TEACHER_1",passwords[0])) {
+                check(error(t1,"begin UNIVERSITY_PROJECT.TEACHER_GRADING.update_grade('00010001',1,5,date '2026-11-03',2026); end;")==20172,
+                    "Teacher cannot move an existing 2025/2026 grade into 2026/2027");
+                check(error(t1,"begin UNIVERSITY_PROJECT.TEACHER_GRADING.insert_grade('00010007',1,5,date '2026-11-03',2026); end;")==20102,
+                    "An old-year appointment does not authorize grading a new academic year");
+                check(error(t1,"begin UNIVERSITY_PROJECT.TEACHER_GRADING.update_grade('00010001',1,5,date '2026-11-03',2025); end;")==0,
+                    "Explicit historical appointment year authorizes the actual teacher");
+                t1.rollback();
+                try(CallableStatement s=t1.prepareCall("begin UNIVERSITY_PROJECT.TEACHER_GRADING.read_grades(?,2026);end;")) {
+                    s.registerOutParameter(1,-10);s.execute();int count=0;boolean scoped=true;
+                    try(ResultSet rs=(ResultSet)s.getObject(1)){while(rs.next()){count++;scoped&=rs.getInt("ACADEMIC_YEAR")==2026;}}
+                    check(scoped&&count==4,"Teacher READ filters academic year and returns only its four 2026/2027 grades");
+                }
+            }
             check(baseline.equals(snapshot(owner)),"All grade values, dates, student keys and teacher identities restored after testing");
             System.out.println("TEACHER_AUTHORIZATION_PASSED: "+passed+" checks; six real authenticated teacher accounts");
         }finally{Arrays.fill(passwords,null);}
