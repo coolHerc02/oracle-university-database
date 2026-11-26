@@ -1,0 +1,12 @@
+PASS: ACADEMIC_TITLES: 4 rows and all fields preserved
+PASS: CURRICULUM: 46 rows and all fields preserved
+PASS: DISCIPLINES: 15 rows and all fields preserved
+PASS: DISCIPLINE_TEACHERS: 53 rows and all fields preserved
+PASS: GRADES: 64 rows and all fields preserved
+PASS: GRADE_SCALE: 5 rows and all fields preserved
+PASS: SEMESTERS: 12 rows and all fields preserved
+PASS: SPECIALTIES: 5 rows and all fields preserved
+PASS: STUDENTS: 20 rows and all fields preserved
+PASS: STUDY_YEARS: 6 rows and all fields preserved
+PASS: TEACHERS: 6 rows and all fields preserved
+TABLE_CURSOR_DATA_PRESERVATION_PASSED: 11 checks
