@@ -2,7 +2,7 @@
 
 При една дисциплина СА не може да се съхранява един общ semester_no в DISCIPLINES, защото СИТ я изучава в семестър 6, а КСТ - в семестър 4.
 Затова CURRICULUM свързва SPECIALTIES, DISCIPLINES и SEMESTERS. DISCIPLINE_TEACHERS назначава преподавател към curriculum_id.
-GRADES сочи (curriculum_id,teacher_id) и съдържа само оценка по учебния план на студента.
+GRADES сочи (curriculum_id,teacher_id,academic_year) и съдържа само оценка по учебния план на студента.
 
 | Дисциплина | Специалност | Семестър | Назначени преподаватели |
 | --- | --- | ---: | --- |
@@ -34,3 +34,6 @@ set_curriculum_grade приема конкретен учебен план и п
 Старите учебни assign_teacher / replace_teacher / unassign_teacher и create_teacher_for_disciplines са административни помощници за първия учебен план на дисциплината (най-малък curriculum_id).
 Те не дават глобално назначение за всички специалности. За реална промяна на назначенията предпочитай методите с изрично curriculum_id.
 update_discipline променя само наименованието; подаден semester_no се отказва с ORA-20143. Семестърът се редактира чрез update_curriculum.
+
+
+Актуализация от 03.11.2026: [учебна година](academic-year-change.md).
