@@ -11,7 +11,7 @@
   <keyObject>0E1FD125-E593-488D-827F-ACC0208ED633</keyObject>
   <referredKeyID>0E1FD125-E593-488D-827F-ACC0208ED633</referredKeyID>
   <mandatory>true</mandatory>
-  <refColNames>curriculum_id,teacher_id</refColNames>
+  <refColNames>curriculum_id,teacher_id,academic_year</refColNames>
   <transferable>true</transferable>
   <rely>false</rely>
   <columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>

@@ -19,5 +19,5 @@
   <deleteRule>NO ACTION</deleteRule>
   <nameOnSource>поставя 0..N оценки</nameOnSource>
   <nameOnTarget>за 1 назначение</nameOnTarget>
-  <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
+  <commentInRDBMS>One current student-course grade. Composite FK includes curriculum, teacher and academic year; historical appointments remain referenced.</commentInRDBMS>
 </Relation>

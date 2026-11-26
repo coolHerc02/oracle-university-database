@@ -3,7 +3,7 @@
   <sourceDDLFile>university_import.sql</sourceDDLFile>
   <createdBy>User</createdBy>
   <createdTime>2026-10-06 10:52:27 UTC</createdTime>
-  <commentInRDBMS>One current grade per student and discipline. The grading teacher must belong to the same discipline_teachers assignment. Teacher authorization uses SESSION_USER, not a supplied identity.</commentInRDBMS>
+  <commentInRDBMS>One current student-course grade. Composite FK includes curriculum, teacher and academic year; historical appointments remain referenced.</commentInRDBMS>
   <ownerDesignName>university</ownerDesignName>
   <importedID>34612302-1143-E6C1-803D-9B8274A586FA</importedID>
   <allowColumnReorder>false</allowColumnReorder>
@@ -84,6 +84,22 @@
         <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="9A366DD8-839C-4A1D-8072-94A9AF908F18" />
       </associations>
     </Column>
+    <Column name="academic_year" id="9D336414-51F6-46DF-9037-677EF9637CA3">
+      <sourceDDLFile>university_import.sql</sourceDDLFile>
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:52:27 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+      <importedID>B5D78739-AE39-4FB6-A1BE-927CAC5E6A1B</importedID>
+      <use>0</use>
+      <logicalDatatype>LOGDT019</logicalDatatype>
+      <domain>FA4CE265-EBDA-8DEC-6106-495BA2C5F0EA</domain>
+      <ownDataTypeParameters>,,</ownDataTypeParameters>
+      <autoIncrementCycle>false</autoIncrementCycle>
+      <nullsAllowed>false</nullsAllowed>
+      <associations>
+        <colAssociation fkAssociation="E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A" referredColumn="AE471697-2024-4FBF-9FEB-AC3B51C55443" />
+      </associations>
+    </Column>
   </columns>
   <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
     <ind_PK_UK id="04DA56D7-B0F5-B418-6D6A-A33EEB47A76D" name="grades_pk">
@@ -110,6 +126,7 @@
       <indexColumnUsage>
         <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
         <colUsage columnID="7BD05E89-0CDF-41BD-B4EB-B0AF2C102732" />
+        <colUsage columnID="9D336414-51F6-46DF-9037-677EF9637CA3" />
       </indexColumnUsage>
     </ind_PK_UK>
     <ind_PK_UK id="4B54CF1A-F57E-83DE-8CFE-34F6203D0D9E" name="grades_value_ix">
@@ -132,6 +149,7 @@
       <indexColumnUsage>
         <colUsage columnID="4888E8E6-CA88-5DAC-9F90-DA4A60321F2E" />
         <colUsage columnID="7BD05E89-0CDF-41BD-B4EB-B0AF2C102732" />
+        <colUsage columnID="9D336414-51F6-46DF-9037-677EF9637CA3" />
       </indexColumnUsage>
     </ind_PK_UK>
     <ind_PK_UK id="E7FEC07F-8029-7D2B-2DB5-0C529B3A105C" name="grades_student_fk">

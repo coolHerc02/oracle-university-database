@@ -34,6 +34,11 @@
       <createdTime>2026-10-06 10:48:38 UTC</createdTime>
       <ownerDesignName>university</ownerDesignName>
     </ColumnProxy>
+    <ColumnProxy name="academic_year" id="9D336414-51F6-46DF-9037-677EF9637CA3">
+      <createdBy>User</createdBy>
+      <createdTime>2026-10-06 10:48:38 UTC</createdTime>
+      <ownerDesignName>university</ownerDesignName>
+    </ColumnProxy>
   </columnProxies>
   <indexProxies>
     <IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="grades_value_ix" id="4B54CF1A-F57E-83DE-8CFE-34F6203D0D9E">
