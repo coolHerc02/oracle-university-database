@@ -1,0 +1,463 @@
+
+PL/SQL procedure successfully completed.
+
+ALL_SPECIALTIES
+LIST|SPECIALTIES
+ROW|specialty_name=Икономика
+ROW|specialty_name=КСТ
+ROW|specialty_name=Компютърни науки
+ROW|specialty_name=СИТ
+ROW|specialty_name=Софтуерно инженерство
+ROWS|SPECIALTIES|5
+
+PL/SQL procedure successfully completed.
+
+ALL_ACADEMIC_TITLES
+LIST|ACADEMIC_TITLES
+ROW|title_name=асистент
+ROW|title_name=главен асистент
+ROW|title_name=доцент
+ROW|title_name=професор
+ROWS|ACADEMIC_TITLES|4
+
+PL/SQL procedure successfully completed.
+
+ALL_STUDY_YEARS
+LIST|STUDY_YEARS
+ROW|study_year_no=1 | year_label=I курс
+ROW|study_year_no=2 | year_label=II курс
+ROW|study_year_no=3 | year_label=III курс
+ROW|study_year_no=4 | year_label=IV курс
+ROW|study_year_no=5 | year_label=V курс
+ROW|study_year_no=6 | year_label=VI курс
+ROWS|STUDY_YEARS|6
+
+PL/SQL procedure successfully completed.
+
+ALL_SEMESTERS
+LIST|SEMESTERS
+ROW|semester_no=1 | year_label=I курс | study_year_no=1 | term_no=1
+ROW|semester_no=2 | year_label=I курс | study_year_no=1 | term_no=2
+ROW|semester_no=3 | year_label=II курс | study_year_no=2 | term_no=1
+ROW|semester_no=4 | year_label=II курс | study_year_no=2 | term_no=2
+ROW|semester_no=5 | year_label=III курс | study_year_no=3 | term_no=1
+ROW|semester_no=6 | year_label=III курс | study_year_no=3 | term_no=2
+ROW|semester_no=7 | year_label=IV курс | study_year_no=4 | term_no=1
+ROW|semester_no=8 | year_label=IV курс | study_year_no=4 | term_no=2
+ROW|semester_no=9 | year_label=V курс | study_year_no=5 | term_no=1
+ROW|semester_no=10 | year_label=V курс | study_year_no=5 | term_no=2
+ROW|semester_no=11 | year_label=VI курс | study_year_no=6 | term_no=1
+ROW|semester_no=12 | year_label=VI курс | study_year_no=6 | term_no=2
+ROWS|SEMESTERS|12
+
+PL/SQL procedure successfully completed.
+
+ALL_GRADE_SCALE
+LIST|GRADE_SCALE
+ROW|grade_value=2 | grade_label=Слаб | is_passing=0 | passing_status=FAIL
+ROW|grade_value=3 | grade_label=Среден | is_passing=1 | passing_status=PASS
+ROW|grade_value=4 | grade_label=Добър | is_passing=1 | passing_status=PASS
+ROW|grade_value=5 | grade_label=Много добър | is_passing=1 | passing_status=PASS
+ROW|grade_value=6 | grade_label=Отличен | is_passing=1 | passing_status=PASS
+ROWS|GRADE_SCALE|5
+
+PL/SQL procedure successfully completed.
+
+ALL_STUDENTS
+LIST|STUDENTS
+ROW|faculty_number=KST-DEMO | first_name=Demo | middle_name=<NULL> | last_name=KST | specialty_name=КСТ | year_label=II курс | study_year_no=2 | email=kst.demo@university.example
+ROW|faculty_number=SIT-DEMO | first_name=Demo | middle_name=<NULL> | last_name=SIT | specialty_name=СИТ | year_label=III курс | study_year_no=3 | email=sit.demo@university.example
+ROW|faculty_number=00010004 | first_name=Елена | middle_name=Николова | last_name=Георгиева | specialty_name=Компютърни науки | year_label=I курс | study_year_no=1 | email=student4@university.example
+ROW|faculty_number=00010011 | first_name=Борис | middle_name=Николов | last_name=Димитров | specialty_name=Софтуерно инженерство | year_label=II курс | study_year_no=2 | email=student11@university.example
+ROW|faculty_number=00010018 | first_name=Йоана | middle_name=Петрова | last_name=Димитрова | specialty_name=Икономика | year_label=III курс | study_year_no=3 | email=student18@university.example
+ROW|faculty_number=00010002 | first_name=Мария | middle_name=Георгиева | last_name=Димитрова | specialty_name=Софтуерно инженерство | year_label=I курс | study_year_no=1 | email=student2@university.example
+ROW|faculty_number=00010005 | first_name=Георги | middle_name=Димитров | last_name=Иванов | specialty_name=Софтуерно инженерство | year_label=I курс | study_year_no=1 | email=student5@university.example
+ROW|faculty_number=00010012 | first_name=София | middle_name=Тодорова | last_name=Иванова | specialty_name=Икономика | year_label=II курс | study_year_no=2 | email=student12@university.example
+ROW|faculty_number=00010007 | first_name=Николай | middle_name=Александров | last_name=Колев | specialty_name=Компютърни науки | year_label=II курс | study_year_no=2 | email=student7@university.example
+ROW|faculty_number=00010017 | first_name=Павел | middle_name=Стоянов | last_name=Колев | specialty_name=Софтуерно инженерство | year_label=III курс | study_year_no=3 | email=student17@university.example
+ROW|faculty_number=00010010 | first_name=Петя | middle_name=Петрова | last_name=Костова | specialty_name=Компютърни науки | year_label=II курс | study_year_no=2 | email=student10@university.example
+ROW|faculty_number=00010016 | first_name=Ралица | middle_name=Георгиева | last_name=Костова | specialty_name=Компютърни науки | year_label=III курс | study_year_no=3 | email=student16@university.example
+ROW|faculty_number=00010015 | first_name=Христо | middle_name=Иванов | last_name=Николов | specialty_name=Икономика | year_label=III курс | study_year_no=3 | email=student15@university.example
+ROW|faculty_number=00010008 | first_name=Виктория | middle_name=Иванова | last_name=Николова | specialty_name=Софтуерно инженерство | year_label=II курс | study_year_no=2 | email=student8@university.example
+ROW|faculty_number=00010001 | first_name=Александър | middle_name=Иванов | last_name=Петров | specialty_name=Компютърни науки | year_label=I курс | study_year_no=1 | email=student1@university.example
+ROW|faculty_number=00010013 | first_name=Мартин | middle_name=Колев | last_name=Петров | specialty_name=Компютърни науки | year_label=III курс | study_year_no=3 | email=student13@university.example
+ROW|faculty_number=00010006 | first_name=Анна | middle_name=Стоянова | last_name=Петрова | specialty_name=Икономика | year_label=I курс | study_year_no=1 | email=student6@university.example
+ROW|faculty_number=00010003 | first_name=Иван | middle_name=Петров | last_name=Стоянов | specialty_name=Икономика | year_label=I курс | study_year_no=1 | email=student3@university.example
+ROW|faculty_number=00010014 | first_name=Десислава | middle_name=Димитрова | last_name=Стоянова | specialty_name=Софтуерно инженерство | year_label=III курс | study_year_no=3 | email=student14@university.example
+ROW|faculty_number=00010009 | first_name=Димитър | middle_name=Георгиев | last_name=Тодоров | specialty_name=Икономика | year_label=II курс | study_year_no=2 | email=student9@university.example
+ROWS|STUDENTS|20
+
+PL/SQL procedure successfully completed.
+
+ALL_TEACHERS
+LIST|TEACHERS
+ROW|first_name=Мария | middle_name=Петрова | last_name=Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example
+ROW|first_name=Иван | middle_name=Колев | last_name=Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example
+ROW|first_name=Анна | middle_name=Димитрова | last_name=Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example
+ROW|first_name=Петър | middle_name=Иванов | last_name=Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example
+ROW|first_name=Георги | middle_name=Тодоров | last_name=Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example
+ROW|first_name=Елена | middle_name=Николова | last_name=Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example
+ROWS|TEACHERS|6
+
+PL/SQL procedure successfully completed.
+
+ALL_DISCIPLINES
+LIST|DISCIPLINES
+ROW|discipline_name=SQL програмиране
+ROW|discipline_name=Академичен английски
+ROW|discipline_name=Алгоритми
+ROW|discipline_name=Английски език
+ROW|discipline_name=Бази от данни
+ROW|discipline_name=Дискретна математика
+ROW|discipline_name=Компютърни мрежи
+ROW|discipline_name=Математика
+ROW|discipline_name=Моделиране на данни
+ROW|discipline_name=Операционни системи
+ROW|discipline_name=Основи на икономиката
+ROW|discipline_name=СА
+ROW|discipline_name=Софтуерно инженерство
+ROW|discipline_name=Статистика
+ROW|discipline_name=Уеб технологии
+ROWS|DISCIPLINES|15
+
+PL/SQL procedure successfully completed.
+
+ALL_CURRICULUM
+LIST|CURRICULUM
+ROW|specialty_name=Икономика | discipline_name=Английски език | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Математика | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Основи на икономиката | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Академичен английски | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Алгоритми | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Дискретна математика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Статистика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Бази от данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Моделиране на данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Операционни системи | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=SQL програмиране | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Компютърни мрежи | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Икономика | discipline_name=Софтуерно инженерство | semester_no=5 | year_label=III курс | term_no=1
+ROW|specialty_name=Икономика | discipline_name=Уеб технологии | semester_no=6 | year_label=III курс | term_no=2
+ROW|specialty_name=КСТ | discipline_name=Математика | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=КСТ | discipline_name=СА | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Английски език | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Математика | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Основи на икономиката | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Академичен английски | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Алгоритми | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Дискретна математика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Статистика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Бази от данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Моделиране на данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Операционни системи | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=SQL програмиране | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Компютърни мрежи | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Компютърни науки | discipline_name=Софтуерно инженерство | semester_no=5 | year_label=III курс | term_no=1
+ROW|specialty_name=Компютърни науки | discipline_name=Уеб технологии | semester_no=6 | year_label=III курс | term_no=2
+ROW|specialty_name=СИТ | discipline_name=Математика | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=СИТ | discipline_name=СА | semester_no=6 | year_label=III курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Английски език | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Математика | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Основи на икономиката | semester_no=1 | year_label=I курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Академичен английски | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Алгоритми | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Дискретна математика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Статистика | semester_no=2 | year_label=I курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Бази от данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Моделиране на данни | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Операционни системи | semester_no=3 | year_label=II курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=SQL програмиране | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Компютърни мрежи | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Софтуерно инженерство | semester_no=5 | year_label=III курс | term_no=1
+ROW|specialty_name=Софтуерно инженерство | discipline_name=Уеб технологии | semester_no=6 | year_label=III курс | term_no=2
+ROWS|CURRICULUM|46
+
+PL/SQL procedure successfully completed.
+
+ALL_DISCIPLINE_TEACHERS
+LIST|DISCIPLINE_TEACHERS
+ROW|discipline_name=Английски език | specialty_name=Икономика | semester_no=1 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Икономика | semester_no=1 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Икономика | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Основи на икономиката | specialty_name=Икономика | semester_no=1 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Академичен английски | specialty_name=Икономика | semester_no=2 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Алгоритми | specialty_name=Икономика | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Дискретна математика | specialty_name=Икономика | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Статистика | specialty_name=Икономика | semester_no=2 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Икономика | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Икономика | semester_no=3 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Моделиране на данни | specialty_name=Икономика | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Операционни системи | specialty_name=Икономика | semester_no=3 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=SQL програмиране | specialty_name=Икономика | semester_no=4 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Компютърни мрежи | specialty_name=Икономика | semester_no=4 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Софтуерно инженерство | specialty_name=Икономика | semester_no=5 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Уеб технологии | specialty_name=Икономика | semester_no=6 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Английски език | specialty_name=Компютърни науки | semester_no=1 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Компютърни науки | semester_no=1 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Компютърни науки | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Основи на икономиката | specialty_name=Компютърни науки | semester_no=1 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Академичен английски | specialty_name=Компютърни науки | semester_no=2 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Алгоритми | specialty_name=Компютърни науки | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Дискретна математика | specialty_name=Компютърни науки | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Статистика | specialty_name=Компютърни науки | semester_no=2 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Компютърни науки | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Компютърни науки | semester_no=3 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Моделиране на данни | specialty_name=Компютърни науки | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Операционни системи | specialty_name=Компютърни науки | semester_no=3 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=SQL програмиране | specialty_name=Компютърни науки | semester_no=4 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Компютърни мрежи | specialty_name=Компютърни науки | semester_no=4 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Софтуерно инженерство | specialty_name=Компютърни науки | semester_no=5 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Уеб технологии | specialty_name=Компютърни науки | semester_no=6 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Английски език | specialty_name=Софтуерно инженерство | semester_no=1 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Софтуерно инженерство | semester_no=1 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=Софтуерно инженерство | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Основи на икономиката | specialty_name=Софтуерно инженерство | semester_no=1 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Академичен английски | specialty_name=Софтуерно инженерство | semester_no=2 | teacher_name=Анна Димитрова Колева | title_name=асистент | phone=+359000000006 | email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Алгоритми | specialty_name=Софтуерно инженерство | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Дискретна математика | specialty_name=Софтуерно инженерство | semester_no=2 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Статистика | specialty_name=Софтуерно инженерство | semester_no=2 | teacher_name=Елена Николова Стоянова | title_name=доцент | phone=+359000000004 | email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Софтуерно инженерство | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Бази от данни | specialty_name=Софтуерно инженерство | semester_no=3 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Моделиране на данни | specialty_name=Софтуерно инженерство | semester_no=3 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Операционни системи | specialty_name=Софтуерно инженерство | semester_no=3 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=SQL програмиране | specialty_name=Софтуерно инженерство | semester_no=4 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Компютърни мрежи | specialty_name=Софтуерно инженерство | semester_no=4 | teacher_name=Иван Колев Димитров | title_name=главен асистент | phone=+359000000003 | email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Софтуерно инженерство | specialty_name=Софтуерно инженерство | semester_no=5 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Уеб технологии | specialty_name=Софтуерно инженерство | semester_no=6 | teacher_name=Георги Тодоров Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|discipline_name=Математика | specialty_name=КСТ | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=КСТ | semester_no=4 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=КСТ | semester_no=4 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=Математика | specialty_name=СИТ | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=СИТ | semester_no=6 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROWS|DISCIPLINE_TEACHERS|53
+
+PL/SQL procedure successfully completed.
+
+ALL_GRADES
+LIST|GRADES
+ROW|faculty_number=KST-DEMO | student_name=Demo KST | student_email=kst.demo@university.example | specialty_name=КСТ | year_label=II курс | discipline_name=Математика | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-10-20 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2026 | academic_year_label=2026/2027
+ROW|faculty_number=KST-DEMO | student_name=Demo KST | student_email=kst.demo@university.example | specialty_name=КСТ | year_label=II курс | discipline_name=СА | semester_no=4 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-10-20 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example | academic_year=2026 |
+academic_year_label=2026/2027
+ROW|faculty_number=SIT-DEMO | student_name=Demo SIT | student_email=sit.demo@university.example | specialty_name=СИТ | year_label=III курс | discipline_name=Математика | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-10-20 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2026 | academic_year_label=2026/2027
+ROW|faculty_number=SIT-DEMO | student_name=Demo SIT | student_email=sit.demo@university.example | specialty_name=СИТ | year_label=III курс | discipline_name=СА | semester_no=6 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-10-20 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example | academic_year=2026 |
+academic_year_label=2026/2027
+ROW|faculty_number=00010004 | student_name=Елена Николова Георгиева | student_email=student4@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010004 | student_name=Елена Николова Георгиева | student_email=student4@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010004 | student_name=Елена Николова Георгиева | student_email=student4@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010004 | student_name=Елена Николова Георгиева | student_email=student4@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Дискретна математика | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010011 | student_name=Борис Николов Димитров | student_email=student11@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010011 | student_name=Борис Николов Димитров | student_email=student11@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010011 | student_name=Борис Николов Димитров | student_email=student11@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010018 | student_name=Йоана Петрова Димитрова | student_email=student18@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010018 | student_name=Йоана Петрова Димитрова | student_email=student18@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010018 | student_name=Йоана Петрова Димитрова | student_email=student18@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010002 | student_name=Мария Георгиева Димитрова | student_email=student2@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010002 | student_name=Мария Георгиева Димитрова | student_email=student2@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010002 | student_name=Мария Георгиева Димитрова | student_email=student2@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Основи на икономиката | semester_no=1 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Елена Николова Стоянова | title_name=доцент | teacher_phone=+359000000004 |
+teacher_email=teacher4@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010002 | student_name=Мария Георгиева Димитрова | student_email=student2@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010005 | student_name=Георги Димитров Иванов | student_email=student5@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010005 | student_name=Георги Димитров Иванов | student_email=student5@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010005 | student_name=Георги Димитров Иванов | student_email=student5@university.example | specialty_name=Софтуерно инженерство | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010012 | student_name=София Тодорова Иванова | student_email=student12@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010012 | student_name=София Тодорова Иванова | student_email=student12@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010012 | student_name=София Тодорова Иванова | student_email=student12@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010007 | student_name=Николай Александров Колев | student_email=student7@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010007 | student_name=Николай Александров Колев | student_email=student7@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=Моделиране на данни | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010007 | student_name=Николай Александров Колев | student_email=student7@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010007 | student_name=Николай Александров Колев | student_email=student7@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010017 | student_name=Павел Стоянов Колев | student_email=student17@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010017 | student_name=Павел Стоянов Колев | student_email=student17@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010017 | student_name=Павел Стоянов Колев | student_email=student17@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010010 | student_name=Петя Петрова Костова | student_email=student10@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010010 | student_name=Петя Петрова Костова | student_email=student10@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010010 | student_name=Петя Петрова Костова | student_email=student10@university.example | specialty_name=Компютърни науки | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010016 | student_name=Ралица Георгиева Костова | student_email=student16@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010016 | student_name=Ралица Георгиева Костова | student_email=student16@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010016 | student_name=Ралица Георгиева Костова | student_email=student16@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010015 | student_name=Христо Иванов Николов | student_email=student15@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010015 | student_name=Христо Иванов Николов | student_email=student15@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010015 | student_name=Христо Иванов Николов | student_email=student15@university.example | specialty_name=Икономика | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010008 | student_name=Виктория Иванова Николова | student_email=student8@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010008 | student_name=Виктория Иванова Николова | student_email=student8@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010008 | student_name=Виктория Иванова Николова | student_email=student8@university.example | specialty_name=Софтуерно инженерство | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Дискретна математика | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010013 | student_name=Мартин Колев Петров | student_email=student13@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010013 | student_name=Мартин Колев Петров | student_email=student13@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010013 | student_name=Мартин Колев Петров | student_email=student13@university.example | specialty_name=Компютърни науки | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010006 | student_name=Анна Стоянова Петрова | student_email=student6@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010006 | student_name=Анна Стоянова Петрова | student_email=student6@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010006 | student_name=Анна Стоянова Петрова | student_email=student6@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Академичен английски | semester_no=2 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010006 | student_name=Анна Стоянова Петрова | student_email=student6@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010003 | student_name=Иван Петров Стоянов | student_email=student3@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 | teacher_email=teacher6@university.example
+| academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010003 | student_name=Иван Петров Стоянов | student_email=student3@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010003 | student_name=Иван Петров Стоянов | student_email=student3@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 | teacher_email=teacher1@university.example |
+academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010003 | student_name=Иван Петров Стоянов | student_email=student3@university.example | specialty_name=Икономика | year_label=I курс | discipline_name=Статистика | semester_no=2 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Елена Николова Стоянова | title_name=доцент | teacher_phone=+359000000004 | teacher_email=teacher4@university.example |
+academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010014 | student_name=Десислава Димитрова Стоянова | student_email=student14@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Компютърни мрежи | semester_no=4 | grade_value=5 | grade_label=Много добър | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010014 | student_name=Десислава Димитрова Стоянова | student_email=student14@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Софтуерно инженерство | semester_no=5 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010014 | student_name=Десислава Димитрова Стоянова | student_email=student14@university.example | specialty_name=Софтуерно инженерство | year_label=III курс | discipline_name=Уеб технологии | semester_no=6 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Георги Тодоров Петров | title_name=професор | teacher_phone=+359000000005 |
+teacher_email=teacher5@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010009 | student_name=Димитър Георгиев Тодоров | student_email=student9@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=Бази от данни | semester_no=3 | grade_value=3 | grade_label=Среден | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010009 | student_name=Димитър Георгиев Тодоров | student_email=student9@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=Операционни системи | semester_no=3 | grade_value=2 | grade_label=Слаб | is_passing=0 | grade_date=2026-06-12 00:00:00 | teacher_name=Иван Колев Димитров | title_name=главен асистент | teacher_phone=+359000000003 |
+teacher_email=teacher3@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010009 | student_name=Димитър Георгиев Тодоров | student_email=student9@university.example | specialty_name=Икономика | year_label=II курс | discipline_name=SQL програмиране | semester_no=4 | grade_value=4 | grade_label=Добър | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Мария Петрова Георгиева | title_name=доцент | teacher_phone=+359000000002 |
+teacher_email=teacher2@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROWS|GRADES|64
+
+PL/SQL procedure successfully completed.
+
+FILTERED_SPECIALTIES
+LIST|SPECIALTIES
+ROW|specialty_name=Компютърни науки
+ROWS|SPECIALTIES|1
+
+PL/SQL procedure successfully completed.
+
+FILTERED_ACADEMIC_TITLES
+LIST|ACADEMIC_TITLES
+ROW|title_name=професор
+ROWS|ACADEMIC_TITLES|1
+
+PL/SQL procedure successfully completed.
+
+FILTERED_SEMESTERS
+LIST|SEMESTERS
+ROW|semester_no=1 | year_label=I курс | study_year_no=1 | term_no=1
+ROW|semester_no=3 | year_label=II курс | study_year_no=2 | term_no=1
+ROW|semester_no=5 | year_label=III курс | study_year_no=3 | term_no=1
+ROW|semester_no=7 | year_label=IV курс | study_year_no=4 | term_no=1
+ROW|semester_no=9 | year_label=V курс | study_year_no=5 | term_no=1
+ROW|semester_no=11 | year_label=VI курс | study_year_no=6 | term_no=1
+ROWS|SEMESTERS|6
+
+PL/SQL procedure successfully completed.
+
+FILTERED_GRADE_SCALE
+LIST|GRADE_SCALE
+ROW|grade_value=2 | grade_label=Слаб | is_passing=0 | passing_status=FAIL
+ROWS|GRADE_SCALE|1
+
+PL/SQL procedure successfully completed.
+
+FILTERED_STUDENTS
+LIST|STUDENTS
+ROW|faculty_number=00010004 | first_name=Елена | middle_name=Николова | last_name=Георгиева | specialty_name=Компютърни науки | year_label=I курс | study_year_no=1 | email=student4@university.example
+ROW|faculty_number=00010007 | first_name=Николай | middle_name=Александров | last_name=Колев | specialty_name=Компютърни науки | year_label=II курс | study_year_no=2 | email=student7@university.example
+ROW|faculty_number=00010010 | first_name=Петя | middle_name=Петрова | last_name=Костова | specialty_name=Компютърни науки | year_label=II курс | study_year_no=2 | email=student10@university.example
+ROW|faculty_number=00010016 | first_name=Ралица | middle_name=Георгиева | last_name=Костова | specialty_name=Компютърни науки | year_label=III курс | study_year_no=3 | email=student16@university.example
+ROW|faculty_number=00010001 | first_name=Александър | middle_name=Иванов | last_name=Петров | specialty_name=Компютърни науки | year_label=I курс | study_year_no=1 | email=student1@university.example
+ROW|faculty_number=00010013 | first_name=Мартин | middle_name=Колев | last_name=Петров | specialty_name=Компютърни науки | year_label=III курс | study_year_no=3 | email=student13@university.example
+ROWS|STUDENTS|6
+
+PL/SQL procedure successfully completed.
+
+FILTERED_TEACHERS
+LIST|TEACHERS
+ROW|first_name=Петър | middle_name=Иванов | last_name=Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example
+ROW|first_name=Георги | middle_name=Тодоров | last_name=Петров | title_name=професор | phone=+359000000005 | email=teacher5@university.example
+ROWS|TEACHERS|2
+
+PL/SQL procedure successfully completed.
+
+FILTERED_DISCIPLINES
+LIST|DISCIPLINES
+ROW|discipline_name=Бази от данни
+ROWS|DISCIPLINES|1
+
+PL/SQL procedure successfully completed.
+
+FILTERED_CURRICULUM
+LIST|CURRICULUM
+ROW|specialty_name=КСТ | discipline_name=СА | semester_no=4 | year_label=II курс | term_no=2
+ROW|specialty_name=СИТ | discipline_name=СА | semester_no=6 | year_label=III курс | term_no=2
+ROWS|CURRICULUM|2
+
+PL/SQL procedure successfully completed.
+
+FILTERED_DISCIPLINE_TEACHERS
+LIST|DISCIPLINE_TEACHERS
+ROW|discipline_name=Математика | specialty_name=КСТ | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=КСТ | semester_no=4 | teacher_name=Мария Петрова Георгиева | title_name=доцент | phone=+359000000002 | email=teacher2@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=КСТ | semester_no=4 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=Математика | specialty_name=СИТ | semester_no=1 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROW|discipline_name=СА | specialty_name=СИТ | semester_no=6 | teacher_name=Петър Иванов Николов | title_name=професор | phone=+359000000001 | email=teacher1@university.example | academic_year=2026 | academic_year_label=2026/2027
+ROWS|DISCIPLINE_TEACHERS|5
+
+PL/SQL procedure successfully completed.
+
+FILTERED_GRADES
+LIST|GRADES
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Английски език | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-12 00:00:00 | teacher_name=Анна Димитрова Колева | title_name=асистент | teacher_phone=+359000000006 |
+teacher_email=teacher6@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Математика | semester_no=1 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-10 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Алгоритми | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-11 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROW|faculty_number=00010001 | student_name=Александър Иванов Петров | student_email=student1@university.example | specialty_name=Компютърни науки | year_label=I курс | discipline_name=Дискретна математика | semester_no=2 | grade_value=6 | grade_label=Отличен | is_passing=1 | grade_date=2026-06-13 00:00:00 | teacher_name=Петър Иванов Николов | title_name=професор | teacher_phone=+359000000001 |
+teacher_email=teacher1@university.example | academic_year=2025 | academic_year_label=2025/2026
+ROWS|GRADES|4
+
+PL/SQL procedure successfully completed.
+
+TABLE_CURSOR_DEMO_COMPLETED
