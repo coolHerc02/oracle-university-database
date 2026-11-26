@@ -1,0 +1,32 @@
+PASS: 05_search.sql exposes 2 final queries
+PASS: 05_search.sql report 1 hides surrogate IDs
+PASS: 05_search.sql report 1 filters by meaningful values
+PASS: 05_search.sql report 1 has explicit ordering
+PASS: 05_search.sql report 1 includes entity contact data
+PASS: 05_search.sql report 2 hides surrogate IDs
+PASS: 05_search.sql report 2 filters by meaningful values
+PASS: 05_search.sql report 2 has explicit ordering
+PASS: 05_search.sql report 2 includes entity contact data
+PASS: 06_reports.sql exposes 5 final queries
+PASS: 06_reports.sql report 1 hides surrogate IDs
+PASS: 06_reports.sql report 1 filters by meaningful values
+PASS: 06_reports.sql report 1 has explicit ordering
+PASS: 06_reports.sql report 1 includes entity contact data
+PASS: 06_reports.sql report 2 hides surrogate IDs
+PASS: 06_reports.sql report 2 filters by meaningful values
+PASS: 06_reports.sql report 2 has explicit ordering
+PASS: 06_reports.sql report 2 includes entity contact data
+PASS: 06_reports.sql report 3 hides surrogate IDs
+PASS: 06_reports.sql report 3 filters by meaningful values
+PASS: 06_reports.sql report 3 has explicit ordering
+PASS: 06_reports.sql report 3 includes entity contact data
+PASS: 06_reports.sql report 4 hides surrogate IDs
+PASS: 06_reports.sql report 4 filters by meaningful values
+PASS: 06_reports.sql report 4 has explicit ordering
+PASS: 06_reports.sql report 4 includes entity contact data
+PASS: 06_reports.sql report 5 hides surrogate IDs
+PASS: 06_reports.sql report 5 filters by meaningful values
+PASS: 06_reports.sql report 5 has explicit ordering
+PASS: 06_reports.sql report 5 includes entity contact data
+PASS: Aggregate subqueries group by entity keys and the academic-year dimension
+TEACHER_SELECT_SOURCE_AUDIT_PASSED: 31 checks; 7 final queries
