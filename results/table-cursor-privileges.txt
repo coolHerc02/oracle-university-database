@@ -1,0 +1,4 @@
+PASS: General lists have no PUBLIC or teacher EXECUTE grants
+PASS: Teacher accounts have no additional roles
+PASS: Teacher system privileges remain CREATE SESSION only
+TABLE_CURSOR_PRIVILEGES_PASSED: 3 checks
