@@ -1,0 +1,12 @@
+PASS: SPECIALTIES: CREATE TABLE at schema line 27; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: ACADEMIC_TITLES: CREATE TABLE at schema line 36; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: STUDY_YEARS: CREATE TABLE at schema line 45; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: SEMESTERS: CREATE TABLE at schema line 54; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: GRADE_SCALE: CREATE TABLE at schema line 66; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: STUDENTS: CREATE TABLE at schema line 82; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: TEACHERS: CREATE TABLE at schema line 99; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: DISCIPLINES: CREATE TABLE at schema line 116; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: CURRICULUM: CREATE TABLE at schema line 124; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: DISCIPLINE_TEACHERS: CREATE TABLE at schema line 137; INSERT, SELECT, UPDATE, DELETE executed successfully
+PASS: GRADES: CREATE TABLE at schema line 147; INSERT, SELECT, UPDATE, DELETE executed successfully
+CRUD_COVERAGE_AUDIT_PASSED: 11 CREATE TABLE definitions; 44 executed CRUD operations
