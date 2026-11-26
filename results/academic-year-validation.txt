@@ -1,0 +1,41 @@
+PASS: Academic year is mandatory in both tables
+PASS: Appointment primary key includes academic year
+PASS: Grade FK includes the appointment year
+PASS: One current student-course grade remains the primary key
+PASS: Sixty original grades belong to 2025/2026
+PASS: Four SIT/KST example grades belong to 2026/2027
+PASS: Original specialty appointments retained in 2025/2026
+PASS: Five SIT/KST appointments retained in 2026/2027
+PASS: Same teacher and course may have different academic years
+PASS: Teaching the same course in another year does not inflate distinct-course
+ranking
+PASS: Duplicate teacher-course-year rejected (expected -1, actual -1)
+PASS: Fractional academic year rejected without rounding (expected -2290, actual
+-2290)
+PASS: Out-of-range academic year rejected (expected -2290, actual -2290)
+PASS: Ambiguous year must be specified explicitly (expected -20171, actual
+-20171)
+PASS: Future-year teacher replacement succeeds
+PASS: Replacement preserves historical teacher appointment
+PASS: Historical grade retains its year and teacher
+PASS: Historical report excludes teachers from other academic years
+PASS: Multiple appointment years never duplicate academic rows
+PASS: Delete removes only the selected year appointment
+PASS: Existing grade cannot silently move into another academic year (expected
+-20172, actual -20172)
+PASS: Owner cannot use a teacher appointed only in another year (expected -2291,
+actual -2291)
+AFTER INSERT: student=00010007, academic_year=2026, curriculum=1, grade=4
+(transaction pending)
+PASS: New-year grade references the new-year teacher
+PASS: New-year report lists only new-year teachers
+PASS: Appointment referenced by a grade is protected (expected -2292, actual
+-2292)
+PASS: DELETE refuses a different academic year (expected -20172, actual -20172)
+PASS: Year-specific grade DELETE succeeds
+PASS: All grade rows and fields restored
+PASS: All appointment rows and fields restored
+PASS: Write guard closed after successful and rejected operations
+ACADEMIC_YEAR_VALIDATION_PASSED: 30 checks
+
+PL/SQL procedure successfully completed.
