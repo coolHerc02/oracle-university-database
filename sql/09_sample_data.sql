@@ -36,7 +36,7 @@ prompt STUDENT_DISCIPLINE_GRADES
 select * from grades order by faculty_number,curriculum_id;
 
 prompt DISCIPLINE_TEACHER_ASSIGNMENTS
-select * from discipline_teachers order by curriculum_id,teacher_id;
+select * from discipline_teachers order by curriculum_id,teacher_id,academic_year;
 
 prompt CURRICULUM
 select * from curriculum order by specialty_id,discipline_id;
