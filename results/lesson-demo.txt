@@ -1,25 +1,42 @@
 LESSON DEMONSTRATION: changes will be rolled back
-AFTER INSERT: student=DEMO-LESSON, curriculum=61, grade=4 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, curriculum=62, grade=5 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, curriculum=63, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=94, grade=4
+(transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=95, grade=5
+(transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=96, grade=6
+(transaction pending)
 EXPLICIT OPEN/FETCH/CLOSE CURSOR:
 Student: DEMO-LESSON Demo Student
 Specialty: Компютърни науки; I курс
+Email: updated.student@university.example
 Average: 5.33
-Semester 1: Demo modelling | grade 5 | 2026-06-13
-Semester 2: Demo databases | grade 5 | 2026-06-11
-Semester 3: Demo SQL and PL/SQL | grade 6 | 2026-06-12
+Semester 1: Demo modelling | grade 5 Много добър | 2026-06-13 | academic year
+2026/2027
+Graded by: асистент Demo Teacher | +359000000098 |
+updated.teacher@university.example
+Semester 2: Demo databases | grade 5 Много добър | 2026-06-11 | academic year
+2026/2027
+Graded by: асистент Demo Teacher | +359000000098 |
+updated.teacher@university.example
+Semester 3: Demo SQL and PL/SQL | grade 6 Отличен | 2026-06-12 | academic year
+2026/2027
+Graded by: асистент Demo Teacher | +359000000098 |
+updated.teacher@university.example
 FOR CURSOR - TEACHER DISCIPLINES:
-66 | Demo modelling | semester 1
-67 | Demo databases | semester 2
-68 | Demo SQL and PL/SQL | semester 3
+Demo modelling | semester 1 | Компютърни науки | academic year 2026/2027
+Demo databases | semester 2 | Компютърни науки | academic year 2026/2027
+Demo SQL and PL/SQL | semester 3 | Компютърни науки | academic year 2026/2027
 LIKE CURSOR - STUDENT KEYWORD:
-KST-DEMO | Demo KST | КСТ | II курс | 5.50
-SIT-DEMO | Demo SIT | СИТ | III курс | 5.50
-DEMO-LESSON | Demo Student | Компютърни науки | I курс | 5.33
+KST-DEMO | Demo KST | kst.demo@university.example | КСТ | II курс | 5.50 |
+disciplines: 2
+SIT-DEMO | Demo SIT | sit.demo@university.example | СИТ | III курс | 5.50 |
+disciplines: 2
+DEMO-LESSON | Demo Student | updated.student@university.example | Компютърни
+науки | I курс | 5.33 | disciplines: 3
 Student matches: 3
 LIKE CURSOR - DISCIPLINE KEYWORD:
-68 | Demo SQL and PL/SQL | semester 3 | Demo Teacher
+Demo SQL and PL/SQL | Компютърни науки | semester 3 | асистент Demo Teacher |
++359000000098 | updated.teacher@university.example | academic year 2026/2027
 Discipline matches: 1
 
 PL/SQL procedure successfully completed.
@@ -31,23 +48,45 @@ LESSON_DEMO_ROLLED_BACK
 SEEDED ACADEMIC REPORT - EXPLICIT CURSOR
 Student: 00010001 Александър Иванов Петров
 Specialty: Компютърни науки; I курс
+Email: student1@university.example
 Average: 6.00
-Semester 1: Английски език | grade 6 | 2026-06-12
-Semester 1: Математика | grade 6 | 2026-06-10
-Semester 2: Алгоритми | grade 6 | 2026-06-11
-Semester 2: Дискретна математика | grade 6 | 2026-06-13
+Semester 1: Английски език | grade 6 Отличен | 2026-06-12 | academic year
+2025/2026
+Graded by: асистент Анна Димитрова Колева | +359000000006 |
+teacher6@university.example
+Semester 1: Математика | grade 6 Отличен | 2026-06-10 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 |
+teacher1@university.example
+Semester 2: Алгоритми | grade 6 Отличен | 2026-06-11 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 |
+teacher1@university.example
+Semester 2: Дискретна математика | grade 6 Отличен | 2026-06-13 | academic year
+2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 |
+teacher1@university.example
 
 PL/SQL procedure successfully completed.
 
 CYRILLIC KEYWORD SEARCH
-00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
+00010001 | Александър Иванов Петров | student1@university.example | Компютърни
+науки | I курс | 6.00 | disciplines: 4
 Student matches: 1
 
 PL/SQL procedure successfully completed.
 
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-Discipline matches: 3
+Бази от данни | Икономика | semester 3 | доцент Мария Петрова Георгиева |
++359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Икономика | semester 3 | професор Петър Иванов Николов |
++359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | доцент Мария Петрова Георгиева |
++359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | професор Петър Иванов Николов |
++359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | доцент Мария Петрова
+Георгиева | +359000000002 | teacher2@university.example | academic year
+2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | професор Петър Иванов
+Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Discipline matches: 6
 
 PL/SQL procedure successfully completed.
