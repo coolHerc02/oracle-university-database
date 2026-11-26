@@ -51,42 +51,42 @@ declare
  l_ids t_ids;
 begin
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430'); l_disciplines(1).semester_no := 1;
- l_disciplines(2).discipline_name := unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438'); l_disciplines(2).semester_no := 2;
- l_disciplines(3).discipline_name := unistr('\0414\0438\0441\043a\0440\0435\0442\043d\0430 \043c\0430\0442\0435\043c\0430\0442\0438\043a\0430'); l_disciplines(3).semester_no := 2;
+ l_disciplines(1).discipline_name := unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430'); l_disciplines(1).semester_no := 1; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('\0410\043b\0433\043e\0440\0438\0442\043c\0438'); l_disciplines(2).semester_no := 2; l_disciplines(2).academic_year:=2025;
+ l_disciplines(3).discipline_name := unistr('\0414\0438\0441\043a\0440\0435\0442\043d\0430 \043c\0430\0442\0435\043c\0430\0442\0438\043a\0430'); l_disciplines(3).semester_no := 2; l_disciplines(3).academic_year:=2025;
  university_api.create_teacher(unistr('\041f\0435\0442\044a\0440'),unistr('\0418\0432\0430\043d\043e\0432'),unistr('\041d\0438\043a\043e\043b\043e\0432'),4,'+359000000001','teacher1@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(1) := l_created_ids(1);
  l_ids(2) := l_created_ids(2);
  l_ids(3) := l_created_ids(3);
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\0411\0430\0437\0438 \043e\0442 \0434\0430\043d\043d\0438'); l_disciplines(1).semester_no := 3;
- l_disciplines(2).discipline_name := unistr('SQL \043f\0440\043e\0433\0440\0430\043c\0438\0440\0430\043d\0435'); l_disciplines(2).semester_no := 4;
- l_disciplines(3).discipline_name := unistr('\041c\043e\0434\0435\043b\0438\0440\0430\043d\0435 \043d\0430 \0434\0430\043d\043d\0438'); l_disciplines(3).semester_no := 3;
+ l_disciplines(1).discipline_name := unistr('\0411\0430\0437\0438 \043e\0442 \0434\0430\043d\043d\0438'); l_disciplines(1).semester_no := 3; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('SQL \043f\0440\043e\0433\0440\0430\043c\0438\0440\0430\043d\0435'); l_disciplines(2).semester_no := 4; l_disciplines(2).academic_year:=2025;
+ l_disciplines(3).discipline_name := unistr('\041c\043e\0434\0435\043b\0438\0440\0430\043d\0435 \043d\0430 \0434\0430\043d\043d\0438'); l_disciplines(3).semester_no := 3; l_disciplines(3).academic_year:=2025;
  university_api.create_teacher(unistr('\041c\0430\0440\0438\044f'),unistr('\041f\0435\0442\0440\043e\0432\0430'),unistr('\0413\0435\043e\0440\0433\0438\0435\0432\0430'),3,'+359000000002','teacher2@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(4) := l_created_ids(1);
  l_ids(5) := l_created_ids(2);
  l_ids(6) := l_created_ids(3);
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\041e\043f\0435\0440\0430\0446\0438\043e\043d\043d\0438 \0441\0438\0441\0442\0435\043c\0438'); l_disciplines(1).semester_no := 3;
- l_disciplines(2).discipline_name := unistr('\041a\043e\043c\043f\044e\0442\044a\0440\043d\0438 \043c\0440\0435\0436\0438'); l_disciplines(2).semester_no := 4;
+ l_disciplines(1).discipline_name := unistr('\041e\043f\0435\0440\0430\0446\0438\043e\043d\043d\0438 \0441\0438\0441\0442\0435\043c\0438'); l_disciplines(1).semester_no := 3; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('\041a\043e\043c\043f\044e\0442\044a\0440\043d\0438 \043c\0440\0435\0436\0438'); l_disciplines(2).semester_no := 4; l_disciplines(2).academic_year:=2025;
  university_api.create_teacher(unistr('\0418\0432\0430\043d'),unistr('\041a\043e\043b\0435\0432'),unistr('\0414\0438\043c\0438\0442\0440\043e\0432'),2,'+359000000003','teacher3@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(7) := l_created_ids(1);
  l_ids(8) := l_created_ids(2);
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\041e\0441\043d\043e\0432\0438 \043d\0430 \0438\043a\043e\043d\043e\043c\0438\043a\0430\0442\0430'); l_disciplines(1).semester_no := 1;
- l_disciplines(2).discipline_name := unistr('\0421\0442\0430\0442\0438\0441\0442\0438\043a\0430'); l_disciplines(2).semester_no := 2;
+ l_disciplines(1).discipline_name := unistr('\041e\0441\043d\043e\0432\0438 \043d\0430 \0438\043a\043e\043d\043e\043c\0438\043a\0430\0442\0430'); l_disciplines(1).semester_no := 1; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('\0421\0442\0430\0442\0438\0441\0442\0438\043a\0430'); l_disciplines(2).semester_no := 2; l_disciplines(2).academic_year:=2025;
  university_api.create_teacher(unistr('\0415\043b\0435\043d\0430'),unistr('\041d\0438\043a\043e\043b\043e\0432\0430'),unistr('\0421\0442\043e\044f\043d\043e\0432\0430'),3,'+359000000004','teacher4@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(9) := l_created_ids(1);
  l_ids(10) := l_created_ids(2);
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\0421\043e\0444\0442\0443\0435\0440\043d\043e \0438\043d\0436\0435\043d\0435\0440\0441\0442\0432\043e'); l_disciplines(1).semester_no := 5;
- l_disciplines(2).discipline_name := unistr('\0423\0435\0431 \0442\0435\0445\043d\043e\043b\043e\0433\0438\0438'); l_disciplines(2).semester_no := 6;
+ l_disciplines(1).discipline_name := unistr('\0421\043e\0444\0442\0443\0435\0440\043d\043e \0438\043d\0436\0435\043d\0435\0440\0441\0442\0432\043e'); l_disciplines(1).semester_no := 5; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('\0423\0435\0431 \0442\0435\0445\043d\043e\043b\043e\0433\0438\0438'); l_disciplines(2).semester_no := 6; l_disciplines(2).academic_year:=2025;
  university_api.create_teacher(unistr('\0413\0435\043e\0440\0433\0438'),unistr('\0422\043e\0434\043e\0440\043e\0432'),unistr('\041f\0435\0442\0440\043e\0432'),4,'+359000000005','teacher5@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(11) := l_created_ids(1);
  l_ids(12) := l_created_ids(2);
  l_disciplines.delete;
- l_disciplines(1).discipline_name := unistr('\0410\043d\0433\043b\0438\0439\0441\043a\0438 \0435\0437\0438\043a'); l_disciplines(1).semester_no := 1;
- l_disciplines(2).discipline_name := unistr('\0410\043a\0430\0434\0435\043c\0438\0447\0435\043d \0430\043d\0433\043b\0438\0439\0441\043a\0438'); l_disciplines(2).semester_no := 2;
+ l_disciplines(1).discipline_name := unistr('\0410\043d\0433\043b\0438\0439\0441\043a\0438 \0435\0437\0438\043a'); l_disciplines(1).semester_no := 1; l_disciplines(1).academic_year:=2025;
+ l_disciplines(2).discipline_name := unistr('\0410\043a\0430\0434\0435\043c\0438\0447\0435\043d \0430\043d\0433\043b\0438\0439\0441\043a\0438'); l_disciplines(2).semester_no := 2; l_disciplines(2).academic_year:=2025;
  university_api.create_teacher(unistr('\0410\043d\043d\0430'),unistr('\0414\0438\043c\0438\0442\0440\043e\0432\0430'),unistr('\041a\043e\043b\0435\0432\0430'),1,'+359000000006','teacher6@university.example',l_disciplines,l_teacher_id,l_created_ids);
  l_ids(13) := l_created_ids(1);
  l_ids(14) := l_created_ids(2);
@@ -99,7 +99,7 @@ begin
  for c in(select c.*, (select min(teacher_id) from discipline_teachers dt where dt.curriculum_id=c.curriculum_id) initial_teacher
           from curriculum c where c.specialty_id=(select min(specialty_id) from specialties)) loop
    for sp in(select specialty_id from specialties where specialty_id<>c.specialty_id order by specialty_id) loop
-     university_api.add_curriculum(sp.specialty_id,c.discipline_id,c.semester_no,c.initial_teacher,l_copy_id);
+     university_api.add_curriculum(sp.specialty_id,c.discipline_id,c.semester_no,c.initial_teacher,l_copy_id,2025);
      for t in(select teacher_id from discipline_teachers where curriculum_id=c.curriculum_id and teacher_id<>c.initial_teacher) loop
        university_api.assign_curriculum_teacher(l_copy_id,t.teacher_id);
      end loop;
