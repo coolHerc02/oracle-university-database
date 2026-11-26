@@ -11,7 +11,8 @@ PASS 10: Every teacher leads at least two disciplines
 PASS 11: Leading zeroes and Cyrillic retained
 PASS 12: Reject teacher with one discipline (expected -20030, actual -20030)
 PASS 13: Reject student with one discipline (expected -20031, actual -20031)
-AFTER INSERT: student=TEST-DUP, curriculum=1, grade=4 (transaction pending)
+AFTER INSERT: student=TEST-DUP, academic_year=2025, curriculum=1, grade=4
+(transaction pending)
 PASS 14: Reject duplicate student-discipline pair (expected -1, actual -1)
 PASS 15: Failed create_student rolled back all its rows
 PASS 16: Reject duplicate faculty number (expected -1, actual -1)
@@ -41,10 +42,14 @@ PASS 37: Teacher counts total distinct assignments independently of grades
 PASS 38: Grade correction changes average from six to five
 PASS 39: Grade correction changes ranking
 PASS 40: Caller rollback restores original average
-AFTER INSERT: student=TEST-RENAME, curriculum=1, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=2, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=3, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=13, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=1, grade=6
+(transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=2, grade=6
+(transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=3, grade=6
+(transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=13, grade=6
+(transaction pending)
 PASS 41: Faculty number correction preserves all grades
 PASS 42: Old faculty number removed consistently during correction
 PASS 43: Teacher and two disciplines created atomically
