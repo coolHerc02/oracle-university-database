@@ -323,3 +323,359 @@
 - `results/lesson-programs-compilation.txt`
 - `results/migration-rehearsal.txt`
 - `results/search.txt`
+
+# Локални комити от 26.11.2026
+
+Потребителят изрично разреши максимално подробно разделяне на промените.
+Тази серия съдържа 82 комита. Провереният release има 468 основни Oracle проверки,
+91 нови проверки на списъчните курсори и 57 проверки на query/cursor съответствието.
+Пълната серия е локална; push не е изпълняван в тази операция.
+Базов commit: `c58a947445bf88771e04324c0cd692411024083b`.
+
+## 1. 96dedc329883 - db: add academic year to appointment and grade keys
+
+- `models/university_import.sql`
+- `sql/01_schema.sql`
+
+## 2. 92208eace2ba - db: scope administrative assignments and grades by academic year
+
+- `sql/02_programs.sql`
+
+## 3. 4e9333090bbc - db: authorize teacher grading for the exact appointment year
+
+- `sql/20_teacher_grading.sql`
+
+## 4. e20a526fd9c8 - migration: retain old appointments and grade authors across academic years
+
+- `sql/26_migrate_academic_year.sql`
+
+## 5. ea4055ffc419 - test: record academic year migration evidence
+
+- `results/academic-year-migration.txt`
+
+## 6. 24c43b76d10f - test: record academic year data preservation evidence
+
+- `results/academic-year-data-preservation.txt`
+
+## 7. 9c1602cb27a6 - test: record academic year migration rehearsal evidence
+
+- `results/academic-year-migration-rehearsal.txt`
+
+## 8. a0fdf9ad6c75 - test: enforce year-specific appointments and historical grade integrity
+
+- `sql/27_academic_year_validation.sql`
+
+## 9. 8f9071e5064a - test: record academic year validation evidence
+
+- `results/academic-year-validation.txt`
+
+## 10. 87cc621fc83f - demo: show different teachers in successive academic years
+
+- `sql/28_academic_year_demo.sql`
+
+## 11. c1f246dc815c - test: record academic year demo evidence
+
+- `results/academic-year-demo.txt`
+
+## 12. 28c8b1f7f996 - demo: display actual DDL and prove CRUD for all eleven tables
+
+- `sql/29_defense_demo.sql`
+
+## 13. a69dc27ff8e3 - test: record crud coverage audit evidence
+
+- `results/crud-coverage-audit.txt`
+
+## 14. 8a746c01ccef - test: record defense demo evidence
+
+- `results/defense-demo.txt`
+
+## 15. 3c92cbcd7714 - docs: explain year values migration and historical grade limits
+
+- `docs/academic-year-change.md`
+
+## 16. aec79faa8f03 - docs: prepare instructor demonstration with per-table CRUD matrix
+
+- `docs/defense-guide.md`
+
+## 17. a6f533aae06d - test: record current validation summary evidence
+
+- `results/current-validation-summary.txt`
+
+## 18. 77a812b4d1e6 - report: filter grade searches by meaningful names and show full details
+
+- `sql/05_search.sql`
+
+## 19. c0aa4855837f - test: record search evidence
+
+- `results/search.txt`
+
+## 20. ccc1f5f24c26 - report: apply instructor presentation rules to all five reports
+
+- `sql/06_reports.sql`
+
+## 21. 953ccde4cabc - test: record reports evidence
+
+- `results/reports.txt`
+
+## 22. 077a9a2ae454 - demo: explain related-object keyword searches and cursor variants
+
+- `sql/30_teacher_select_rules_demo.sql`
+
+## 23. bae8fcd0011c - test: record teacher select demo evidence
+
+- `results/teacher-select-demo.txt`
+
+## 24. 3684239df613 - test: verify homonyms literal keywords full details and rollback
+
+- `sql/31_teacher_select_rules_validation.sql`
+
+## 25. 40151873275f - test: record teacher select validation evidence
+
+- `results/teacher-select-validation.txt`
+
+## 26. b32fd2fec657 - test: audit all seven final SELECT projections filters and ordering
+
+- `scripts/Validate-Teacher-Select-Rules.py`
+
+## 27. 659d8377e02a - test: record teacher select source audit evidence
+
+- `results/teacher-select-source-audit.txt`
+
+## 28. eea492b800ba - migration: update reporting programs without modifying table data
+
+- `sql/32_update_reporting.sql`
+
+## 29. 8347e75ee15d - test: record reporting update evidence
+
+- `results/reporting-update.txt`
+
+## 30. 4bc91905cecd - test: record teacher select data preservation evidence
+
+- `results/teacher-select-data-preservation.txt`
+
+## 31. 5dd98ad4cf1d - docs: transcribe instructor rules and explain the university cursor example
+
+- `docs/teacher-select-rules.md`
+
+## 32. a227115ad009 - query: add complete filtered SELECT lists for all eleven tables
+
+- `sql/33_select_each_table.sql`
+
+## 33. 99a14bb4109b - test: record table selects evidence
+
+- `results/table-selects.txt`
+
+## 34. 39905668d253 - db: install eleven read-only declared cursor procedures
+
+- `sql/34_cursor_procedures_each_table.sql`
+
+## 35. e6687858e94d - test: record table cursor installation evidence
+
+- `results/table-cursor-installation.txt`
+
+## 36. f7c0142231c9 - demo: show all table cursors and meaningful filter examples
+
+- `sql/35_cursor_procedures_demo.sql`
+
+## 37. 49f9634846a9 - test: record table cursor demo evidence
+
+- `results/table-cursor-demo.txt`
+
+## 38. ab17577daaaf - test: validate cursor cardinality filters inputs and full data restoration
+
+- `sql/36_cursor_procedures_validation.sql`
+
+## 39. 727551be5b88 - test: record table cursor validation evidence
+
+- `results/table-cursor-validation.txt`
+
+## 40. 2704b29a7b9e - build: generate standalone queries and cursor procedures from one catalogue
+
+- `scripts/Build-Table-Cursor-SQL.py`
+
+## 41. 8d8cf40ec855 - test: verify query cursor equivalence and presentation rules
+
+- `scripts/Validate-Table-Cursor-SQL.py`
+
+## 42. 0b3f7570ab77 - test: record table cursor source audit evidence
+
+- `results/table-cursor-source-audit.txt`
+
+## 43. 9a860725b2a1 - test: record table cursor data preservation evidence
+
+- `results/table-cursor-data-preservation.txt`
+
+## 44. a0fd7cc190e0 - test: record table cursor privileges evidence
+
+- `results/table-cursor-privileges.txt`
+
+## 45. 13ae5085110c - data: seed original appointments in academic year 2025
+
+- `sql/03_seed_data.sql`
+
+## 46. 5a5a91bebb7f - data: place SIT and KST sample assignments in academic year 2026
+
+- `sql/25_curriculum_example.sql`
+
+## 47. 5d222146f0d2 - test: record validation evidence
+
+- `results/validation.txt`
+
+## 48. 489fd05aae95 - db: adapt standalone procedures and cursors
+
+- `sql/10_standalone_programs.sql`
+
+## 49. 9bc3e3926706 - test: record lesson demo evidence
+
+- `results/lesson-demo.txt`
+
+## 50. 0aec2b93c4eb - test: record lesson validation evidence
+
+- `results/lesson-validation.txt`
+
+## 51. 43811ce5b93f - test: validate scoped many-to-many assignments
+
+- `sql/16_many_teachers_validation.sql`
+
+## 52. 90314d18e1bc - demo: execute all 44 CRUD operations and restore all eleven tables
+
+- `sql/18_crud_all_tables.sql`
+
+## 53. 083486674217 - test: record crud all tables evidence
+
+- `results/crud-all-tables.txt`
+
+## 54. 8bdefb8785a5 - test: record crud validation evidence
+
+- `results/crud-validation.txt`
+
+## 55. edaaeb8e08ca - test: validate specialty and semester rules
+
+- `sql/23_curriculum_validation.sql`
+
+## 56. e83fb0176c26 - test: record curriculum validation evidence
+
+- `results/curriculum-validation.txt`
+
+## 57. 0901ebc39602 - test: verify permissions using six real teacher logins
+
+- `scripts/CheckTeacherGrading.java`
+
+## 58. 063f9ae10d2e - test: record teacher authorization evidence
+
+- `results/teacher-authorization.txt`
+
+## 59. b2f577f6ff65 - build: assemble the academic-year and table-list cursor release
+
+- `scripts/Assemble-Academic-Year-SQL.py`
+- `scripts/Assemble-Curriculum-SQL.py`
+- `scripts/Assemble-SQL.py`
+- `sql/13_build.sql`
+
+## 60. 8f36b357b198 - test: record full build validation evidence
+
+- `results/full-build-validation.txt`
+
+## 61. effdbc29f87c - data: export current fictional sample records
+
+- `sql/09_sample_data.sql`
+
+## 62. d82a7248e409 - test: record sample data evidence
+
+- `results/sample-data.txt`
+
+## 63. 851046de5b46 - docs: extract current report data
+
+- `sql/14_documentation_data.sql`
+
+## 64. 2a36a4f25e6b - test: record documentation data evidence
+
+- `results/documentation-data.txt`
+
+## 65. 49e13581c58f - test: validate native metadata against actual Oracle schema
+
+- `scripts/Validate-DataModeler.py`
+
+## 66. 607218c3b870 - test: record model validation evidence
+
+- `results/model-validation.txt`
+
+## 67. ce0fbb725a79 - test: record schema snapshot evidence
+
+- `results/schema-snapshot.txt`
+
+## 68. c2a9145d4165 - model: synchronize complete native logical relational and physical design
+
+- `models/university/logical/entity/seg_0/08017D41-A7A4-49A6-8E6A-A64E3A314A23.xml`
+- `models/university/logical/entity/seg_0/3C568D34-718B-1372-270D-6EF980979BE6.xml`
+- `models/university/logical/relation/seg_0/B82190C7-7275-158B-EDF4-859F9B484280.xml`
+- `models/university/logical/subviews/0E327345-A259-0025-22A5-5A923728FDE8.xml`
+- `models/university/mapping/ExtendedMap_RM1CFB6451-B9AC-ED07-5D24-908CFC3FAB15.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/foreignkey/seg_0/E33EF9F8-9CFA-DE7D-4545-16AD6E3E773A.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/phys/32076570-BF29817DFF70/Table/seg_0/482E6F98-6F19-4959-94AC-F85C091ED33D.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/phys/32076570-BF29817DFF70/Table/seg_0/ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/subviews/5EF645B8-FD94-1BAE-8730-90A127B2F2E9.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/table/seg_0/482E6F98-6F19-4959-94AC-F85C091ED33D.xml`
+- `models/university/rel/1CFB6451-908CFC3FAB15/table/seg_0/ED8E42E8-3AC9-7C2D-25D1-25483ECD2C16.xml`
+
+## 69. 67df3f141520 - diagram: refresh logical model visualization
+
+- `docs/diagrams/logical.pdf`
+- `docs/diagrams/logical.png`
+- `docs/diagrams/logical.svg`
+
+## 70. fe850f44b034 - diagram: refresh relational model visualization
+
+- `docs/diagrams/relational.pdf`
+- `docs/diagrams/relational.png`
+- `docs/diagrams/relational.svg`
+
+## 71. fa95294c12df - docs: explain every table and normalization
+
+- `docs/data-dictionary.md`
+
+## 72. 2a282f46f530 - docs: explain specialty-specific teaching and semesters
+
+- `docs/curriculum-change.md`
+
+## 73. 35bfe86cd62b - docs: explain authenticated grading boundaries
+
+- `docs/grading-authorization.md`
+
+## 74. 8d7b232600b3 - docs: document CRUD coverage and rollback
+
+- `docs/crud-coverage.md`
+
+## 75. 67087bbdf29a - docs: explain current reports and table-list cursor usage
+
+- `docs/usage-and-results.md`
+
+## 76. ede3adf8a867 - docs: explain the saved academic-year model keys
+
+- `models/README.md`
+
+## 77. 539641ee33d8 - docs: refresh portfolio overview
+
+- `README.md`
+
+## 78. 9a85bd71bdbf - docs: record local commit authorization and project progress
+
+- `docs/activity-log.md`
+
+## 79. 52a621e3070e - docs: record the authorized granular commit plan
+
+- `docs/review-of-changes.md`
+
+## 80. b093e0b15693 - test: record pdf visual validation evidence
+
+- `results/pdf-visual-validation.txt`
+
+## 81. 14ce04d253f5 - chore: refresh scripts/Render-DataModeler-Diagrams.py
+
+- `scripts/Render-DataModeler-Diagrams.py`
+
+## 82. docs: record granular local commit history
+
+- `docs/commit-log.md`
+
+Последният commit записва този дневник. Неговият хеш се вижда с `git log -1`; не се вгражда в собствения му текст.
