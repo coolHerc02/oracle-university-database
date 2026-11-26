@@ -46,5 +46,9 @@ PASS 45: Authorized teacher succeeds after the first transaction releases its lo
 PASS 46: Teacher 2 may grade SA for KST in semester 4
 PASS 47: Same teacher and catalogue course cannot authorize SA for SIT in semester 6
 PASS 48: Teacher 1 explicitly assigned to both specialties can read both SA contexts
-PASS 49: All grade values, dates, student keys and teacher identities restored after testing
-TEACHER_AUTHORIZATION_PASSED: 49 checks; six real authenticated teacher accounts
+PASS 49: Teacher cannot move an existing 2025/2026 grade into 2026/2027
+PASS 50: An old-year appointment does not authorize grading a new academic year
+PASS 51: Explicit historical appointment year authorizes the actual teacher
+PASS 52: Teacher READ filters academic year and returns only its four 2026/2027 grades
+PASS 53: All grade values, dates, student keys and teacher identities restored after testing
+TEACHER_AUTHORIZATION_PASSED: 53 checks; six real authenticated teacher accounts
