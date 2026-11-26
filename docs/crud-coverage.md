@@ -17,3 +17,5 @@ Sequences продължават да се увеличават при ROLLBACK;
 За GRADE_SCALE временен savepoint освобождава стойност 6, показва реален INSERT/UPDATE/DELETE и веднага възстановява и оценките, и скалата.
 Ограниченията и защитните triggers остават включени. sql/19_crud_validation.sql има 20 допълнителни проверки за откази и атомарност.
 [Изпълнен CRUD](../results/crud-all-tables.txt). [Безопасност на изтриването](../results/crud-validation.txt).
+
+[Подробна демонстрация и матрица за всяка таблица](defense-guide.md). За CREATE TABLE + CRUD с F5 използвай sql/29_defense_demo.sql.
