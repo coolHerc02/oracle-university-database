@@ -1,4 +1,4 @@
-Temporary verification schema: UNIV_VERIFY_1020134051
+Temporary verification schema: UNIV_VERIFY_1126093637
 All public SQL scripts built successfully with only the schema-name guard adapted for this isolated test.
 
 
@@ -147,6 +147,12 @@ Comment created.
 
 UNIVERSITY_SCHEMA_READY
 
+Comment created.
+
+
+Comment created.
+
+
 PL/SQL procedure successfully completed.
 
 
@@ -261,7 +267,44 @@ PL/SQL procedure successfully completed.
 PL/SQL procedure successfully completed.
 
 
-1 row created.
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+TABLE_CURSOR_PROCEDURES_COMPILED: 11 procedures
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
 
 
 1 row created.
@@ -350,66 +393,69 @@ PL/SQL procedure successfully completed.
 
 1 row created.
 
-AFTER INSERT: student=00010001, curriculum=1, grade=6 (transaction pending)
-AFTER INSERT: student=00010001, curriculum=2, grade=6 (transaction pending)
-AFTER INSERT: student=00010001, curriculum=13, grade=6 (transaction pending)
-AFTER INSERT: student=00010001, curriculum=3, grade=6 (transaction pending)
-AFTER INSERT: student=00010002, curriculum=15, grade=5 (transaction pending)
-AFTER INSERT: student=00010002, curriculum=17, grade=4 (transaction pending)
-AFTER INSERT: student=00010002, curriculum=39, grade=5 (transaction pending)
-AFTER INSERT: student=00010002, curriculum=31, grade=4 (transaction pending)
-AFTER INSERT: student=00010003, curriculum=16, grade=2 (transaction pending)
-AFTER INSERT: student=00010003, curriculum=18, grade=3 (transaction pending)
-AFTER INSERT: student=00010003, curriculum=40, grade=4 (transaction pending)
-AFTER INSERT: student=00010003, curriculum=34, grade=3 (transaction pending)
-AFTER INSERT: student=00010004, curriculum=1, grade=6 (transaction pending)
-AFTER INSERT: student=00010004, curriculum=2, grade=6 (transaction pending)
-AFTER INSERT: student=00010004, curriculum=13, grade=6 (transaction pending)
-AFTER INSERT: student=00010004, curriculum=3, grade=6 (transaction pending)
-AFTER INSERT: student=00010005, curriculum=15, grade=4 (transaction pending)
-AFTER INSERT: student=00010005, curriculum=17, grade=5 (transaction pending)
-AFTER INSERT: student=00010005, curriculum=39, grade=5 (transaction pending)
-AFTER INSERT: student=00010006, curriculum=16, grade=2 (transaction pending)
-AFTER INSERT: student=00010006, curriculum=18, grade=2 (transaction pending)
-AFTER INSERT: student=00010006, curriculum=40, grade=3 (transaction pending)
-AFTER INSERT: student=00010006, curriculum=42, grade=3 (transaction pending)
-AFTER INSERT: student=00010007, curriculum=4, grade=5 (transaction pending)
-AFTER INSERT: student=00010007, curriculum=5, grade=5 (transaction pending)
-AFTER INSERT: student=00010007, curriculum=7, grade=5 (transaction pending)
-AFTER INSERT: student=00010007, curriculum=6, grade=5 (transaction pending)
-AFTER INSERT: student=00010008, curriculum=21, grade=6 (transaction pending)
-AFTER INSERT: student=00010008, curriculum=23, grade=5 (transaction pending)
-AFTER INSERT: student=00010008, curriculum=27, grade=5 (transaction pending)
-AFTER INSERT: student=00010009, curriculum=22, grade=3 (transaction pending)
-AFTER INSERT: student=00010009, curriculum=24, grade=4 (transaction pending)
-AFTER INSERT: student=00010009, curriculum=28, grade=2 (transaction pending)
-AFTER INSERT: student=00010010, curriculum=4, grade=4 (transaction pending)
-AFTER INSERT: student=00010010, curriculum=5, grade=4 (transaction pending)
-AFTER INSERT: student=00010010, curriculum=7, grade=5 (transaction pending)
-AFTER INSERT: student=00010011, curriculum=21, grade=6 (transaction pending)
-AFTER INSERT: student=00010011, curriculum=23, grade=6 (transaction pending)
-AFTER INSERT: student=00010011, curriculum=27, grade=5 (transaction pending)
-AFTER INSERT: student=00010012, curriculum=22, grade=2 (transaction pending)
-AFTER INSERT: student=00010012, curriculum=24, grade=3 (transaction pending)
-AFTER INSERT: student=00010012, curriculum=28, grade=3 (transaction pending)
-AFTER INSERT: student=00010013, curriculum=11, grade=5 (transaction pending)
-AFTER INSERT: student=00010013, curriculum=12, grade=5 (transaction pending)
-AFTER INSERT: student=00010013, curriculum=8, grade=4 (transaction pending)
-AFTER INSERT: student=00010014, curriculum=35, grade=4 (transaction pending)
-AFTER INSERT: student=00010014, curriculum=37, grade=6 (transaction pending)
-AFTER INSERT: student=00010014, curriculum=29, grade=5 (transaction pending)
-AFTER INSERT: student=00010015, curriculum=36, grade=3 (transaction pending)
-AFTER INSERT: student=00010015, curriculum=38, grade=2 (transaction pending)
-AFTER INSERT: student=00010015, curriculum=30, grade=4 (transaction pending)
-AFTER INSERT: student=00010016, curriculum=11, grade=6 (transaction pending)
-AFTER INSERT: student=00010016, curriculum=12, grade=5 (transaction pending)
-AFTER INSERT: student=00010016, curriculum=8, grade=6 (transaction pending)
-AFTER INSERT: student=00010017, curriculum=35, grade=5 (transaction pending)
-AFTER INSERT: student=00010017, curriculum=37, grade=5 (transaction pending)
-AFTER INSERT: student=00010017, curriculum=29, grade=5 (transaction pending)
-AFTER INSERT: student=00010018, curriculum=36, grade=2 (transaction pending)
-AFTER INSERT: student=00010018, curriculum=38, grade=3 (transaction pending)
-AFTER INSERT: student=00010018, curriculum=30, grade=4 (transaction pending)
+
+1 row created.
+
+AFTER INSERT: student=00010001, academic_year=2025, curriculum=1, grade=6 (transaction pending)
+AFTER INSERT: student=00010001, academic_year=2025, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=00010001, academic_year=2025, curriculum=13, grade=6 (transaction pending)
+AFTER INSERT: student=00010001, academic_year=2025, curriculum=3, grade=6 (transaction pending)
+AFTER INSERT: student=00010002, academic_year=2025, curriculum=15, grade=5 (transaction pending)
+AFTER INSERT: student=00010002, academic_year=2025, curriculum=17, grade=4 (transaction pending)
+AFTER INSERT: student=00010002, academic_year=2025, curriculum=39, grade=5 (transaction pending)
+AFTER INSERT: student=00010002, academic_year=2025, curriculum=31, grade=4 (transaction pending)
+AFTER INSERT: student=00010003, academic_year=2025, curriculum=16, grade=2 (transaction pending)
+AFTER INSERT: student=00010003, academic_year=2025, curriculum=18, grade=3 (transaction pending)
+AFTER INSERT: student=00010003, academic_year=2025, curriculum=40, grade=4 (transaction pending)
+AFTER INSERT: student=00010003, academic_year=2025, curriculum=34, grade=3 (transaction pending)
+AFTER INSERT: student=00010004, academic_year=2025, curriculum=1, grade=6 (transaction pending)
+AFTER INSERT: student=00010004, academic_year=2025, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=00010004, academic_year=2025, curriculum=13, grade=6 (transaction pending)
+AFTER INSERT: student=00010004, academic_year=2025, curriculum=3, grade=6 (transaction pending)
+AFTER INSERT: student=00010005, academic_year=2025, curriculum=15, grade=4 (transaction pending)
+AFTER INSERT: student=00010005, academic_year=2025, curriculum=17, grade=5 (transaction pending)
+AFTER INSERT: student=00010005, academic_year=2025, curriculum=39, grade=5 (transaction pending)
+AFTER INSERT: student=00010006, academic_year=2025, curriculum=16, grade=2 (transaction pending)
+AFTER INSERT: student=00010006, academic_year=2025, curriculum=18, grade=2 (transaction pending)
+AFTER INSERT: student=00010006, academic_year=2025, curriculum=40, grade=3 (transaction pending)
+AFTER INSERT: student=00010006, academic_year=2025, curriculum=42, grade=3 (transaction pending)
+AFTER INSERT: student=00010007, academic_year=2025, curriculum=4, grade=5 (transaction pending)
+AFTER INSERT: student=00010007, academic_year=2025, curriculum=5, grade=5 (transaction pending)
+AFTER INSERT: student=00010007, academic_year=2025, curriculum=7, grade=5 (transaction pending)
+AFTER INSERT: student=00010007, academic_year=2025, curriculum=6, grade=5 (transaction pending)
+AFTER INSERT: student=00010008, academic_year=2025, curriculum=21, grade=6 (transaction pending)
+AFTER INSERT: student=00010008, academic_year=2025, curriculum=23, grade=5 (transaction pending)
+AFTER INSERT: student=00010008, academic_year=2025, curriculum=27, grade=5 (transaction pending)
+AFTER INSERT: student=00010009, academic_year=2025, curriculum=22, grade=3 (transaction pending)
+AFTER INSERT: student=00010009, academic_year=2025, curriculum=24, grade=4 (transaction pending)
+AFTER INSERT: student=00010009, academic_year=2025, curriculum=28, grade=2 (transaction pending)
+AFTER INSERT: student=00010010, academic_year=2025, curriculum=4, grade=4 (transaction pending)
+AFTER INSERT: student=00010010, academic_year=2025, curriculum=5, grade=4 (transaction pending)
+AFTER INSERT: student=00010010, academic_year=2025, curriculum=7, grade=5 (transaction pending)
+AFTER INSERT: student=00010011, academic_year=2025, curriculum=21, grade=6 (transaction pending)
+AFTER INSERT: student=00010011, academic_year=2025, curriculum=23, grade=6 (transaction pending)
+AFTER INSERT: student=00010011, academic_year=2025, curriculum=27, grade=5 (transaction pending)
+AFTER INSERT: student=00010012, academic_year=2025, curriculum=22, grade=2 (transaction pending)
+AFTER INSERT: student=00010012, academic_year=2025, curriculum=24, grade=3 (transaction pending)
+AFTER INSERT: student=00010012, academic_year=2025, curriculum=28, grade=3 (transaction pending)
+AFTER INSERT: student=00010013, academic_year=2025, curriculum=11, grade=5 (transaction pending)
+AFTER INSERT: student=00010013, academic_year=2025, curriculum=12, grade=5 (transaction pending)
+AFTER INSERT: student=00010013, academic_year=2025, curriculum=8, grade=4 (transaction pending)
+AFTER INSERT: student=00010014, academic_year=2025, curriculum=35, grade=4 (transaction pending)
+AFTER INSERT: student=00010014, academic_year=2025, curriculum=37, grade=6 (transaction pending)
+AFTER INSERT: student=00010014, academic_year=2025, curriculum=29, grade=5 (transaction pending)
+AFTER INSERT: student=00010015, academic_year=2025, curriculum=36, grade=3 (transaction pending)
+AFTER INSERT: student=00010015, academic_year=2025, curriculum=38, grade=2 (transaction pending)
+AFTER INSERT: student=00010015, academic_year=2025, curriculum=30, grade=4 (transaction pending)
+AFTER INSERT: student=00010016, academic_year=2025, curriculum=11, grade=6 (transaction pending)
+AFTER INSERT: student=00010016, academic_year=2025, curriculum=12, grade=5 (transaction pending)
+AFTER INSERT: student=00010016, academic_year=2025, curriculum=8, grade=6 (transaction pending)
+AFTER INSERT: student=00010017, academic_year=2025, curriculum=35, grade=5 (transaction pending)
+AFTER INSERT: student=00010017, academic_year=2025, curriculum=37, grade=5 (transaction pending)
+AFTER INSERT: student=00010017, academic_year=2025, curriculum=29, grade=5 (transaction pending)
+AFTER INSERT: student=00010018, academic_year=2025, curriculum=36, grade=2 (transaction pending)
+AFTER INSERT: student=00010018, academic_year=2025, curriculum=38, grade=3 (transaction pending)
+AFTER INSERT: student=00010018, academic_year=2025, curriculum=30, grade=4 (transaction pending)
 SEED_DATA_CREATED_OK
 
 PL/SQL procedure successfully completed.
@@ -435,10 +481,10 @@ CURRICULUM		    42
 11 rows selected.
 
 SEED_COMMITTED_OK
-AFTER INSERT: student=SIT-DEMO, curriculum=43, grade=5 (transaction pending)
-AFTER INSERT: student=SIT-DEMO, curriculum=45, grade=6 (transaction pending)
-AFTER INSERT: student=KST-DEMO, curriculum=44, grade=5 (transaction pending)
-AFTER INSERT: student=KST-DEMO, curriculum=46, grade=6 (transaction pending)
+AFTER INSERT: student=SIT-DEMO, academic_year=2026, curriculum=43, grade=5 (transaction pending)
+AFTER INSERT: student=SIT-DEMO, academic_year=2026, curriculum=45, grade=6 (transaction pending)
+AFTER INSERT: student=KST-DEMO, academic_year=2026, curriculum=44, grade=5 (transaction pending)
+AFTER INSERT: student=KST-DEMO, academic_year=2026, curriculum=46, grade=6 (transaction pending)
 
 PL/SQL procedure successfully completed.
 
@@ -447,29 +493,29 @@ Commit complete.
 
 
 SPECIALTY_NAME
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DISCIPLINE_NAME
---------------------------------------------------------------------------------
-SEMESTER_NO CURRICULUM_ID TEACHER_ID
------------ ------------- ----------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID ACADEMIC_YEAR
+----------- ------------- ---------- -------------
 КСТ
 СА
-	  4	       44	   1
+	  4	       44	   1	      2026
 
 КСТ
 СА
-	  4	       44	   2
+	  4	       44	   2	      2026
 
 SPECIALTY_NAME
---------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DISCIPLINE_NAME
---------------------------------------------------------------------------------
-SEMESTER_NO CURRICULUM_ID TEACHER_ID
------------ ------------- ----------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SEMESTER_NO CURRICULUM_ID TEACHER_ID ACADEMIC_YEAR
+----------- ------------- ---------- -------------
 
 СИТ
 СА
-	  6	       43	   1
+	  6	       43	   1	      2026
 
 
 CURRICULUM_EXAMPLE_READY
@@ -486,7 +532,7 @@ PASS 10: Every teacher leads at least two disciplines
 PASS 11: Leading zeroes and Cyrillic retained
 PASS 12: Reject teacher with one discipline (expected -20030, actual -20030)
 PASS 13: Reject student with one discipline (expected -20031, actual -20031)
-AFTER INSERT: student=TEST-DUP, curriculum=1, grade=4 (transaction pending)
+AFTER INSERT: student=TEST-DUP, academic_year=2025, curriculum=1, grade=4 (transaction pending)
 PASS 14: Reject duplicate student-discipline pair (expected -1, actual -1)
 PASS 15: Failed create_student rolled back all its rows
 PASS 16: Reject duplicate faculty number (expected -1, actual -1)
@@ -498,15 +544,13 @@ PASS 21: CHECK rejects invalid scale value (expected -2290, actual -2290)
 PASS 22: CHECK rejects invalid semester mapping (expected -2290, actual -2290)
 PASS 23: Reject invalid email form (expected -2290, actual -2290)
 PASS 24: Direct core DML is guarded (expected -20020, actual -20020)
-PASS 25: Referenced grading assignment cannot be replaced (expected -2292,
-actual -2292)
+PASS 25: Referenced grading assignment cannot be replaced (expected -2292, actual -2292)
 PASS 26: Rejected reassignment restored original teacher
 PASS 27: Reject grade for missing student (expected -20141, actual -20141)
 PASS 28: Reject grade for missing discipline (expected -20141, actual -20141)
 PASS 29: Reject discipline with missing teacher (expected -2291, actual -2291)
 PASS 30: Reject discipline with missing semester (expected -2291, actual -2291)
-PASS 31: Reject teacher with missing academic title (expected -2291, actual
--2291)
+PASS 31: Reject teacher with missing academic title (expected -2291, actual -2291)
 PASS 32: Write guard reset after failures
 PASS 33: Academic average matches hand calculation
 PASS 34: Equal averages share DENSE_RANK position
@@ -516,10 +560,10 @@ PASS 37: Teacher counts total distinct assignments independently of grades
 PASS 38: Grade correction changes average from six to five
 PASS 39: Grade correction changes ranking
 PASS 40: Caller rollback restores original average
-AFTER INSERT: student=TEST-RENAME, curriculum=1, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=2, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=3, grade=6 (transaction pending)
-AFTER INSERT: student=TEST-RENAME, curriculum=13, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=1, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=3, grade=6 (transaction pending)
+AFTER INSERT: student=TEST-RENAME, academic_year=2025, curriculum=13, grade=6 (transaction pending)
 PASS 41: Faculty number correction preserves all grades
 PASS 42: Old faculty number removed consistently during correction
 PASS 43: Teacher and two disciplines created atomically
@@ -535,27 +579,31 @@ PL/SQL procedure successfully completed.
 Rollback complete.
 
 LESSON DEMONSTRATION: changes will be rolled back
-AFTER INSERT: student=DEMO-LESSON, curriculum=49, grade=4 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, curriculum=50, grade=5 (transaction pending)
-AFTER INSERT: student=DEMO-LESSON, curriculum=51, grade=6 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=49, grade=4 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=50, grade=5 (transaction pending)
+AFTER INSERT: student=DEMO-LESSON, academic_year=2026, curriculum=51, grade=6 (transaction pending)
 EXPLICIT OPEN/FETCH/CLOSE CURSOR:
 Student: DEMO-LESSON Demo Student
 Specialty: Компютърни науки; I курс
+Email: updated.student@university.example
 Average: 5.33
-Semester 1: Demo modelling | grade 5 | 2026-06-13
-Semester 2: Demo databases | grade 5 | 2026-06-11
-Semester 3: Demo SQL and PL/SQL | grade 6 | 2026-06-12
+Semester 1: Demo modelling | grade 5 Много добър | 2026-06-13 | academic year 2026/2027
+Graded by: асистент Demo Teacher | +359000000098 | updated.teacher@university.example
+Semester 2: Demo databases | grade 5 Много добър | 2026-06-11 | academic year 2026/2027
+Graded by: асистент Demo Teacher | +359000000098 | updated.teacher@university.example
+Semester 3: Demo SQL and PL/SQL | grade 6 Отличен | 2026-06-12 | academic year 2026/2027
+Graded by: асистент Demo Teacher | +359000000098 | updated.teacher@university.example
 FOR CURSOR - TEACHER DISCIPLINES:
-18 | Demo modelling | semester 1
-19 | Demo databases | semester 2
-20 | Demo SQL and PL/SQL | semester 3
+Demo modelling | semester 1 | Компютърни науки | academic year 2026/2027
+Demo databases | semester 2 | Компютърни науки | academic year 2026/2027
+Demo SQL and PL/SQL | semester 3 | Компютърни науки | academic year 2026/2027
 LIKE CURSOR - STUDENT KEYWORD:
-KST-DEMO | Demo KST | КСТ | II курс | 5.50
-SIT-DEMO | Demo SIT | СИТ | III курс | 5.50
-DEMO-LESSON | Demo Student | Компютърни науки | I курс | 5.33
+KST-DEMO | Demo KST | kst.demo@university.example | КСТ | II курс | 5.50 | disciplines: 2
+SIT-DEMO | Demo SIT | sit.demo@university.example | СИТ | III курс | 5.50 | disciplines: 2
+DEMO-LESSON | Demo Student | updated.student@university.example | Компютърни науки | I курс | 5.33 | disciplines: 3
 Student matches: 3
 LIKE CURSOR - DISCIPLINE KEYWORD:
-20 | Demo SQL and PL/SQL | semester 3 | Demo Teacher
+Demo SQL and PL/SQL | Компютърни науки | semester 3 | асистент Demo Teacher | +359000000098 | updated.teacher@university.example | academic year 2026/2027
 Discipline matches: 1
 
 PL/SQL procedure successfully completed.
@@ -567,24 +615,32 @@ LESSON_DEMO_ROLLED_BACK
 SEEDED ACADEMIC REPORT - EXPLICIT CURSOR
 Student: 00010001 Александър Иванов Петров
 Specialty: Компютърни науки; I курс
+Email: student1@university.example
 Average: 6.00
-Semester 1: Английски език | grade 6 | 2026-06-12
-Semester 1: Математика | grade 6 | 2026-06-10
-Semester 2: Алгоритми | grade 6 | 2026-06-11
-Semester 2: Дискретна математика | grade 6 | 2026-06-13
+Semester 1: Английски език | grade 6 Отличен | 2026-06-12 | academic year 2025/2026
+Graded by: асистент Анна Димитрова Колева | +359000000006 | teacher6@university.example
+Semester 1: Математика | grade 6 Отличен | 2026-06-10 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Semester 2: Алгоритми | grade 6 Отличен | 2026-06-11 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Semester 2: Дискретна математика | grade 6 Отличен | 2026-06-13 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
 
 PL/SQL procedure successfully completed.
 
 CYRILLIC KEYWORD SEARCH
-00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
+00010001 | Александър Иванов Петров | student1@university.example | Компютърни науки | I курс | 6.00 | disciplines: 4
 Student matches: 1
 
 PL/SQL procedure successfully completed.
 
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-4 | Бази от данни | semester 3 | Петър Иванов Николов; Мария Петрова Георгиева
-Discipline matches: 3
+Бази от данни | Икономика | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Икономика | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Discipline matches: 6
 
 PL/SQL procedure successfully completed.
 
@@ -593,50 +649,47 @@ PASS 2: AFTER INSERT row trigger enabled
 PASS 3: BEFORE INSERT sequence trigger supplies lookup ID
 PASS 4: TEACHER_INS creates two distinct disciplines atomically
 PASS 5: TEACHER_UPD changes contact data
-AFTER INSERT: student=LESSON-STUDENT, curriculum=52, grade=4 (transaction
-pending)
-AFTER INSERT: student=LESSON-STUDENT, curriculum=53, grade=5 (transaction
-pending)
+AFTER INSERT: student=LESSON-STUDENT, academic_year=2026, curriculum=52, grade=4 (transaction pending)
+AFTER INSERT: student=LESSON-STUDENT, academic_year=2026, curriculum=53, grade=5 (transaction pending)
 PASS 6: STUDENT_INS creates student and two grades
 PASS 7: AFTER trigger reports actual inserted grades
 PASS 8: STUDENT_UPD corrects names and email
 PASS 9: DISCIPLINE_INS adds a discipline
 PASS 10: DISCIPLINE_UPD changes name and semester
-AFTER INSERT: student=LESSON-STUDENT, curriculum=54, grade=6 (transaction
-pending)
+AFTER INSERT: student=LESSON-STUDENT, academic_year=2026, curriculum=54, grade=6 (transaction pending)
 PASS 11: GRADE_INS adds one new student-discipline pair
 PASS 12: GRADE_UPD corrects existing value and date
 PASS 13: GRADE_INS refuses duplicate pair (expected -20061, actual -20061)
 PASS 14: Refused INSERT does not overwrite grade
 PASS 15: GRADE_UPD refuses absent curriculum (expected -20141, actual -20141)
-PASS 16: Standalone procedure rejects fractional grade (expected -2291, actual
--2291)
-PASS 17: Standalone procedure rejects NULL grade date (expected -1407, actual
--1407)
+PASS 16: Standalone procedure rejects fractional grade (expected -2291, actual -2291)
+PASS 17: Standalone procedure rejects NULL grade date (expected -1407, actual -1407)
 PASS 18: Failed UPDATE restores previous value and date
-AFTER INSERT: student=LESSON-DUP, curriculum=52, grade=4 (transaction pending)
-PASS 19: STUDENT_INS rejects repeated discipline atomically (expected -1, actual
--1)
+AFTER INSERT: student=LESSON-DUP, academic_year=2026, curriculum=52, grade=4 (transaction pending)
+PASS 19: STUDENT_INS rejects repeated discipline atomically (expected -1, actual -1)
 PASS 20: Failed student insertion leaves no partial student
-PASS 21: Explicit cursor reports missing student (expected -20043, actual
--20043)
+PASS 21: Explicit cursor reports missing student (expected -20043, actual -20043)
 Student: LESSON-STUDENT LESSON Updated
 Specialty: Компютърни науки; I курс
+Email: updated.student@university.example
 Average: 4.67
-Semester 1: LESSON discipline 1 | grade 4 | 2026-06-10
-Semester 2: LESSON discipline 2 | grade 5 | 2026-06-11
-Semester 4: LESSON updated discipline | grade 5 | 2026-06-13
+Semester 1: LESSON discipline 1 | grade 4 Добър | 2026-06-10 | academic year 2026/2027
+Graded by: асистент LESSON Updated | +359000000098 | updated.teacher@university.example
+Semester 2: LESSON discipline 2 | grade 5 Много добър | 2026-06-11 | academic year 2026/2027
+Graded by: асистент LESSON Updated | +359000000098 | updated.teacher@university.example
+Semester 4: LESSON updated discipline | grade 5 Много добър | 2026-06-13 | academic year 2026/2027
+Graded by: асистент LESSON Updated | +359000000098 | updated.teacher@university.example
 PASS 22: OPEN/FETCH/CLOSE cursor prints ordered academic report and average
-21 | LESSON discipline 1 | semester 1
-22 | LESSON discipline 2 | semester 2
-23 | LESSON updated discipline | semester 4
+LESSON discipline 1 | semester 1 | Компютърни науки | academic year 2026/2027
+LESSON discipline 2 | semester 2 | Компютърни науки | academic year 2026/2027
+LESSON updated discipline | semester 4 | Компютърни науки | academic year 2026/2027
 PASS 23: FOR cursor lists teacher disciplines
-00010001 | Александър Иванов Петров | Компютърни науки | I курс | 6.00
+00010001 | Александър Иванов Петров | student1@university.example | Компютърни науки | I курс | 6.00 | disciplines: 4
 Student matches: 1
 PASS 24: LIKE cursor finds Cyrillic student keyword
 Student matches: 0
 PASS 25: LIKE cursor treats percent as literal text
-23 | LESSON updated discipline | semester 4 | LESSON Updated
+LESSON updated discipline | Компютърни науки | semester 4 | асистент LESSON Updated | +359000000098 | updated.teacher@university.example | academic year 2026/2027
 Discipline matches: 1
 PASS 26: LIKE cursor finds discipline keyword
 PASS 27: Teacher cursor rejects missing teacher (expected -20045, actual -20045)
@@ -672,27 +725,21 @@ PASS 18: Missing discipline rejected (expected -2291, actual -2291)
 PASS 19: Missing assignment reported (expected -20072, actual -20072)
 PASS 20: Second teacher can be removed while minima hold
 PASS 21: Changing teacher list preserves transcript grain and average
-PASS 22: Assignment referenced by grades cannot be removed (expected -2292,
-actual -2292)
+PASS 22: Assignment referenced by grades cannot be removed (expected -2292, actual -2292)
 PASS 23: Last-teacher rejection restores assignment
-PASS 24: Grading teacher assignment is protected by FK (expected -2292, actual
--2292)
-PASS 25: Referenced replacement rolls back atomically (expected -2292, actual
--2292)
+PASS 24: Grading teacher assignment is protected by FK (expected -2292, actual -2292)
+PASS 25: Referenced replacement rolls back atomically (expected -2292, actual -2292)
 PASS 26: Rejected replacement preserves original teacher
 PASS 27: Standalone assignment INSERT succeeds
 PASS 28: Standalone assignment DELETE succeeds
 PASS 29: New teacher can join two existing disciplines
 PASS 30: Joining existing disciplines creates no duplicate disciplines
 PASS 31: CLOB teacher aggregation preserves ampersand text
-PASS 32: Repeated discipline in new teacher bundle rejected (expected -1, actual
--1)
+PASS 32: Repeated discipline in new teacher bundle rejected (expected -1, actual -1)
 PASS 33: Failed bundle leaves no partial teacher
-PASS 34: Existing-discipline bundle needs at least two (expected -20030, actual
--20030)
+PASS 34: Existing-discipline bundle needs at least two (expected -20030, actual -20030)
 PASS 35: NULL discipline list rejected (expected -20030, actual -20030)
-PASS 36: Missing discipline rolls back teacher bundle (expected -2291, actual
--2291)
+PASS 36: Missing discipline rolls back teacher bundle (expected -2291, actual -2291)
 PASS 37: New teacher minimum remains enforced (expected -20041, actual -20041)
 PASS 38: Discipline metadata update preserves all its teachers
 PASS 39: Teacher list safely exceeds VARCHAR2/LISTAGG limit
@@ -769,12 +816,12 @@ PASS: DISCIPLINES C
 PASS: DISCIPLINES R
 PASS: DISCIPLINES U
 PASS: DISCIPLINES D
-AFTER INSERT: student=CRUD_B09AB35131BE4F4, curriculum=1, grade=5 (transaction pending)
-AFTER INSERT: student=CRUD_B09AB35131BE4F4, curriculum=2, grade=6 (transaction pending)
+AFTER INSERT: student=CRUD_5E6490BFAF7948D, academic_year=2025, curriculum=1, grade=5 (transaction pending)
+AFTER INSERT: student=CRUD_5E6490BFAF7948D, academic_year=2025, curriculum=2, grade=6 (transaction pending)
 PASS: STUDENTS C
 PASS: STUDENTS R
 PASS: STUDENTS U
-AFTER INSERT: student=CRUD_B09AB35131BE4F4, curriculum=3, grade=4 (transaction pending)
+AFTER INSERT: student=CRUD_5E6490BFAF7948D, academic_year=2025, curriculum=3, grade=4 (transaction pending)
 PASS: GRADES C
 PASS: GRADES R
 PASS: GRADES U
@@ -809,8 +856,8 @@ PASS: Missing teacher rejected (SQLCODE -20045)
 PASS: Missing discipline rejected (SQLCODE -20046)
 PASS: Missing student curriculum rejected (SQLCODE -20141)
 PASS: Direct DELETE guard stays active (SQLCODE -20020)
-AFTER INSERT: student=CRUD_FAIL_232CA5381F, curriculum=57, grade=5 (transaction pending)
-AFTER INSERT: student=CRUD_FAIL_232CA5381F, curriculum=58, grade=5 (transaction pending)
+AFTER INSERT: student=CRUD_FAIL_7FCBE57A98, academic_year=2026, curriculum=57, grade=5 (transaction pending)
+AFTER INSERT: student=CRUD_FAIL_7FCBE57A98, academic_year=2026, curriculum=58, grade=5 (transaction pending)
 PASS: Student cannot lose his second grade (SQLCODE -20042)
 PASS: Failed grade DELETE preserves both grades
 PASS: Failed operation keeps caller prior changes
@@ -818,7 +865,7 @@ PASS: Discipline DELETE checks affected students (SQLCODE -20042)
 PASS: Failed discipline DELETE restores course, assignment and grade
 PASS: Teacher referenced by grades cannot be deleted (SQLCODE -2292)
 PASS: Failed teacher DELETE restores all assignments
-AFTER INSERT: student=CRUD_FAIL_232CA5381F, curriculum=59, grade=6 (transaction pending)
+AFTER INSERT: student=CRUD_FAIL_7FCBE57A98, academic_year=2026, curriculum=59, grade=6 (transaction pending)
 PASS: Allowed discipline DELETE removes selected course
 PASS: Allowed discipline DELETE retains two student grades
 PASS: Allowed discipline DELETE retains two teacher courses
@@ -852,7 +899,7 @@ GRADE_TEACHER_VALIDATION_PASSED: 16 checks
 PL/SQL procedure successfully completed.
 
 PASS: Eleven normalized tables
-PASS: Thirty-nine physical columns
+PASS: Forty-one physical columns
 PASS: Twelve foreign keys
 PASS: Semester removed from catalogue
 PASS: No redundant catalogue discipline column in grades or assignments
@@ -880,6 +927,205 @@ CURRICULUM_VALIDATION_PASSED: 25 checks
 
 PL/SQL procedure successfully completed.
 
+PASS: Academic year is mandatory in both tables
+PASS: Appointment primary key includes academic year
+PASS: Grade FK includes the appointment year
+PASS: One current student-course grade remains the primary key
+PASS: Sixty original grades belong to 2025/2026
+PASS: Four SIT/KST example grades belong to 2026/2027
+PASS: Original specialty appointments retained in 2025/2026
+PASS: Five SIT/KST appointments retained in 2026/2027
+PASS: Same teacher and course may have different academic years
+PASS: Teaching the same course in another year does not inflate distinct-course ranking
+PASS: Duplicate teacher-course-year rejected (expected -1, actual -1)
+PASS: Fractional academic year rejected without rounding (expected -2290, actual -2290)
+PASS: Out-of-range academic year rejected (expected -2290, actual -2290)
+PASS: Ambiguous year must be specified explicitly (expected -20171, actual -20171)
+PASS: Future-year teacher replacement succeeds
+PASS: Replacement preserves historical teacher appointment
+PASS: Historical grade retains its year and teacher
+PASS: Historical report excludes teachers from other academic years
+PASS: Multiple appointment years never duplicate academic rows
+PASS: Delete removes only the selected year appointment
+PASS: Existing grade cannot silently move into another academic year (expected -20172, actual -20172)
+PASS: Owner cannot use a teacher appointed only in another year (expected -2291, actual -2291)
+AFTER INSERT: student=00010007, academic_year=2026, curriculum=1, grade=4 (transaction pending)
+PASS: New-year grade references the new-year teacher
+PASS: New-year report lists only new-year teachers
+PASS: Appointment referenced by a grade is protected (expected -2292, actual -2292)
+PASS: DELETE refuses a different academic year (expected -20172, actual -20172)
+PASS: Year-specific grade DELETE succeeds
+PASS: All grade rows and fields restored
+PASS: All appointment rows and fields restored
+PASS: Write guard closed after successful and rejected operations
+ACADEMIC_YEAR_VALIDATION_PASSED: 30 checks
+
+PL/SQL procedure successfully completed.
+
+PASS: Both related-object keyword procedures are installed
+PASS: Student reporting includes email
+PASS: Teacher reporting includes both contact fields
+PASS: Academic reporting identifies the actual grader with title and contacts
+PASS: Teachers with the same
+name retain two independent aggregate rows
+PASS: Students with the same name retain their separate averages
+PASS: Title keyword filters the joined reference object
+PASS: Title cursor prints full teacher characteristics
+PASS: Title keyword search ignores letter
+case
+PASS: Percent in teacher keyword is literal text
+PASS: Underscore in teacher keyword is literal text
+PASS: Backslash in teacher keyword is literal text
+PASS: No teacher matches is a valid empty result
+PASS: Empty title keyword lists all teachers
+PASS:
+Oversized teacher keyword rejected
+PASS: Oversized specialty keyword rejected
+PASS: Specialty keyword filters the joined reference object
+PASS: Specialty cursor prints faculty number email specialty and study year
+PASS: Percent in specialty keyword is literal
+text
+PASS: Underscore in specialty keyword is literal text
+PASS: Backslash in specialty keyword is literal text
+PASS: Existing student cursor now includes contact data
+PASS: Discipline cursor prints specialty semester teacher contacts and academic year
+PASS:
+Explicit cursor includes student and grader characteristics
+PASS: FOR cursor includes student and grader characteristics
+PASS: Another year of the same catalogue course does not inflate teacher count
+PASS: Extra assignment year never duplicates academic
+grades
+PASS: Business rules pass and write guard is closed
+PASS: SPECIALTIES all rows and fields restored
+PASS: ACADEMIC_TITLES all rows and fields restored
+PASS: STUDY_YEARS all rows and fields restored
+PASS: SEMESTERS all rows and fields restored
+PASS:
+GRADE_SCALE all rows and fields restored
+PASS: STUDENTS all rows and fields restored
+PASS: TEACHERS all rows and fields restored
+PASS: DISCIPLINES all rows and fields restored
+PASS: CURRICULUM all rows and fields restored
+PASS: DISCIPLINE_TEACHERS all rows and
+fields restored
+PASS: GRADES all rows and fields restored
+
+
+TEACHER_SELECT_RULES_VALIDATION_PASSED: 39 checks
+
+PL/SQL procedure successfully completed.
+
+
+PL/SQL procedure successfully completed.
+
+PASS: SPECIALTIES: one result per base row
+PASS: SPECIALTIES: correct empty/nonempty summary
+PASS: list_specialties: blank p_keyword lists all rows
+PASS: list_specialties: oversized p_keyword rejected
+PASS: ACADEMIC_TITLES: one result per base row
+PASS: ACADEMIC_TITLES: correct empty/nonempty summary
+PASS: list_academic_titles: blank p_keyword lists all rows
+PASS: list_academic_titles: oversized p_keyword
+rejected
+PASS: STUDY_YEARS: one result per base row
+PASS: STUDY_YEARS: correct empty/nonempty summary
+PASS: list_study_years: blank p_keyword lists all rows
+PASS: list_study_years: oversized p_keyword rejected
+PASS: SEMESTERS: one result per base row
+PASS: SEMESTERS: correct empty/nonempty summary
+PASS: list_semesters: blank p_year_keyword lists all rows
+PASS: list_semesters: oversized p_year_keyword rejected
+PASS:
+GRADE_SCALE: one result per base row
+PASS: GRADE_SCALE: correct empty/nonempty summary
+PASS: STUDENTS: one result per base row
+PASS: STUDENTS: correct empty/nonempty summary
+PASS: list_students: blank p_keyword lists all rows
+PASS: list_students: oversized p_keyword rejected
+PASS: list_students: blank p_specialty_keyword lists all rows
+PASS: list_students: oversized p_specialty_keyword rejected
+PASS: list_students:
+blank p_year_keyword lists all rows
+PASS: list_students: oversized p_year_keyword rejected
+PASS: TEACHERS: one result per base row
+PASS: TEACHERS: correct empty/nonempty summary
+PASS: list_teachers: blank p_keyword lists all rows
+PASS: list_teachers: oversized p_keyword rejected
+PASS: list_teachers: blank p_title_keyword lists all rows
+PASS: list_teachers: oversized p_title_keyword rejected
+PASS: DISCIPLINES: one
+result per base row
+PASS: DISCIPLINES: correct empty/nonempty summary
+PASS: list_disciplines: blank p_keyword lists all rows
+PASS: list_disciplines: oversized p_keyword rejected
+PASS: CURRICULUM: one result per base row
+PASS: CURRICULUM: correct empty/nonempty summary
+PASS: list_curriculum: blank p_discipline_keyword lists all rows
+PASS: list_curriculum: oversized p_discipline_keyword rejected
+PASS: list_curriculum:
+blank p_specialty_keyword lists all rows
+PASS: list_curriculum: oversized p_specialty_keyword rejected
+PASS: DISCIPLINE_TEACHERS: one result per base row
+PASS: DISCIPLINE_TEACHERS: correct empty/nonempty summary
+PASS: list_teaching_assignments: blank p_discipline_keyword lists all rows
+PASS: list_teaching_assignments: oversized p_discipline_keyword rejected
+PASS: list_teaching_assignments: blank p_teacher_keyword
+lists all rows
+PASS: list_teaching_assignments: oversized p_teacher_keyword rejected
+PASS: list_teaching_assignments: blank p_specialty_keyword lists all rows
+PASS: list_teaching_assignments: oversized p_specialty_keyword rejected
+PASS: GRADES: one result per base row
+PASS: GRADES: correct empty/nonempty summary
+PASS: list_grades: blank p_discipline_keyword lists all rows
+PASS: list_grades: oversized
+p_discipline_keyword rejected
+PASS: list_grades: blank p_specialty_keyword lists all rows
+PASS: list_grades: oversized p_specialty_keyword rejected
+PASS: Literal percent does not become a wildcard
+PASS: Literal underscore does not become a wildcard
+PASS: Literal backslash is escaped
+PASS: Case-insensitive keyword search
+PASS: Empty search reports zero rows
+PASS: Apostrophe input remains literal data
+PASS: Student
+specialty filter uses the related name
+PASS: Teacher title filter uses the related name
+PASS: Semester term filter
+PASS: Failed grade-scale filter
+PASS: Curriculum semester filter
+PASS: Assignment year filter
+PASS: Grade faculty number and historical year filter
+PASS: Grade output identifies historical grader and year
+PASS: Different academic year does not leak historical grades
+PASS: Grade minimum filter
+PASS:
+Invalid term rejected
+PASS: Invalid passing flag rejected
+PASS: Fractional academic year rejected
+PASS: Out-of-range academic year rejected
+PASS: Invalid minimum grade rejected
+PASS: Fractional semester rejected
+PASS: SPECIALTIES: all rows and fields preserved
+PASS: ACADEMIC_TITLES: all rows and fields preserved
+PASS: STUDY_YEARS: all rows and fields preserved
+PASS: SEMESTERS: all rows and fields preserved
+PASS:
+GRADE_SCALE: all rows and fields preserved
+PASS: STUDENTS: all rows and fields preserved
+PASS: TEACHERS: all rows and fields preserved
+PASS: DISCIPLINES: all rows and fields preserved
+PASS: CURRICULUM: all rows and fields preserved
+PASS: DISCIPLINE_TEACHERS: all rows and fields preserved
+PASS: GRADES: all rows and fields preserved
+PASS: Temporary literal-keyword fixture rolled back
+PASS: All database objects remain
+VALID
+
+
+TABLE_CURSOR_VALIDATION_PASSED: 91 checks
+
+PL/SQL procedure successfully completed.
+
 TABLE|ACADEMIC_TITLES
 TABLE|CURRICULUM
 TABLE|DISCIPLINES
@@ -901,11 +1147,13 @@ COLUMN|DISCIPLINES|DISCIPLINE_ID|NUMBER|0||N||
 COLUMN|DISCIPLINES|DISCIPLINE_NAME|VARCHAR2|150|C|N||
 COLUMN|DISCIPLINE_TEACHERS|CURRICULUM_ID|NUMBER|0||N||
 COLUMN|DISCIPLINE_TEACHERS|TEACHER_ID|NUMBER|0||N||
+COLUMN|DISCIPLINE_TEACHERS|ACADEMIC_YEAR|NUMBER|0||N||
 COLUMN|GRADES|FACULTY_NUMBER|VARCHAR2|20|C|N||
 COLUMN|GRADES|CURRICULUM_ID|NUMBER|0||N||
 COLUMN|GRADES|GRADE_VALUE|NUMBER|0||N||
 COLUMN|GRADES|GRADE_DATE|DATE|0||N||
 COLUMN|GRADES|TEACHER_ID|NUMBER|0||N||
+COLUMN|GRADES|ACADEMIC_YEAR|NUMBER|0||N||
 COLUMN|GRADE_SCALE|GRADE_VALUE|NUMBER|0||N||
 COLUMN|GRADE_SCALE|GRADE_LABEL|VARCHAR2|30|C|N||
 COLUMN|GRADE_SCALE|IS_PASSING|NUMBER|0||N||
@@ -935,7 +1183,7 @@ KEY|ACADEMIC_TITLES|ACADEMIC_TITLES_PK|P|TITLE_ID
 KEY|CURRICULUM|CURRICULUM_COURSE_UQ|U|SPECIALTY_ID,DISCIPLINE_ID
 KEY|CURRICULUM|CURRICULUM_PK|P|CURRICULUM_ID
 KEY|DISCIPLINES|DISCIPLINES_PK|P|DISCIPLINE_ID
-KEY|DISCIPLINE_TEACHERS|DISCIPLINE_TEACHERS_PK|P|CURRICULUM_ID,TEACHER_ID
+KEY|DISCIPLINE_TEACHERS|DISCIPLINE_TEACHERS_PK|P|CURRICULUM_ID,TEACHER_ID,ACADEMIC_YEAR
 KEY|GRADES|GRADES_PK|P|FACULTY_NUMBER,CURRICULUM_ID
 KEY|GRADE_SCALE|GRADE_SCALE_LABEL_UQ|U|GRADE_LABEL
 KEY|GRADE_SCALE|GRADE_SCALE_PK|P|GRADE_VALUE
@@ -952,7 +1200,7 @@ FK|CURRICULUM|CURRICULUM_SEMESTER_FK|SEMESTER_NO|SEMESTERS|SEMESTER_NO
 FK|CURRICULUM|CURRICULUM_SPECIALTY_FK|SPECIALTY_ID|SPECIALTIES|SPECIALTY_ID
 FK|DISCIPLINE_TEACHERS|DT_CURRICULUM_FK|CURRICULUM_ID|CURRICULUM|CURRICULUM_ID
 FK|DISCIPLINE_TEACHERS|DT_TEACHER_FK|TEACHER_ID|TEACHERS|TEACHER_ID
-FK|GRADES|GRADES_ASSIGNMENT_FK|CURRICULUM_ID,TEACHER_ID|DISCIPLINE_TEACHERS|CURRICULUM_ID,TEACHER_ID
+FK|GRADES|GRADES_ASSIGNMENT_FK|CURRICULUM_ID,TEACHER_ID,ACADEMIC_YEAR|DISCIPLINE_TEACHERS|CURRICULUM_ID,TEACHER_ID,ACADEMIC_YEAR
 FK|GRADES|GRADES_STUDENT_FK|FACULTY_NUMBER|STUDENTS|FACULTY_NUMBER
 FK|GRADES|GRADES_VALUE_FK|GRADE_VALUE|GRADE_SCALE|GRADE_VALUE
 FK|SEMESTERS|SEMESTERS_YEAR_FK|STUDY_YEAR_NO|STUDY_YEARS|STUDY_YEAR_NO
@@ -961,60 +1209,63 @@ FK|STUDENTS|STUDENTS_YEAR_FK|STUDY_YEAR_NO|STUDY_YEARS|STUDY_YEAR_NO
 FK|TEACHERS|TEACHERS_TITLE_FK|TITLE_ID|ACADEMIC_TITLES|TITLE_ID
 CHECK|ACADEMIC_TITLES|ACADEMIC_TITLES_ID_CK|title_id > 0 and title_id = trunc(title_id)
 CHECK|ACADEMIC_TITLES|ACADEMIC_TITLES_NAME_CK|trim(title_name) is not null
-CHECK|ACADEMIC_TITLES|SYS_C0011748|"TITLE_ID" IS NOT NULL
-CHECK|ACADEMIC_TITLES|SYS_C0011749|"TITLE_NAME" IS NOT NULL
+CHECK|ACADEMIC_TITLES|SYS_C0013041|"TITLE_ID" IS NOT NULL
+CHECK|ACADEMIC_TITLES|SYS_C0013042|"TITLE_NAME" IS NOT NULL
 CHECK|CURRICULUM|CURRICULUM_ID_CK|curriculum_id > 0 and curriculum_id = trunc(curriculum_id)
-CHECK|CURRICULUM|SYS_C0011808|"CURRICULUM_ID" IS NOT NULL
-CHECK|CURRICULUM|SYS_C0011809|"SPECIALTY_ID" IS NOT NULL
-CHECK|CURRICULUM|SYS_C0011810|"DISCIPLINE_ID" IS NOT NULL
-CHECK|CURRICULUM|SYS_C0011811|"SEMESTER_NO" IS NOT NULL
+CHECK|CURRICULUM|SYS_C0013101|"CURRICULUM_ID" IS NOT NULL
+CHECK|CURRICULUM|SYS_C0013102|"SPECIALTY_ID" IS NOT NULL
+CHECK|CURRICULUM|SYS_C0013103|"DISCIPLINE_ID" IS NOT NULL
+CHECK|CURRICULUM|SYS_C0013104|"SEMESTER_NO" IS NOT NULL
 CHECK|DISCIPLINES|DISCIPLINES_ID_CK|discipline_id > 0 and discipline_id = trunc(discipline_id)
 CHECK|DISCIPLINES|DISCIPLINES_NAME_CK|trim(discipline_name) is not null
-CHECK|DISCIPLINES|SYS_C0011803|"DISCIPLINE_ID" IS NOT NULL
-CHECK|DISCIPLINES|SYS_C0011804|"DISCIPLINE_NAME" IS NOT NULL
-CHECK|DISCIPLINE_TEACHERS|SYS_C0011818|"CURRICULUM_ID" IS NOT NULL
-CHECK|DISCIPLINE_TEACHERS|SYS_C0011819|"TEACHER_ID" IS NOT NULL
-CHECK|GRADES|SYS_C0011823|"FACULTY_NUMBER" IS NOT NULL
-CHECK|GRADES|SYS_C0011824|"CURRICULUM_ID" IS NOT NULL
-CHECK|GRADES|SYS_C0011825|"GRADE_VALUE" IS NOT NULL
-CHECK|GRADES|SYS_C0011826|"GRADE_DATE" IS NOT NULL
-CHECK|GRADES|SYS_C0011827|"TEACHER_ID" IS NOT NULL
+CHECK|DISCIPLINES|SYS_C0013096|"DISCIPLINE_ID" IS NOT NULL
+CHECK|DISCIPLINES|SYS_C0013097|"DISCIPLINE_NAME" IS NOT NULL
+CHECK|DISCIPLINE_TEACHERS|DT_ACADEMIC_YEAR_CK|academic_year between 1900 and 9998 and academic_year=trunc(academic_year)
+CHECK|DISCIPLINE_TEACHERS|SYS_C0013111|"CURRICULUM_ID" IS NOT NULL
+CHECK|DISCIPLINE_TEACHERS|SYS_C0013112|"TEACHER_ID" IS NOT NULL
+CHECK|DISCIPLINE_TEACHERS|SYS_C0013113|"ACADEMIC_YEAR" IS NOT NULL
+CHECK|GRADES|SYS_C0013118|"FACULTY_NUMBER" IS NOT NULL
+CHECK|GRADES|SYS_C0013119|"CURRICULUM_ID" IS NOT NULL
+CHECK|GRADES|SYS_C0013120|"GRADE_VALUE" IS NOT NULL
+CHECK|GRADES|SYS_C0013121|"GRADE_DATE" IS NOT NULL
+CHECK|GRADES|SYS_C0013122|"TEACHER_ID" IS NOT NULL
+CHECK|GRADES|SYS_C0013123|"ACADEMIC_YEAR" IS NOT NULL
 CHECK|GRADE_SCALE|GRADE_SCALE_LABEL_CK|trim(grade_label) is not null
 CHECK|GRADE_SCALE|GRADE_SCALE_PASSING_CK|	  (grade_value = 2 and is_passing = 0)	       or (grade_value between 3 and 6 and is_passing = 1)
 CHECK|GRADE_SCALE|GRADE_SCALE_VALUE_CK| 	grade_value between 2 and 6 and grade_value = trunc(grade_value)
-CHECK|GRADE_SCALE|SYS_C0011769|"GRADE_VALUE" IS NOT NULL
-CHECK|GRADE_SCALE|SYS_C0011770|"GRADE_LABEL" IS NOT NULL
-CHECK|GRADE_SCALE|SYS_C0011771|"IS_PASSING" IS NOT NULL
+CHECK|GRADE_SCALE|SYS_C0013062|"GRADE_VALUE" IS NOT NULL
+CHECK|GRADE_SCALE|SYS_C0013063|"GRADE_LABEL" IS NOT NULL
+CHECK|GRADE_SCALE|SYS_C0013064|"IS_PASSING" IS NOT NULL
 CHECK|SEMESTERS|SEMESTERS_NO_CK|semester_no > 0 and semester_no = trunc(semester_no)
 CHECK|SEMESTERS|SEMESTERS_ORDER_CK|semester_no = 2 * (study_year_no - 1) + term_no
 CHECK|SEMESTERS|SEMESTERS_TERM_CK|term_no in (1, 2)
-CHECK|SEMESTERS|SYS_C0011760|"SEMESTER_NO" IS NOT NULL
-CHECK|SEMESTERS|SYS_C0011761|"STUDY_YEAR_NO" IS NOT NULL
-CHECK|SEMESTERS|SYS_C0011762|"TERM_NO" IS NOT NULL
+CHECK|SEMESTERS|SYS_C0013053|"SEMESTER_NO" IS NOT NULL
+CHECK|SEMESTERS|SYS_C0013054|"STUDY_YEAR_NO" IS NOT NULL
+CHECK|SEMESTERS|SYS_C0013055|"TERM_NO" IS NOT NULL
 CHECK|SPECIALTIES|SPECIALTIES_ID_CK|specialty_id > 0 and specialty_id = trunc(specialty_id)
 CHECK|SPECIALTIES|SPECIALTIES_NAME_CK|trim(specialty_name) is not null
-CHECK|SPECIALTIES|SYS_C0011742|"SPECIALTY_ID" IS NOT NULL
-CHECK|SPECIALTIES|SYS_C0011743|"SPECIALTY_NAME" IS NOT NULL
+CHECK|SPECIALTIES|SYS_C0013035|"SPECIALTY_ID" IS NOT NULL
+CHECK|SPECIALTIES|SYS_C0013036|"SPECIALTY_NAME" IS NOT NULL
 CHECK|STUDENTS|STUDENTS_EMAIL_CK|email like '%_@_%._%'
 CHECK|STUDENTS|STUDENTS_FIRST_NAME_CK|trim(first_name) is not null
 CHECK|STUDENTS|STUDENTS_LAST_NAME_CK|trim(last_name) is not null
 CHECK|STUDENTS|STUDENTS_NUMBER_CK|trim(faculty_number) is not null
-CHECK|STUDENTS|SYS_C0011777|"FACULTY_NUMBER" IS NOT NULL
-CHECK|STUDENTS|SYS_C0011778|"FIRST_NAME" IS NOT NULL
-CHECK|STUDENTS|SYS_C0011779|"LAST_NAME" IS NOT NULL
-CHECK|STUDENTS|SYS_C0011780|"SPECIALTY_ID" IS NOT NULL
-CHECK|STUDENTS|SYS_C0011781|"STUDY_YEAR_NO" IS NOT NULL
-CHECK|STUDENTS|SYS_C0011782|"EMAIL" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013070|"FACULTY_NUMBER" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013071|"FIRST_NAME" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013072|"LAST_NAME" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013073|"SPECIALTY_ID" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013074|"STUDY_YEAR_NO" IS NOT NULL
+CHECK|STUDENTS|SYS_C0013075|"EMAIL" IS NOT NULL
 CHECK|STUDY_YEARS|STUDY_YEARS_LABEL_CK|trim(year_label) is not null
 CHECK|STUDY_YEARS|STUDY_YEARS_NO_CK|study_year_no > 0 and study_year_no = trunc(study_year_no)
-CHECK|STUDY_YEARS|SYS_C0011754|"STUDY_YEAR_NO" IS NOT NULL
-CHECK|STUDY_YEARS|SYS_C0011755|"YEAR_LABEL" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011790|"TEACHER_ID" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011791|"FIRST_NAME" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011792|"LAST_NAME" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011793|"TITLE_ID" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011794|"PHONE" IS NOT NULL
-CHECK|TEACHERS|SYS_C0011795|"EMAIL" IS NOT NULL
+CHECK|STUDY_YEARS|SYS_C0013047|"STUDY_YEAR_NO" IS NOT NULL
+CHECK|STUDY_YEARS|SYS_C0013048|"YEAR_LABEL" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013083|"TEACHER_ID" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013084|"FIRST_NAME" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013085|"LAST_NAME" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013086|"TITLE_ID" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013087|"PHONE" IS NOT NULL
+CHECK|TEACHERS|SYS_C0013088|"EMAIL" IS NOT NULL
 CHECK|TEACHERS|TEACHERS_EMAIL_CK|email like '%_@_%._%'
 CHECK|TEACHERS|TEACHERS_FIRST_NAME_CK|trim(first_name) is not null
 CHECK|TEACHERS|TEACHERS_ID_CK|teacher_id > 0 and teacher_id = trunc(teacher_id)
@@ -1033,6 +1284,17 @@ OBJECT|PROCEDURE|FIND_DISCIPLINE|VALID
 OBJECT|PROCEDURE|FIND_STUDENT|VALID
 OBJECT|PROCEDURE|GRADE_INS|VALID
 OBJECT|PROCEDURE|GRADE_UPD|VALID
+OBJECT|PROCEDURE|LIST_ACADEMIC_TITLES|VALID
+OBJECT|PROCEDURE|LIST_CURRICULUM|VALID
+OBJECT|PROCEDURE|LIST_DISCIPLINES|VALID
+OBJECT|PROCEDURE|LIST_GRADES|VALID
+OBJECT|PROCEDURE|LIST_GRADE_SCALE|VALID
+OBJECT|PROCEDURE|LIST_SEMESTERS|VALID
+OBJECT|PROCEDURE|LIST_SPECIALTIES|VALID
+OBJECT|PROCEDURE|LIST_STUDENTS|VALID
+OBJECT|PROCEDURE|LIST_STUDY_YEARS|VALID
+OBJECT|PROCEDURE|LIST_TEACHERS|VALID
+OBJECT|PROCEDURE|LIST_TEACHING_ASSIGNMENTS|VALID
 OBJECT|PROCEDURE|STUDENT_INS|VALID
 OBJECT|PROCEDURE|STUDENT_UPD|VALID
 OBJECT|PROCEDURE|TEACHER_DISCIPLINES|VALID
