@@ -1,5 +1,5 @@
 PASS: Eleven normalized tables
-PASS: Thirty-nine physical columns
+PASS: Forty-one physical columns
 PASS: Twelve foreign keys
 PASS: Semester removed from catalogue
 PASS: No redundant catalogue discipline column in grades or assignments
