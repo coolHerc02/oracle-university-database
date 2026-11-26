@@ -1,0 +1,39 @@
+
+PL/SQL procedure successfully completed.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+
+Procedure created.
+
+TABLE_CURSOR_PROCEDURES_COMPILED: 11 procedures
+
+PL/SQL procedure successfully completed.
