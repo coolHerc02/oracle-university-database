@@ -15,7 +15,7 @@ group by object_type order by object_type;
 select 'STUDENT|'||faculty_number||'|'||student_name||'|'||specialty_name||'|'||year_label||'|'||student_email
 from v_academic_report where faculty_number='00010001' and rownum=1;
 select 'ACADEMIC|'||discipline_name||'|'||semester_no||'|'||teacher_name||'|'||academic_title||'|'||
-grade_value||'|'||to_char(grade_date,'YYYY-MM-DD')
+grade_value||'|'||to_char(grade_date,'YYYY-MM-DD')||'|'||academic_year_label
 from v_academic_report where faculty_number='00010001' order by semester_no,discipline_name,discipline_id;
 select 'AVERAGE|'||faculty_number||'|'||student_name||'|'||to_char(average_grade,'FM0D00')
 from v_student_averages where specialty_id=1 and study_year_no=1
