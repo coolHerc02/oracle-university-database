@@ -1,0 +1,58 @@
+PASS: Eleven SELECTs correspond to eleven declared cursor procedures
+PASS: Procedure names are unique
+PASS: list_specialties: identical projection joins predicates and order
+PASS: list_specialties: no surrogate ID output
+PASS: list_specialties: meaningful filters
+PASS: list_specialties: explicit order
+PASS: list_specialties: explicit characteristics
+PASS: list_academic_titles: identical projection joins predicates and order
+PASS: list_academic_titles: no surrogate ID output
+PASS: list_academic_titles: meaningful filters
+PASS: list_academic_titles: explicit order
+PASS: list_academic_titles: explicit characteristics
+PASS: list_study_years: identical projection joins predicates and order
+PASS: list_study_years: no surrogate ID output
+PASS: list_study_years: meaningful filters
+PASS: list_study_years: explicit order
+PASS: list_study_years: explicit characteristics
+PASS: list_semesters: identical projection joins predicates and order
+PASS: list_semesters: no surrogate ID output
+PASS: list_semesters: meaningful filters
+PASS: list_semesters: explicit order
+PASS: list_semesters: explicit characteristics
+PASS: list_grade_scale: identical projection joins predicates and order
+PASS: list_grade_scale: no surrogate ID output
+PASS: list_grade_scale: meaningful filters
+PASS: list_grade_scale: explicit order
+PASS: list_grade_scale: explicit characteristics
+PASS: list_students: identical projection joins predicates and order
+PASS: list_students: no surrogate ID output
+PASS: list_students: meaningful filters
+PASS: list_students: explicit order
+PASS: list_students: explicit characteristics
+PASS: list_teachers: identical projection joins predicates and order
+PASS: list_teachers: no surrogate ID output
+PASS: list_teachers: meaningful filters
+PASS: list_teachers: explicit order
+PASS: list_teachers: explicit characteristics
+PASS: list_disciplines: identical projection joins predicates and order
+PASS: list_disciplines: no surrogate ID output
+PASS: list_disciplines: meaningful filters
+PASS: list_disciplines: explicit order
+PASS: list_disciplines: explicit characteristics
+PASS: list_curriculum: identical projection joins predicates and order
+PASS: list_curriculum: no surrogate ID output
+PASS: list_curriculum: meaningful filters
+PASS: list_curriculum: explicit order
+PASS: list_curriculum: explicit characteristics
+PASS: list_teaching_assignments: identical projection joins predicates and order
+PASS: list_teaching_assignments: no surrogate ID output
+PASS: list_teaching_assignments: meaningful filters
+PASS: list_teaching_assignments: explicit order
+PASS: list_teaching_assignments: explicit characteristics
+PASS: list_grades: identical projection joins predicates and order
+PASS: list_grades: no surrogate ID output
+PASS: list_grades: meaningful filters
+PASS: list_grades: explicit order
+PASS: list_grades: explicit characteristics
+TABLE_CURSOR_SOURCE_AUDIT_PASSED: 57 checks; 11 query-procedure pairs
