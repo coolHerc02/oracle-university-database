@@ -26,20 +26,18 @@ column rank_position format 999
 variable p_faculty_number varchar2(20)
 exec :p_faculty_number := '00010001';
 prompt SEARCH_1_GRADES_BY_STUDENT
-select faculty_number, student_name, discipline_id, discipline_name, semester_no,
-       grade_value, grade_label, grade_date
+select faculty_number,student_name,student_email,specialty_name,year_label,
+       discipline_name,semester_no,academic_year_label,grade_value,grade_label,grade_date,
+       grading_teacher_name,grading_teacher_title,grading_teacher_phone,grading_teacher_email
 from v_academic_report where faculty_number = :p_faculty_number
-order by semester_no, discipline_name, discipline_id;
+order by semester_no,discipline_name,academic_year_label;
 
--- Name resolves the ID so this example also works after sequence gaps.
-variable p_discipline_id number
-begin
- select min(discipline_id) into :p_discipline_id from disciplines
- where discipline_name = unistr('\0411\0430\0437\0438 \043e\0442 \0434\0430\043d\043d\0438');
-end;
-/
+-- User-facing filters use meaningful names, not surrogate IDs.
+variable p_discipline_name varchar2(100)
+exec :p_discipline_name := unistr('\0411\0430\0437\0438 \043e\0442 \0434\0430\043d\043d\0438');
 prompt SEARCH_2_GRADES_BY_DISCIPLINE
-select discipline_id, discipline_name, faculty_number, student_name,
-       specialty_name,year_label,grade_value,grade_date
-from v_academic_report where discipline_id = :p_discipline_id
-order by student_name, faculty_number;
+select discipline_name,faculty_number,student_name,student_email,specialty_name,year_label,
+       semester_no,academic_year_label,grade_value,grade_label,grade_date,
+       grading_teacher_name,grading_teacher_title,grading_teacher_phone,grading_teacher_email
+from v_academic_report where discipline_name = :p_discipline_name
+order by student_name,faculty_number,academic_year_label;
