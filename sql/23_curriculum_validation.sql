@@ -11,7 +11,7 @@ declare
 begin
  savepoint curriculum_validation;
  select count(*) into n from user_tables;ok(n=11,'Eleven normalized tables');
- select count(*) into n from user_tab_columns where table_name in(select table_name from user_tables);ok(n=39,'Thirty-nine physical columns');
+ select count(*) into n from user_tab_columns where table_name in(select table_name from user_tables);ok(n=41,'Forty-one physical columns');
  select count(*) into n from user_constraints where constraint_type='R';ok(n=12,'Twelve foreign keys');
  select count(*) into n from user_tab_columns where table_name='DISCIPLINES' and column_name='SEMESTER_NO';ok(n=0,'Semester removed from catalogue');
  select count(*) into n from user_tab_columns where table_name in('GRADES','DISCIPLINE_TEACHERS') and column_name='DISCIPLINE_ID';ok(n=0,'No redundant catalogue discipline column in grades or assignments');
