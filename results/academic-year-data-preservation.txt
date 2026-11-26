@@ -1,0 +1,13 @@
+PASS: SPECIALTIES: 5 original rows and all pre-existing fields preserved
+PASS: ACADEMIC_TITLES: 4 original rows and all pre-existing fields preserved
+PASS: STUDY_YEARS: 6 original rows and all pre-existing fields preserved
+PASS: SEMESTERS: 12 original rows and all pre-existing fields preserved
+PASS: GRADE_SCALE: 5 original rows and all pre-existing fields preserved
+PASS: STUDENTS: 20 original rows and all pre-existing fields preserved
+PASS: TEACHERS: 6 original rows and all pre-existing fields preserved
+PASS: DISCIPLINES: 15 original rows and all pre-existing fields preserved
+PASS: CURRICULUM: 46 original rows and all pre-existing fields preserved
+PASS: DISCIPLINE_TEACHERS: 53 original rows and all pre-existing fields preserved
+PASS: GRADES: 64 original rows and all pre-existing fields preserved
+Approved sample-data assumption: original June 2026 grades -> 2025/2026; October SIT/KST examples -> 2026/2027.
+ACADEMIC_YEAR_DATA_PRESERVATION_PASSED: 11 checks
