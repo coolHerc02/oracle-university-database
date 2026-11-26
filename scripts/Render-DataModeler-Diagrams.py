@@ -144,7 +144,7 @@ for logical in (False,True):
             native_paths[fk]=pts if foreign[fk]==ends else list(reversed(pts))
     r=Renderer(name)
     r.text(40,20,"Логически модел" if logical else "Релационен модел · Oracle 11g XE",26,bold=True)
-    r.text(40,57,"Визуализация на обектите и подредбата в native university.dmd: 11 обекта, 39 полета, 12 връзки.",14,color="#475569")
+    r.text(40,57,"Визуализация на обектите и подредбата в native university.dmd: 11 обекта, 41 полета, 12 връзки.",14,color="#475569")
     boxes={}
     for n,t in tables.items():
         x,y,w=layout[n]
@@ -197,6 +197,6 @@ for logical in (False,True):
     r.text(40,1028,"# - основен UID     U* - допълнителен UID     * - задължителен атрибут     o - незадължителен атрибут" if logical else
            "PK - първичен ключ     FK - външен ключ     P/F - част от PK и FK     NN - задължително поле",15,color="#334155")
     r.text(40,1055,"Преподавател: поне 2 различни дисциплини. Учебен план: 1..N преподаватели. Студент: 2..N оценки.",16,bold=True,color="#0f766e")
-    r.text(40,1080,"CURRICULUM определя специалност и семестър. GRADES сочи конкретно преподавателско назначение.",14,color="#475569")
+    r.text(40,1080,"CURRICULUM определя специалност и семестър. GRADES сочи назначение за същата учебна година.",14,color="#475569")
     r.save()
 print("DIAGRAMS_RENDERED_FROM_NATIVE_MODEL: logical and relational, SVG/PNG/PDF")
