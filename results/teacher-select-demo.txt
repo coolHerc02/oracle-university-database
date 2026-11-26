@@ -1,0 +1,78 @@
+KEYWORD_IN_RELATED_OBJECT_TITLE
+Teachers with title containing: професор
+Георги Тодоров Петров | професор | +359000000005 | teacher5@university.example | disciplines: 2
+Петър Иванов Николов | професор | +359000000001 | teacher1@university.example | disciplines: 5
+Teacher matches: 2
+
+PL/SQL procedure successfully completed.
+
+KEYWORD_IN_RELATED_OBJECT_SPECIALTY
+Students with specialty containing: комп
+00010001 | Александър Иванов Петров | student1@university.example | Компютърни науки | I курс | disciplines: 4 | average: 6.00
+00010004 | Елена Николова Георгиева | student4@university.example | Компютърни науки | I курс | disciplines: 4 | average: 6.00
+00010013 | Мартин Колев Петров | student13@university.example | Компютърни науки | III курс | disciplines: 3 | average: 4.67
+00010007 | Николай Александров Колев | student7@university.example | Компютърни науки | II курс | disciplines: 4 | average: 5.00
+00010010 | Петя Петрова Костова | student10@university.example | Компютърни науки | II курс | disciplines: 3 | average: 4.33
+00010016 | Ралица Георгиева Костова | student16@university.example | Компютърни науки | III курс | disciplines: 3 | average: 5.67
+Student matches: 6
+
+PL/SQL procedure successfully completed.
+
+KEYWORD_IN_STUDENT_NAME
+00010001 | Александър Иванов Петров | student1@university.example | Компютърни науки | I курс | 6.00 | disciplines: 4
+Student matches: 1
+
+PL/SQL procedure successfully completed.
+
+KEYWORD_IN_DISCIPLINE_NAME_WITH_ALL_TEACHING_CONTEXTS
+Бази от данни | Икономика | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Икономика | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Компютърни науки | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | доцент Мария Петрова Георгиева | +359000000002 | teacher2@university.example | academic year 2025/2026
+Бази от данни | Софтуерно инженерство | semester 3 | професор Петър Иванов Николов | +359000000001 | teacher1@university.example | academic year 2025/2026
+Discipline matches: 6
+
+PL/SQL procedure successfully completed.
+
+EXPLICIT_OPEN_FETCH_CLOSE_CURSOR
+Student: 00010001 Александър Иванов Петров
+Specialty: Компютърни науки; I курс
+Email: student1@university.example
+Average: 6.00
+Semester 1: Английски език | grade 6 Отличен | 2026-06-12 | academic year 2025/2026
+Graded by: асистент Анна Димитрова Колева | +359000000006 | teacher6@university.example
+Semester 1: Математика | grade 6 Отличен | 2026-06-10 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Semester 2: Алгоритми | grade 6 Отличен | 2026-06-11 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Semester 2: Дискретна математика | grade 6 Отличен | 2026-06-13 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+
+PL/SQL procedure successfully completed.
+
+DECLARED_CURSOR_FOR_LOOP
+Student: 00010001 Александър Иванов Петров
+Specialty: Компютърни науки, I курс
+Email: student1@university.example
+Average: 6
+Semester 1: Английски език | grade 6 Отличен | 2026-06-12 | academic year 2025/2026
+Graded by: асистент Анна Димитрова Колева | +359000000006 | teacher6@university.example
+Assigned teachers: Анна Димитрова Колева
+Titles: асистент | phones: +359000000006 | emails: teacher6@university.example
+Semester 1: Математика | grade 6 Отличен | 2026-06-10 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Assigned teachers: Петър Иванов Николов; Мария Петрова Георгиева
+Titles: професор; доцент | phones: +359000000001; +359000000002 | emails: teacher1@university.example; teacher2@university.example
+Semester 2: Алгоритми | grade 6 Отличен | 2026-06-11 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Assigned teachers: Петър Иванов Николов
+Titles: професор | phones: +359000000001 | emails: teacher1@university.example
+Semester 2: Дискретна математика | grade 6 Отличен | 2026-06-13 | academic year 2025/2026
+Graded by: професор Петър Иванов Николов | +359000000001 | teacher1@university.example
+Assigned teachers: Петър Иванов Николов
+Titles: професор | phones: +359000000001 | emails: teacher1@university.example
+
+PL/SQL procedure successfully completed.
+
+TEACHER_SELECT_RULES_DEMO_COMPLETED
