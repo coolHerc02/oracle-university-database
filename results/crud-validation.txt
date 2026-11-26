@@ -3,10 +3,10 @@ PASS: Missing teacher rejected (SQLCODE -20045)
 PASS: Missing discipline rejected (SQLCODE -20046)
 PASS: Missing student curriculum rejected (SQLCODE -20141)
 PASS: Direct DELETE guard stays active (SQLCODE -20020)
-AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=65, grade=5 (transaction
-pending)
-AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=66, grade=5 (transaction
-pending)
+AFTER INSERT: student=CRUD_FAIL_2B64DC087B, academic_year=2026, curriculum=75,
+grade=5 (transaction pending)
+AFTER INSERT: student=CRUD_FAIL_2B64DC087B, academic_year=2026, curriculum=76,
+grade=5 (transaction pending)
 PASS: Student cannot lose his second grade (SQLCODE -20042)
 PASS: Failed grade DELETE preserves both grades
 PASS: Failed operation keeps caller prior changes
@@ -14,8 +14,8 @@ PASS: Discipline DELETE checks affected students (SQLCODE -20042)
 PASS: Failed discipline DELETE restores course, assignment and grade
 PASS: Teacher referenced by grades cannot be deleted (SQLCODE -2292)
 PASS: Failed teacher DELETE restores all assignments
-AFTER INSERT: student=CRUD_FAIL_9122EC60BF, curriculum=67, grade=6 (transaction
-pending)
+AFTER INSERT: student=CRUD_FAIL_2B64DC087B, academic_year=2026, curriculum=77,
+grade=6 (transaction pending)
 PASS: Allowed discipline DELETE removes selected course
 PASS: Allowed discipline DELETE retains two student grades
 PASS: Allowed discipline DELETE retains two teacher courses
