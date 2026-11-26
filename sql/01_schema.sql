@@ -137,7 +137,9 @@ create table curriculum (
 create table discipline_teachers (
     curriculum_id number not null,
     teacher_id number not null,
-    constraint discipline_teachers_pk primary key (curriculum_id, teacher_id),
+    academic_year number not null,
+    constraint dt_academic_year_ck check (academic_year between 1900 and 9998 and academic_year=trunc(academic_year)),
+    constraint discipline_teachers_pk primary key (curriculum_id, teacher_id, academic_year),
     constraint dt_curriculum_fk foreign key (curriculum_id) references curriculum (curriculum_id),
     constraint dt_teacher_fk foreign key (teacher_id) references teachers (teacher_id)
 );
@@ -148,10 +150,11 @@ create table grades (
     grade_value number not null,
     grade_date date not null,
     teacher_id number not null,
+    academic_year number not null,
     constraint grades_pk primary key (faculty_number, curriculum_id),
     constraint grades_student_fk foreign key (faculty_number) references students (faculty_number),
-    constraint grades_assignment_fk foreign key (curriculum_id, teacher_id)
-        references discipline_teachers (curriculum_id, teacher_id),
+    constraint grades_assignment_fk foreign key (curriculum_id, teacher_id, academic_year)
+        references discipline_teachers (curriculum_id, teacher_id, academic_year),
     constraint grades_value_fk foreign key (grade_value) references grade_scale (grade_value)
 );
 
@@ -161,7 +164,7 @@ create index teachers_title_ix on teachers (title_id);
 create index curriculum_discipline_ix on curriculum(discipline_id);
 create index curriculum_semester_ix on curriculum(semester_no);
 create index dt_teacher_ix on discipline_teachers (teacher_id);
-create index grades_assignment_ix on grades (curriculum_id, teacher_id);
+create index grades_assignment_ix on grades (curriculum_id, teacher_id, academic_year);
 create index grades_value_ix on grades (grade_value);
 -- grades_pk covers the student FK; semesters_year_term_uq covers the year FK.
 
@@ -223,3 +226,6 @@ comment on column grades.teacher_id is 'Responsible grading teacher. Must be ass
 comment on column grade_scale.is_passing is '0 for grade 2; 1 for grades 3 through 6.';
 
 prompt UNIVERSITY_SCHEMA_READY
+
+comment on column discipline_teachers.academic_year is 'Starting year: 2025 means academic year 2025/2026. Appointment identity includes this year.';
+comment on column grades.academic_year is 'Academic year of the referenced teaching assignment. Existing grades retain their recorded year.';
