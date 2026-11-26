@@ -47,7 +47,7 @@ begin
  select sum(discipline_count) into v from v_teacher_ranking;ok(v=18,'Teacher ranking counts distinct catalogue courses per teacher');
  err('begin university_api.assign_teacher('||math_id||','||teacher1||'); end;',-1,'Duplicate assignment is rejected');
  select count(*) into n from discipline_teachers;ok(n=53,'Duplicate refusal preserves all assignments');
- err('insert into discipline_teachers values('||math_id||','||teacher6||')',-20020,'Direct assignment INSERT guarded');
+ err('insert into discipline_teachers(curriculum_id,teacher_id) values('||math_id||','||teacher6||')',-20020,'Direct assignment INSERT guarded');
  err('update discipline_teachers set teacher_id=teacher_id where curriculum_id='||math_id,-20020,'Direct assignment UPDATE guarded');
  err('delete from discipline_teachers where curriculum_id='||math_id,-20020,'Direct assignment DELETE guarded');
  err('begin university_api.assign_teacher('||math_id||',999999); end;',-2291,'Missing teacher rejected');
