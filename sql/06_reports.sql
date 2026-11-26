@@ -24,46 +24,48 @@ column average_grade format 990.00
 column rank_position format 999
 
 variable p_faculty_number varchar2(20)
-variable p_specialty_id number
-variable p_study_year_no number
-variable p_discipline_id number
+variable p_specialty_name varchar2(100)
+variable p_study_year_label varchar2(30)
+variable p_discipline_name varchar2(100)
 begin
- :p_faculty_number := '00010001'; :p_specialty_id := 1; :p_study_year_no := 1;
- select min(discipline_id) into :p_discipline_id from disciplines
- where discipline_name = unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
+ :p_faculty_number := '00010001';
+ :p_specialty_name := unistr('\041a\043e\043c\043f\044e\0442\044a\0440\043d\0438 \043d\0430\0443\043a\0438');
+ :p_study_year_label := unistr('I \043a\0443\0440\0441');
+ :p_discipline_name := unistr('\041c\0430\0442\0435\043c\0430\0442\0438\043a\0430');
 end;
 /
 prompt REPORT_1_ACADEMIC_TRANSCRIPT_ALL_SOURCE_FIELDS
 select faculty_number,student_name,student_email,specialty_name,year_label,
        discipline_name,semester_no,teacher_name,academic_title,teacher_phone,
-       teacher_email,grading_teacher_id,grading_teacher_name,
-       grade_value,grade_label,grade_date,round(average_grade,2) average_grade
+       teacher_email,grading_teacher_name,grading_teacher_title,grading_teacher_phone,grading_teacher_email,
+       academic_year_label,grade_value,grade_label,grade_date,round(average_grade,2) average_grade
 from v_academic_report where faculty_number=:p_faculty_number
-order by semester_no,discipline_name,discipline_id;
+order by semester_no,discipline_name,academic_year_label;
 
 prompt REPORT_2_STUDENT_AVERAGES_FILTERED_BY_SPECIALTY_AND_YEAR
-select faculty_number,student_name,specialty_name,year_label,discipline_count,
+select faculty_number,student_name,student_email,specialty_name,year_label,discipline_count,
        round(average_grade,2) average_grade
 from v_student_averages
-where specialty_id=:p_specialty_id and study_year_no=:p_study_year_no
+where specialty_name=:p_specialty_name and year_label=:p_study_year_label
 order by v_student_averages.average_grade desc,student_name,faculty_number;
 
 prompt REPORT_3_FAILED_STUDENTS_BY_DISCIPLINE
-select discipline_name,faculty_number,student_name,specialty_name,
-       study_year_no,grade_value,grade_date
-from v_failed_exams where discipline_id=:p_discipline_id
+select discipline_name,faculty_number,student_name,student_email,specialty_name,
+       year_label,semester_no,academic_year_label,grade_value,grade_label,grade_date,
+       grading_teacher_name,grading_teacher_title,grading_teacher_phone,grading_teacher_email
+from v_failed_exams where discipline_name=:p_discipline_name
 order by student_name,faculty_number;
 
 prompt REPORT_4_RANKING_WITHIN_SPECIALTY
-select rank_position,faculty_number,student_name,year_label,
+select rank_position,faculty_number,student_name,student_email,specialty_name,year_label,
        discipline_count,round(average_grade,2) average_grade
-from v_specialty_ranking where specialty_id=:p_specialty_id
+from v_specialty_ranking where specialty_name=:p_specialty_name
 order by rank_position,student_name,faculty_number;
 
 prompt REPORT_5_TEACHER_RANKING_BY_DISCIPLINE_COUNT
-select rank_position,teacher_id,teacher_name,title_name,discipline_count
+select rank_position,teacher_name,title_name,teacher_phone,teacher_email,discipline_count
 from v_teacher_ranking
-order by rank_position,teacher_name,teacher_id;
+order by rank_position,teacher_name,teacher_email;
 
 prompt PLSQL_EXPLICIT_CURSOR_ACADEMIC_REPORT
 exec university_api.print_academic_report(:p_faculty_number);
